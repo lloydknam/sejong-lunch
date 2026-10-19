@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>세종청사 점심</title>
+<meta name="description" content="세종청사 동료들이 다녀온 점심 식당을 함께 모으고 평가하는 지도">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<style>
+/* Layout: one phone-width column — lunch-countdown header, meal-ticket picker, real map, filter chips, then the shared list. */
+:root{
+  --bg:#f2f4ef;--surface:#ffffff;--line:#d9ded4;--fg:#1b2420;--muted:#5c6862;
+  --ink:#1f5f52;--ink-fg:#ffffff;--ticket:#f1c232;--ticket-fg:#2a2210;--ticket-line:#b38a12;
+  --good:#2f7d4f;--warn:#9a6b00;--bad:#b23b2e;--chip:#e6eae2;
+  --f-display:"Do Hyeon","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --f-body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#121714;--surface:#1a211d;--line:#2c3631;--fg:#e4eae5;--muted:#9aa8a0;
+    --ink:#5fbfa8;--ink-fg:#0c1411;--ticket:#d8ad2b;--ticket-fg:#221a06;--ticket-line:#8f6c0c;
+    --good:#6cc48f;--warn:#e0b44a;--bad:#ef7d6f;--chip:#232b27;color-scheme:dark}
+  .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) brightness(.85) contrast(.9)}
+}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 56px}
+[hidden]{display:none!important}
+.wrap{max-width:620px;margin:0 auto;display:flex;flex-direction:column;gap:22px}
+h1,h2,h3{margin:0;text-wrap:balance;font-weight:400}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+a{color:var(--ink)}
+
+header{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand h1{font-family:var(--f-display);font-size:34px;line-height:1.05}
+.brand p{margin:4px 0 0;color:var(--muted);font-size:13px}
+.clock{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:var(--chip);font-size:13px;white-space:nowrap}
+.clock b{font-family:var(--f-mono);font-weight:500;font-variant-numeric:tabular-nums}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+.clock[data-s="on"] .dot{background:var(--good)}
+.clock[data-s="soon"] .dot{background:var(--warn)}
+
+.ticket{position:relative;display:grid;grid-template-columns:86px 1fr;background:var(--ticket);color:var(--ticket-fg);border-radius:10px;min-height:150px}
+.ticket::before,.ticket::after{content:"";position:absolute;left:86px;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:var(--bg)}
+.ticket::before{top:-9px}.ticket::after{bottom:-9px}
+.stub{border-right:2px dashed var(--ticket-line);padding:16px 10px;display:flex;flex-direction:column;justify-content:space-between;align-items:center;text-align:center}
+.stub .k{font-family:var(--f-display);font-size:22px;writing-mode:vertical-rl;letter-spacing:.2em}
+.stub .d{font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:.04em}
+.tmain{padding:16px 18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.tlabel{font-size:11px;letter-spacing:.12em;font-weight:600;opacity:.75}
+.tname{font-family:var(--f-display);font-size:30px;line-height:1.1;overflow-wrap:anywhere}
+.tmeta{font-size:13px}
+.trow{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:auto}
+.btn{appearance:none;border:0;border-radius:8px;padding:10px 16px;font-weight:600;cursor:pointer;background:var(--ink);color:var(--ink-fg)}
+.btn:disabled{opacity:.5;cursor:default}
+.btn.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+.ticket .btn{background:var(--ticket-fg);color:var(--ticket)}
+.ticket a{color:var(--ticket-fg);font-weight:600;font-size:13px}
+.shuffle .tname{opacity:.55}
+
+.mapbox{display:flex;flex-direction:column;gap:8px}
+.mhead{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+.mhead h2,.lhead h2{font-family:var(--f-display);font-size:22px}
+.mnote{font-size:12px;color:var(--muted)}
+#map{height:320px;border-radius:12px;border:1px solid var(--line);background:var(--chip);z-index:0}
+.leaflet-popup-content{font-family:var(--f-body);font-size:13px;margin:10px 12px}
+.pop b{display:block;font-size:14px}
+.pop .m{color:#5c6862}
+.pop button{margin-top:6px;border:0;background:#1f5f52;color:#fff;border-radius:6px;padding:4px 10px;font-size:12px;cursor:pointer}
+.gov{background:#1b2420;color:#fff;font-size:11px;font-weight:600;padding:2px 6px;border-radius:4px;white-space:nowrap;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+
+.filters{display:flex;flex-direction:column;gap:10px}
+.frow{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.frow .fl{font-size:12px;color:var(--muted);width:44px;flex:none}
+.chip{appearance:none;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 11px;font-size:13px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+
+.lhead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.count{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.list{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.place{border-bottom:1px solid var(--line)}
+.place.hl{background:color-mix(in srgb,var(--ticket) 14%,transparent)}
+.prow{display:grid;grid-template-columns:1fr auto;gap:4px 12px;padding:14px 2px;width:100%;text-align:left;background:none;border:0;cursor:pointer}
+.pname{font-weight:600;font-size:16px;min-width:0;overflow-wrap:anywhere}
+.pmeta{grid-column:1;color:var(--muted);font-size:13px;display:flex;gap:6px;flex-wrap:wrap}
+.score{grid-row:1/span 2;grid-column:2;align-self:center;display:flex;gap:6px;font-family:var(--f-mono);font-size:12px;font-variant-numeric:tabular-nums}
+.score span{padding:2px 6px;border-radius:4px;background:var(--chip)}
+.score .g{color:var(--good)}.score .b{color:var(--bad)}
+.tag{font-size:11px;padding:1px 7px;border-radius:4px;border:1px solid var(--line);color:var(--muted)}
+.tag.unv{border-style:dashed;color:var(--warn);border-color:var(--warn)}
+.tag.ok{color:var(--good);border-color:var(--good)}
+.detail{padding:0 2px 18px;display:flex;flex-direction:column;gap:12px}
+.links{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;align-items:baseline}
+.note{margin:0;font-size:14px}
+.reviews{display:flex;flex-direction:column;gap:8px;margin:0;padding:0;list-style:none}
+.rv{font-size:14px;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.vd{font-size:11px;font-weight:600;padding:1px 6px;border-radius:4px;background:var(--chip);flex:none}
+.vd.again{color:var(--good)}.vd.no{color:var(--bad)}
+.who{font-size:12px;color:var(--muted)}
+.linkbtn{background:none;border:0;padding:0;color:var(--muted);font-size:12px;text-decoration:underline;cursor:pointer}
+.linkbtn.danger{color:var(--bad)}
+
+form{display:flex;flex-direction:column;gap:10px}
+.rform{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px}
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg label{display:inline-flex;align-items:center;gap:4px;font-size:13px;border:1px solid var(--line);border-radius:999px;padding:4px 10px;cursor:pointer;background:var(--bg)}
+.seg input{accent-color:var(--ink)}
+input[type=text],input[type=password],select{width:100%;border:1px solid var(--line);background:var(--bg);border-radius:8px;padding:9px 10px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:420px){.grid2{grid-template-columns:1fr}}
+.field{display:flex;flex-direction:column;gap:4px;min-width:0}
+.field>span{font-size:12px;color:var(--muted)}
+.addbox{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
+.addbox h3{font-family:var(--f-display);font-size:20px;margin-bottom:4px}
+.empty{padding:28px 4px;color:var(--muted);font-size:14px;text-align:center}
+.banner{font-size:13px;color:var(--muted);background:var(--chip);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:8px}
+.banner .row{display:flex;gap:8px}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:9px 16px;border-radius:999px;font-size:13px;z-index:1000}
+.confirm{display:flex;gap:8px;align-items:center;font-size:13px;flex-wrap:wrap}
+footer{font-size:12px;color:var(--muted);text-align:center}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <h1>세종청사 점심</h1>
+      <p>동료들이 직접 다녀온 곳을 모으는 점심 지도</p>
+    </div>
+    <div class="clock" id="clock" data-s="off"><span class="dot"></span><span id="clockText">점심시간 확인 중</span></div>
+  </header>
+
+  <div id="modeBanner" class="banner" hidden></div>
+
+  <section class="ticket" id="ticket" aria-live="polite">
+    <div class="stub"><span class="k">중식권</span><span class="d" id="tdate"></span></div>
+    <div class="tmain">
+      <span class="tlabel" id="tlabel">오늘 뭐 먹지</span>
+      <div class="tname" id="tname">한 장 뽑아볼까요</div>
+      <div class="tmeta" id="tmeta">아래 조건에 맞는 곳 중에서 한 곳을 골라드려요.</div>
+      <div class="trow">
+        <button class="btn" id="pickBtn" type="button">식권 뽑기</button>
+        <span id="tlinks" class="links"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="mapbox" aria-label="지도">
+    <div class="mhead"><h2>지도</h2><span class="mnote" id="mapNote">점을 누르면 식당 정보가 떠요</span></div>
+    <div id="map"></div>
+    <div class="legend"><span><i style="background:var(--ink)"></i>정확한 위치</span><span><i style="border:2px dashed var(--muted)"></i>동네 안 대략 위치</span></div>
+  </section>
+
+  <section class="filters" aria-label="조건">
+    <div class="frow" id="fArea"><span class="fl">동네</span></div>
+    <div class="frow" id="fCat"><span class="fl">종류</span></div>
+    <div class="frow" id="fPrice"><span class="fl">가격</span></div>
+    <div class="frow" id="fEtc"><span class="fl">기타</span></div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:10px">
+    <div class="lhead">
+      <h2>모아둔 곳</h2>
+      <span class="count" id="count"></span>
+    </div>
+    <div class="list" id="list"><div class="empty">목록을 불러오는 중이에요.</div></div>
+  </section>
+
+  <section class="addbox" id="addbox">
+    <h3>새 식당 등록</h3>
+    <p style="margin:0 0 10px;color:var(--muted);font-size:13px" id="addHint">다녀온 곳을 올려주세요. 등록하면 같이 쓰는 모두에게 보여요.</p>
+    <form id="addForm" autocomplete="off">
+      <label class="field"><span>식당 이름</span><input type="text" id="aName" maxlength="40" required placeholder="예: 동동칼국수"></label>
+      <div class="grid2">
+        <label class="field"><span>동네</span><select id="aArea"></select></label>
+        <label class="field"><span>종류</span><select id="aCat"></select></label>
+      </div>
+      <div class="grid2">
+        <label class="field"><span>1인 가격대</span><select id="aPrice"><option value="">모름</option></select></label>
+        <label class="field"><span>주소나 건물 (선택)</span><input type="text" id="aAddr" maxlength="60" placeholder="예: 세종1번가 2층"></label>
+      </div>
+      <div class="seg">
+        <label><input type="checkbox" id="aSolo"> 혼밥 가능</label>
+        <label><input type="checkbox" id="aGroup"> 단체석</label>
+        <label><input type="checkbox" id="aReserve"> 예약 필수</label>
+      </div>
+      <label class="field"><span>한 줄 메모 (선택)</span><input type="text" id="aNote" maxlength="60" placeholder="예: 11시 50분 전에 가야 자리 있음"></label>
+      <label class="field"><span>내 이름이나 별명</span><input type="text" id="aNick" maxlength="20" placeholder="예: 예산실 김사무관"></label>
+      <div><button class="btn" type="submit" id="aSubmit">등록하기</button></div>
+    </form>
+  </section>
+
+  <footer>지도 © OpenStreetMap 기여자 · 식당 정보는 동료들이 올린 내용이에요</footer>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script src="config.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script>
+(function(){
+const API=((window.LUNCH_CONFIG||{}).sheetUrl||"").trim();
+const AREAS=["어진동","나성동","도담동","보람동","아름동","종촌동","고운동","새롬동","다정동","한솔동","대평동","소담동","반곡동","집현동","조치원읍","금남면","장군면","기타"];
+const CATS=["한식","일식","중식","양식","아시아","분식","고기","해산물","카페·빵","기타"];
+const PRICES=["~1만","1~1.5만","1.5만~"];
+const VERD={again:"또 갈래",ok:"무난",no:"비추"};
+const GOV=[36.5041,127.2621];
+const CENTER={"어진동":[36.503,127.258],"도담동":[36.514,127.257],"아름동":[36.517,127.243],"종촌동":[36.505,127.239],"고운동":[36.512,127.225],"나성동":[36.490,127.264],"다정동":[36.495,127.243],"새롬동":[36.485,127.249],"한솔동":[36.481,127.256],"대평동":[36.470,127.272],"보람동":[36.478,127.290],"소담동":[36.480,127.305],"반곡동":[36.497,127.313],"집현동":[36.513,127.310],"조치원읍":[36.601,127.298],"금남면":[36.462,127.285],"장군면":[36.507,127.198]};
+const $=id=>document.getElementById(id);
+const S={seeds:[],places:[],reviews:[],f:{area:"",cat:"",price:"",solo:false,sort:"score"},open:null,picked:null,confirmDel:null,me:null,loaded:false,needPass:false,error:""};
+
+function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+function el(tag,attrs,...kids){const n=document.createElement(tag);
+  if(attrs)for(const k in attrs){const v=attrs[k];if(v==null||v===false)continue;
+    if(k==="class")n.className=v;else if(k==="text")n.textContent=v;
+    else if(k.startsWith("on"))n.addEventListener(k.slice(2),v);else n.setAttribute(k,v===true?"":v)}
+  for(const c of kids.flat()){if(c==null||c===false)continue;n.append(c.nodeType?c:document.createTextNode(String(c)))}
+  return n}
+function toast(t){const n=$("toast");n.textContent=t;n.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>n.hidden=true,2400)}
+
+try{const s=JSON.parse(store("lunchFilter")||"null");if(s&&typeof s==="object")Object.assign(S.f,s)}catch(e){}
+function saveF(){store("lunchFilter",JSON.stringify(S.f))}
+
+/* identity: a random token kept on this phone; the server only ever sees its hash */
+let token=store("lunchToken");
+if(!token||token.length<16){token=Array.from(crypto.getRandomValues(new Uint8Array(16)),b=>b.toString(16).padStart(2,"0")).join("");store("lunchToken",token)}
+async function hashToken(t){const buf=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(t));return Array.from(new Uint8Array(buf),b=>b.toString(16).padStart(2,"0")).join("").slice(0,16)}
+
+/* lunch clock */
+function tick(){const d=new Date();const m=d.getHours()*60+d.getMinutes();const day=d.getDay();
+  const c=$("clock"),t=$("clockText");const fmt=x=>x>=60?Math.floor(x/60)+"시간 "+(x%60)+"분":x+"분";
+  $("tdate").textContent=(d.getMonth()+1)+"."+String(d.getDate()).padStart(2,"0")+" "+["일","월","화","수","목","금","토"][day];
+  t.textContent="";
+  if(day===0||day===6){c.dataset.s="off";t.append("주말이에요");return}
+  if(m<720){c.dataset.s=720-m<=30?"soon":"off";t.append("점심까지 ",el("b",{text:fmt(720-m)}))}
+  else if(m<780){c.dataset.s="on";t.append("점심시간 · ",el("b",{text:fmt(780-m)})," 남음")}
+  else{c.dataset.s="off";t.append("오늘 점심 끝 · 내일 12:00")}}
+tick();setInterval(tick,30000);
+
+/* geometry */
+function seedHash(s){let h=0;for(const c of s)h=(h*31+c.charCodeAt(0))|0;return h}
+function pos(p){if(typeof p.lat==="number"&&typeof p.lng==="number"&&p.lat)return{ll:[p.lat,p.lng],exact:true};
+  const c=CENTER[p.area];if(!c)return null;const h=seedHash(p.id);
+  return{ll:[c[0]+((h%100)/100-.5)*.006,c[1]+(((h>>7)%100)/100-.5)*.008],exact:false}}
+function distKm(a,b){const R=6371,r=Math.PI/180,dl=(b[0]-a[0])*r,dg=(b[1]-a[1])*r;
+  const x=Math.sin(dl/2)**2+Math.cos(a[0]*r)*Math.cos(b[0]*r)*Math.sin(dg/2)**2;return 2*R*Math.asin(Math.sqrt(x))}
+function govDist(p){const q=pos(p);return q&&q.exact?distKm(GOV,q.ll):null}
+function fmtKm(k){return k<1?Math.round(k*10)*100+"m":k.toFixed(1)+"km"}
+
+/* data */
+async function load(){
+  try{const r=await fetch("data/places.json",{cache:"no-cache"});S.seeds=(await r.json()).map(p=>({...p,seed:true}))}
+  catch(e){S.error="식당 목록을 불러오지 못했어요."}
+  await refresh();S.loaded=true;renderAll()}
+async function refresh(){
+  if(!API){const loc=readLocal();S.places=S.seeds.concat(loc.places);S.reviews=loc.reviews;return}
+  try{const r=await fetch(API,{cache:"no-cache"});const j=await r.json();
+    if(!j.ok)throw 0;S.places=S.seeds.concat((j.places||[]).map(p=>({...p,user:true})));S.reviews=j.reviews||[];
+    S.needPass=!!j.needsPasscode&&!store("lunchPass");S.error=""}
+  catch(e){S.places=S.seeds.slice();S.error="공유 저장소에 연결하지 못했어요. 잠시 뒤 새로고침해 주세요."}}
+function readLocal(){try{const j=JSON.parse(store("lunchLocal")||"null");if(j&&Array.isArray(j.places)&&Array.isArray(j.reviews))return j}catch(e){}return{places:[],reviews:[]}}
+function writeLocal(j){store("lunchLocal",JSON.stringify(j))}
+
+async function send(action,payload){
+  const nick=($("aNick").value||store("lunchNick")||"").trim();
+  if(!API){const j=readLocal();const now=Date.now();const id=(action==="addPlace"?"l-":"lr-")+now.toString(36);
+    if(action==="addPlace")j.places.push({...payload,id,nick,owner:S.me,createdAt:now,user:true});
+    if(action==="addReview")j.reviews.push({...payload,id,nick,owner:S.me,createdAt:now});
+    if(action==="deletePlace")j.places=j.places.filter(p=>p.id!==payload.id);
+    if(action==="deleteReview")j.reviews=j.reviews.filter(r=>r.id!==payload.id);
+    writeLocal(j);await refresh();renderAll();return true}
+  const body={action,token,nick,passcode:store("lunchPass")||"",...payload};
+  let j;try{const r=await fetch(API,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(body)});j=await r.json()}
+  catch(e){toast("저장하지 못했어요. 인터넷 연결을 확인해 주세요");return false}
+  if(!j.ok){const m={passcode:"팀 암호가 맞지 않아요. 위에 암호를 넣어주세요",duplicate:"이미 등록된 이름이에요",not_owner:"직접 올린 항목만 지울 수 있어요"};
+    if(j.error==="passcode"){store("lunchPass","");S.needPass=true;renderBanner()}
+    toast(m[j.error]||"저장하지 못했어요. 잠시 뒤 다시 시도해 주세요");return false}
+  await refresh();renderAll();return true}
+
+/* banner */
+function renderBanner(){const b=$("modeBanner");b.replaceChildren();
+  if(S.error){b.append(S.error);b.hidden=false;return}
+  if(!API){b.append("지금은 '내 폰에만 저장' 모드예요. 등록과 평가가 이 기기에만 남아요.");b.hidden=false;return}
+  if(S.needPass){const inp=el("input",{type:"password",id:"passIn",placeholder:"팀 암호","aria-label":"팀 암호"});
+    b.append("등록과 평가를 하려면 팀 암호가 필요해요.",el("div",{class:"row"},inp,el("button",{class:"btn",type:"button",onclick:()=>{const v=inp.value.trim();if(!v)return;store("lunchPass",v);S.needPass=false;renderBanner();toast("암호를 저장했어요")},text:"확인"})));b.hidden=false;return}
+  b.hidden=true}
+
+/* filters */
+function chips(box,opts,key){const row=$(box);row.querySelectorAll(".chip").forEach(n=>n.remove());
+  [["","전체"],...opts.map(o=>[o,o])].forEach(([v,l])=>row.append(el("button",{class:"chip",type:"button","aria-pressed":String(S.f[key]===v),onclick:()=>{S.f[key]=v;saveF();renderAll()},text:l})))}
+function renderFilters(){const used=new Set(S.places.map(p=>p.area));chips("fArea",AREAS.filter(a=>used.has(a)),"area");chips("fCat",CATS,"cat");chips("fPrice",PRICES,"price");
+  const r=$("fEtc");r.querySelectorAll(".chip").forEach(n=>n.remove());
+  r.append(el("button",{class:"chip",type:"button","aria-pressed":String(!!S.f.solo),onclick:()=>{S.f.solo=!S.f.solo;saveF();renderAll()},text:"혼밥 가능만"}),
+    el("button",{class:"chip",type:"button","aria-pressed":String(S.f.sort==="near"),onclick:()=>{S.f.sort=S.f.sort==="near"?"score":"near";saveF();renderAll()},text:"청사에서 가까운 순"}))}
+
+function stats(id){const rs=S.reviews.filter(r=>r.placeId===id);
+  return{rs,again:rs.filter(r=>r.verdict==="again").length,ok:rs.filter(r=>r.verdict==="ok").length,no:rs.filter(r=>r.verdict==="no").length}}
+function filtered(){return S.places.filter(p=>(!S.f.area||p.area===S.f.area)&&(!S.f.cat||p.category===S.f.cat)&&(!S.f.price||p.price===S.f.price)&&(!S.f.solo||p.solo))}
+function sorted(list){const rows=list.map(p=>({p,s:stats(p.id),d:govDist(p)}));
+  if(S.f.sort==="near")return rows.sort((a,b)=>(a.d??99)-(b.d??99));
+  return rows.sort((a,b)=>(b.s.again-b.s.no)-(a.s.again-a.s.no)||b.s.rs.length-a.s.rs.length||(b.p.createdAt||0)-(a.p.createdAt||0))}
+function mapLinks(p,cls){const q=encodeURIComponent("세종 "+p.name);
+  return[el("a",{href:p.kakaoUrl||"https://map.kakao.com/?q="+q,target:"_blank",rel:"noopener",class:cls,text:"카카오맵"}),
+    el("a",{href:"https://map.naver.com/p/search/"+q,target:"_blank",rel:"noopener",class:cls,text:"네이버지도"})]}
+function metaParts(p){const d=govDist(p);return[p.area,p.category,p.price?p.price+"원":null,d!=null?"청사에서 "+fmtKm(d):null].filter(Boolean)}
+const mine=o=>o&&o.owner&&S.me&&o.owner===S.me;
+
+/* ticket */
+function showTicket(p){$("ticket").classList.remove("shuffle");
+  if(!p){$("tlabel").textContent="오늘 뭐 먹지";$("tname").textContent="한 장 뽑아볼까요";
+    $("tmeta").textContent="아래 조건에 맞는 곳 중에서 한 곳을 골라드려요.";$("tlinks").replaceChildren();return}
+  $("tlabel").textContent="오늘의 점심";$("tname").textContent=p.name;
+  const s=stats(p.id);const bits=metaParts(p);if(p.solo)bits.push("혼밥 가능");if(p.reserve)bits.push("예약 필수");
+  if(s.rs.length)bits.push("또 갈래 "+s.again+" · 비추 "+s.no);
+  $("tmeta").textContent=bits.join(" · ");$("tlinks").replaceChildren(...mapLinks(p))}
+$("pickBtn").addEventListener("click",()=>{const pool=filtered();
+  if(!pool.length){showTicket(null);$("tname").textContent="조건에 맞는 곳이 없어요";$("tmeta").textContent="조건을 하나 풀어보세요.";return}
+  const final=pool[Math.floor(Math.random()*pool.length)];
+  const done=()=>{S.picked=final.id;showTicket(final);focusOnMap(final)};
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches||pool.length<2){done();return}
+  $("ticket").classList.add("shuffle");$("tlabel").textContent="뽑는 중";$("tlinks").replaceChildren();
+  let i=0;const iv=setInterval(()=>{$("tname").textContent=pool[i++%pool.length].name;$("tmeta").textContent=""},70);
+  $("pickBtn").disabled=true;setTimeout(()=>{clearInterval(iv);$("pickBtn").disabled=false;done()},650)});
+
+/* map */
+let map=null,layer=null;const markers={};
+function initMap(){if(!window.L){$("map").replaceChildren(el("div",{class:"empty",text:"지도를 불러오지 못했어요."}));return}
+  map=L.map("map",{scrollWheelZoom:false,zoomControl:true}).fitBounds([[36.468,127.222],[36.522,127.318]]);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
+  L.marker(GOV,{icon:L.divIcon({className:"",html:'<span class="gov">정부세종청사</span>',iconSize:null,iconAnchor:[40,10]}),interactive:false,keyboard:false}).addTo(map);
+  layer=L.layerGroup().addTo(map)}
+function cssVar(n){return getComputedStyle(document.documentElement).getPropertyValue(n).trim()}
+function renderMap(){if(!map)return;layer.clearLayers();for(const k in markers)delete markers[k];
+  const ink=cssVar("--ink"),muted=cssVar("--muted"),tk=cssVar("--ticket"),good=cssVar("--good"),bad=cssVar("--bad");
+  let approx=0;
+  filtered().forEach(p=>{const q=pos(p);if(!q)return;if(!q.exact)approx++;const s=stats(p.id);
+    const on=S.open===p.id||S.picked===p.id;const col=s.again>s.no?good:s.no>s.again?bad:ink;
+    const m=L.circleMarker(q.ll,q.exact?{radius:on?9:6.5,color:"#fff",weight:1.5,fillColor:on?tk:col,fillOpacity:.95}
+      :{radius:on?9:6,color:on?tk:muted,weight:1.5,dashArray:"3 3",fillColor:on?tk:muted,fillOpacity:on?.9:.15});
+    const pop=el("div",{class:"pop"},el("b",{text:p.name}),el("span",{class:"m",text:metaParts(p).join(" · ")+(q.exact?"":" · 위치 대략")}),el("br"),
+      el("button",{type:"button",onclick:()=>openInList(p.id),text:"목록에서 보기"}));
+    m.bindPopup(pop);m.addTo(layer);markers[p.id]=m});
+  $("mapNote").textContent=approx?"점선 원은 동네 안 대략 위치예요":"점을 누르면 식당 정보가 떠요"}
+function focusOnMap(p){const q=pos(p);if(!map||!q)return;map.setView(q.ll,Math.max(map.getZoom(),15));renderMap();const m=markers[p.id];if(m)m.openPopup()}
+function openInList(id){S.open=id;S.confirmDel=null;const p=S.places.find(x=>x.id===id);
+  if(p&&filtered().indexOf(p)<0){S.f.area="";S.f.cat="";S.f.price="";S.f.solo=false;saveF()}
+  renderAll();const n=document.querySelector('[data-pid="'+CSS.escape(id)+'"]');if(n)n.scrollIntoView({behavior:"smooth",block:"center"})}
+
+/* list */
+function renderList(){const L2=$("list");
+  if(!S.loaded)return;
+  const items=sorted(filtered());$("count").textContent=items.length+" / "+S.places.length+"곳";
+  if(!S.places.length){L2.replaceChildren(el("div",{class:"empty",text:"아직 등록된 식당이 없어요. 아래에서 첫 번째 곳을 올려주세요."}));return}
+  if(!items.length){L2.replaceChildren(el("div",{class:"empty",text:"조건에 맞는 곳이 없어요. 위 조건을 하나 풀어보세요."}));return}
+  L2.replaceChildren(...items.map(({p,s})=>{const open=S.open===p.id;
+    const tags=[];if(p.solo)tags.push(el("span",{class:"tag",text:"혼밥"}));if(p.group)tags.push(el("span",{class:"tag",text:"단체"}));
+    if(p.reserve)tags.push(el("span",{class:"tag",text:"예약"}));
+    if(p.geo==="ok")tags.push(el("span",{class:"tag ok",text:"카카오맵 확인"}));
+    else if(p.seed&&!s.rs.length)tags.push(el("span",{class:"tag unv",text:"검증 전"}));
+    const row=el("button",{class:"prow",type:"button","aria-expanded":String(open),onclick:()=>{S.open=open?null:p.id;S.confirmDel=null;renderAll();if(!open)focusOnMap(p)}},
+      el("span",{class:"pname",text:p.name}),
+      el("span",{class:"score","aria-label":"또 갈래 "+s.again+", 무난 "+s.ok+", 비추 "+s.no},el("span",{class:"g",text:"+"+s.again}),el("span",{class:"b",text:"−"+s.no})),
+      el("span",{class:"pmeta"},metaParts(p).join(" · "),...tags));
+    const wrap=el("div",{class:"place"+(open?" hl":""),"data-pid":p.id},row);if(open)wrap.append(detail(p,s));return wrap}))}
+
+function detail(p,s){const d=el("div",{class:"detail"});
+  if(p.note)d.append(el("p",{class:"note",text:p.note}));
+  d.append(el("div",{class:"links"},...mapLinks(p),(p.kakaoAddr||p.address)?el("span",{class:"who",text:p.kakaoAddr||p.address}):null,
+    el("span",{class:"who",text:p.seed?"처음 목록에 들어간 곳":"올린 사람 "+(p.nick||"동료")})));
+  if(p.seed&&p.geo!=="ok"&&!s.rs.length)d.append(el("div",{class:"banner",text:"검색으로 찾은 곳이라 아직 아무도 확인하지 않았어요. 영업 중인지 지도에서 먼저 확인하세요."}));
+  if(s.rs.length)d.append(el("ul",{class:"reviews"},...s.rs.slice().sort((a,b)=>(b.createdAt||0)-(a.createdAt||0)).map(r=>
+    el("li",{class:"rv"},el("span",{class:"vd "+r.verdict,text:VERD[r.verdict]||"평가"}),r.text?el("span",{text:r.text}):null,el("span",{class:"who",text:r.nick||"동료"}),
+      mine(r)?el("button",{class:"linkbtn",type:"button",onclick:()=>send("deleteReview",{id:r.id}).then(ok=>ok&&toast("평가를 지웠어요")),text:"삭제"}):null))));
+  d.append(reviewForm(p));
+  if(mine(p)){
+    if(S.confirmDel===p.id)d.append(el("div",{class:"confirm"},"이 식당을 목록에서 지울까요?",
+      el("button",{class:"btn",type:"button",onclick:()=>send("deletePlace",{id:p.id}).then(ok=>{if(ok){S.open=null;toast("지웠어요")}}),text:"지우기"}),
+      el("button",{class:"btn ghost",type:"button",onclick:()=>{S.confirmDel=null;renderList()},text:"취소"})));
+    else d.append(el("div",null,el("button",{class:"linkbtn danger",type:"button",onclick:()=>{S.confirmDel=p.id;renderList()},text:"식당 삭제"})))}
+  return d}
+
+const drafts={};
+function reviewForm(p){const name="v-"+p.id;const dr=drafts[p.id]||{v:"again",t:""};
+  const txt=el("input",{type:"text",id:"rt-"+p.id,maxlength:"80",placeholder:"한 줄 평 (선택) 예: 제육 맛집, 12시 넘으면 대기"});txt.value=dr.t;
+  txt.addEventListener("input",()=>{drafts[p.id]={...(drafts[p.id]||dr),t:txt.value}});
+  const f=el("form",{class:"rform",id:"rf-"+p.id},
+    el("div",{class:"seg"},...Object.entries(VERD).map(([k,l])=>{const r=el("input",{type:"radio",name,value:k,id:"rv-"+p.id+"-"+k,checked:dr.v===k});
+      r.addEventListener("change",()=>{drafts[p.id]={...(drafts[p.id]||dr),v:k}});return el("label",null,r,l)})),
+    txt,el("div",null,el("button",{class:"btn",type:"submit",text:"평가 남기기"})));
+  f.addEventListener("submit",async e=>{e.preventDefault();const btn=f.querySelector("button");btn.disabled=true;
+    const v=(f.querySelector("input[name='"+name+"']:checked")||{}).value||"ok";
+    const ok=await send("addReview",{placeId:p.id,verdict:v,text:txt.value.trim().slice(0,80)});
+    if(ok){delete drafts[p.id];toast("평가를 남겼어요")}else btn.disabled=false});
+  return f}
+
+/* add form */
+AREAS.forEach(a=>$("aArea").append(el("option",{value:a,text:a})));
+CATS.forEach(a=>$("aCat").append(el("option",{value:a,text:a})));
+PRICES.forEach(a=>$("aPrice").append(el("option",{value:a,text:a+"원"})));
+$("aNick").value=store("lunchNick")||"";
+$("aNick").addEventListener("change",()=>store("lunchNick",$("aNick").value.trim()));
+$("addForm").addEventListener("submit",async e=>{e.preventDefault();
+  const name=$("aName").value.trim();if(!name)return;
+  if(S.places.some(p=>p.name.replace(/\s/g,"")===name.replace(/\s/g,""))){toast("이미 등록된 이름이에요");return}
+  store("lunchNick",$("aNick").value.trim());
+  const btn=$("aSubmit");btn.disabled=true;
+  const ok=await send("addPlace",{name,area:$("aArea").value,category:$("aCat").value,price:$("aPrice").value,address:$("aAddr").value.trim(),
+    solo:$("aSolo").checked,group:$("aGroup").checked,reserve:$("aReserve").checked,note:$("aNote").value.trim()});
+  btn.disabled=false;if(ok){$("addForm").reset();$("aNick").value=store("lunchNick")||"";toast("등록했어요")}});
+
+function renderAll(){renderBanner();renderFilters();renderMap();renderList();
+  const p=S.picked&&S.places.find(x=>x.id===S.picked);if(p)showTicket(p);else if(!S.picked)showTicket(null)}
+
+(async()=>{S.me=await hashToken(token).catch(()=>null);initMap();await load();
+  if(API)setInterval(()=>{if(document.visibilityState==="visible")refresh().then(renderAll)},60000)})();
+})();
+</script>
+</body>
+</html>

@@ -102,6 +102,10 @@ header{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;
 .tag{font-size:11px;padding:1px 7px;border-radius:4px;border:1px solid var(--line);color:var(--muted)}
 .tag.unv{border-style:dashed;color:var(--warn);border-color:var(--warn)}
 .tag.ok{color:var(--good);border-color:var(--good)}
+.rvwrap{position:relative;border-radius:10px;overflow:hidden;background:var(--chip);border:1px solid var(--line)}
+.rvview{width:100%;height:220px}
+.rvcap{position:absolute;left:8px;bottom:8px;z-index:2;background:rgba(0,0,0,.6);color:#fff;font-size:11px;padding:2px 8px;border-radius:999px;pointer-events:none}
+.rvmsg{padding:14px 12px;font-size:13px;color:var(--muted)}
 .detail{padding:0 2px 18px;display:flex;flex-direction:column;gap:12px}
 .links{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;align-items:baseline}
 .note{margin:0;font-size:14px}
@@ -219,6 +223,7 @@ footer{font-size:12px;color:var(--muted);text-align:center}
 <script>
 (function(){
 const API=((window.LUNCH_CONFIG||{}).sheetUrl||"").trim();
+const KAKAO_JS=((window.LUNCH_CONFIG||{}).kakaoJsKey||"").trim();
 const AREAS=["어진동","나성동","도담동","보람동","아름동","종촌동","고운동","새롬동","다정동","한솔동","대평동","소담동","반곡동","집현동","조치원읍","금남면","장군면","기타"];
 const CATS=["한식","일식","중식","양식","아시아","분식","고기","해산물","카페·빵","기타"];
 const PRICES=["~1만","1~1.5만","1.5만~"];
@@ -384,6 +389,7 @@ function renderList(){const L2=$("list");
     const wrap=el("div",{class:"place"+(open?" hl":""),"data-pid":p.id},row);if(open)wrap.append(detail(p,s));return wrap}))}
 
 function detail(p,s){const d=el("div",{class:"detail"});
+  const rvn=roadviewNode(p);if(rvn)d.append(rvn);
   if(p.note)d.append(el("p",{class:"note",text:p.note}));
   d.append(el("div",{class:"links"},...mapLinks(p),(p.kakaoAddr||p.address)?el("span",{class:"who",text:p.kakaoAddr||p.address}):null,
     el("span",{class:"who",text:p.seed?"처음 목록에 들어간 곳":"올린 사람 "+(p.nick||"동료")})));
@@ -412,6 +418,37 @@ function reviewForm(p){const name="v-"+p.id;const dr=drafts[p.id]||{v:"again",t:
     const ok=await send("addReview",{placeId:p.id,verdict:v,text:txt.value.trim().slice(0,80)});
     if(ok){delete drafts[p.id];toast("평가를 남겼어요")}else btn.disabled=false});
   return f}
+
+/* kakao roadview: the street-level view in front of the restaurant */
+let kakaoP=null;
+function kakaoReady(){if(!KAKAO_JS)return Promise.reject(new Error("nokey"));
+  if(kakaoP)return kakaoP;
+  kakaoP=new Promise((res,rej)=>{const sc=document.createElement("script");
+    sc.src="https://dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey="+encodeURIComponent(KAKAO_JS);
+    sc.onload=()=>{try{kakao.maps.load(()=>res(kakao))}catch(e){rej(e)}};sc.onerror=()=>rej(new Error("load"));
+    document.head.appendChild(sc);setTimeout(()=>rej(new Error("timeout")),12000)});
+  kakaoP.catch(()=>{kakaoP=null});return kakaoP}
+function bearing(a,b){const r=Math.PI/180,y=Math.sin((b[1]-a[1])*r)*Math.cos(b[0]*r),
+  x=Math.cos(a[0]*r)*Math.sin(b[0]*r)-Math.sin(a[0]*r)*Math.cos(b[0]*r)*Math.cos((b[1]-a[1])*r);
+  return(Math.atan2(y,x)/r+360)%360}
+const rvCache={};
+function roadviewNode(p){
+  if(!KAKAO_JS)return null;
+  const q=pos(p);
+  if(!q||!q.exact)return el("div",{class:"rvwrap"},el("div",{class:"rvmsg",text:"정확한 위치를 아직 못 찾아서 입구 사진(로드뷰)을 띄울 수 없어요. 카카오맵 링크로 확인해 주세요."}));
+  if(rvCache[p.id]){const c=rvCache[p.id];if(c.rv)requestAnimationFrame(()=>c.rv.relayout());return c.node}
+  const view=el("div",{class:"rvview"});const msg=el("div",{class:"rvmsg",text:"입구 사진을 불러오는 중이에요."});
+  const node=el("div",{class:"rvwrap"},msg);const entry={node,rv:null};rvCache[p.id]=entry;
+  kakaoReady().then(k=>{const target=new k.maps.LatLng(q.ll[0],q.ll[1]);
+    new k.maps.RoadviewClient().getNearestPanoId(target,60,id=>{
+      if(!id){msg.textContent="이 근처에는 로드뷰가 없어요. 건물 안쪽이거나 촬영되지 않은 길이에요.";return}
+      node.replaceChildren(view,el("span",{class:"rvcap",text:"카카오 로드뷰 · 드래그해서 둘러보기"}));
+      const rv=new k.maps.Roadview(view);entry.rv=rv;
+      k.maps.event.addListener(rv,"init",()=>{const at=rv.getPosition();
+        rv.setViewpoint({pan:bearing([at.getLat(),at.getLng()],q.ll),tilt:0,zoom:0})});
+      rv.setPanoId(id,target)})})
+  .catch(()=>{delete rvCache[p.id];msg.textContent="입구 사진(로드뷰)을 불러오지 못했어요. 카카오 키 설정을 확인해 주세요."});
+  return node}
 
 /* search */
 let qT=null;

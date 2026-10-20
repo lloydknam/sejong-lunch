@@ -11,7 +11,7 @@
 |---|---|
 | `index.html` | 사이트 전체 화면 |
 | `data/places.json` | 처음 넣어둔 식당 목록 (웹 검색으로 모은 173곳) |
-| `config.js` | 구글 시트 저장소 주소 |
+| `config.js` | 구글 시트 저장소 주소, 카카오 JavaScript 키 |
 | `apps-script/Code.gs` | 구글 시트에 붙여넣는 저장소 코드 |
 | `scripts/geocode.py` | 카카오 API로 식당 위치를 찾는 스크립트 |
 | `.github/workflows/geocode.yml` | 위 스크립트를 GitHub에서 자동 실행 |
@@ -34,17 +34,26 @@
 
 시트에 `places`, `reviews` 탭이 자동으로 생겨요. 잘못 올라온 항목은 시트에서 `deleted` 칸을 `TRUE`로 바꾸면 사이트에서 사라져요.
 
-## 2. 카카오 키로 정확한 위치 찾기
+## 2. 카카오 키: 정확한 위치 + 입구 로드뷰
 
-1. https://developers.kakao.com 에 로그인 → **내 애플리케이션 → 애플리케이션 추가하기**
-2. 만든 앱의 **앱 키 → REST API 키**를 복사해요. 앱 설정에 **카카오맵 사용 설정**이 있으면 켜주세요.
-3. 이 저장소의 **Settings → Secrets and variables → Actions → New repository secret**
-   - Name: `KAKAO_REST_KEY`
-   - Secret: 복사한 키
-4. **Actions** 탭 → **식당 위치 찾기** → **Run workflow**
+카카오 앱 하나에서 키 두 개를 받아요.
 
-몇 분 뒤 `data/places.json`에 좌표가 채워지고, 카카오맵에서 찾은 식당에는 "카카오맵 확인" 표시가 붙어요.
-못 찾은 곳은 지도에 동네 안 대략 위치(점선 원)로 표시돼요.
+1. https://developers.kakao.com 에 로그인 → **내 애플리케이션 → 애플리케이션 추가하기** (앱 이름 예: 세종청사 점심)
+2. 만든 앱의 **앱 설정 → 앱 → 플랫폼 키**(또는 **앱 키**) 화면에서 키 두 개를 확인해요.
+   - **REST API 키**: 위치 찾기용
+   - **JavaScript 키**: 로드뷰용
+3. **JavaScript 키 설정**(또는 **플랫폼 → Web**)의 사이트 도메인에 `https://lloydknam.github.io` 를 등록해요. 안 하면 로드뷰가 안 떠요.
+4. **카카오맵** 사용 설정 메뉴가 있으면 **사용함(ON)** 으로 켜요.
+5. REST API 키 → 이 저장소 **Settings → Secrets and variables → Actions → New repository secret**
+   - Name: `KAKAO_REST_KEY` / Secret: REST API 키
+   - **Actions** 탭 → **식당 위치 찾기** → **Run workflow**
+6. JavaScript 키 → `config.js`의 `kakaoJsKey`에 넣어요.
+   JavaScript 키는 웹 페이지에 공개되는 용도라 저장소에 넣어도 괜찮아요. 등록한 도메인에서만 작동해요.
+   REST API 키는 공개하면 안 되니 꼭 Secrets에만 넣어요.
+
+위치 찾기가 끝나면 `data/places.json`에 좌표가 채워지고 "카카오맵 확인" 표시가 붙어요.
+식당을 펼치면 그 앞 길거리 로드뷰가 식당 방향으로 돌아간 상태로 떠요.
+정확한 위치를 못 찾은 곳은 로드뷰 대신 카카오맵 링크로 확인하라고 안내해요.
 
 ## 알아둘 점
 

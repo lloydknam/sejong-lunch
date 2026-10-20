@@ -78,6 +78,11 @@ header{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;
 .legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
 
 .filters{display:flex;flex-direction:column;gap:10px}
+.search{position:relative}
+.search input{width:100%;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:10px 40px 10px 38px;font-size:15px}
+.search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:16px;height:16px;stroke:var(--muted);fill:none;stroke-width:2;pointer-events:none}
+.search button{position:absolute;right:6px;top:50%;transform:translateY(-50%);border:0;background:var(--chip);color:var(--muted);width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:15px;line-height:1}
+.search input::-webkit-search-cancel-button{display:none}
 .frow{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
 .frow .fl{font-size:12px;color:var(--muted);width:44px;flex:none}
 .chip{appearance:none;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 11px;font-size:13px;cursor:pointer}
@@ -154,6 +159,12 @@ footer{font-size:12px;color:var(--muted);text-align:center}
     </div>
   </section>
 
+  <div class="search" role="search">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg>
+    <input type="search" id="q" placeholder="식당 이름으로 찾기" aria-label="식당 이름으로 찾기" autocomplete="off" enterkeyhint="search">
+    <button type="button" id="qClear" aria-label="검색어 지우기" hidden>×</button>
+  </div>
+
   <section class="mapbox" aria-label="지도">
     <div class="mhead"><h2>지도</h2><span class="mnote" id="mapNote">점을 누르면 식당 정보가 떠요</span></div>
     <div id="map"></div>
@@ -215,7 +226,7 @@ const VERD={again:"또 갈래",ok:"무난",no:"비추"};
 const GOV=[36.5041,127.2621];
 const CENTER={"어진동":[36.503,127.258],"도담동":[36.514,127.257],"아름동":[36.517,127.243],"종촌동":[36.505,127.239],"고운동":[36.512,127.225],"나성동":[36.490,127.264],"다정동":[36.495,127.243],"새롬동":[36.485,127.249],"한솔동":[36.481,127.256],"대평동":[36.470,127.272],"보람동":[36.478,127.290],"소담동":[36.480,127.305],"반곡동":[36.497,127.313],"집현동":[36.513,127.310],"조치원읍":[36.601,127.298],"금남면":[36.462,127.285],"장군면":[36.507,127.198]};
 const $=id=>document.getElementById(id);
-const S={seeds:[],places:[],reviews:[],f:{area:"",cat:"",price:"",solo:false,sort:"score"},open:null,picked:null,confirmDel:null,me:null,loaded:false,needPass:false,error:""};
+const S={q:"",seeds:[],places:[],reviews:[],f:{area:"",cat:"",price:"",solo:false,sort:"score"},open:null,picked:null,confirmDel:null,me:null,loaded:false,needPass:false,error:""};
 
 function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
 function el(tag,attrs,...kids){const n=document.createElement(tag);
@@ -303,7 +314,8 @@ function renderFilters(){const used=new Set(S.places.map(p=>p.area));chips("fAre
 
 function stats(id){const rs=S.reviews.filter(r=>r.placeId===id);
   return{rs,again:rs.filter(r=>r.verdict==="again").length,ok:rs.filter(r=>r.verdict==="ok").length,no:rs.filter(r=>r.verdict==="no").length}}
-function filtered(){return S.places.filter(p=>(!S.f.area||p.area===S.f.area)&&(!S.f.cat||p.category===S.f.cat)&&(!S.f.price||p.price===S.f.price)&&(!S.f.solo||p.solo))}
+const squash=t=>String(t||"").toLowerCase().replace(/\s+/g,"");
+function filtered(){const q=squash(S.q);return S.places.filter(p=>(!q||squash(p.name).includes(q))&&(!S.f.area||p.area===S.f.area)&&(!S.f.cat||p.category===S.f.cat)&&(!S.f.price||p.price===S.f.price)&&(!S.f.solo||p.solo))}
 function sorted(list){const rows=list.map(p=>({p,s:stats(p.id),d:govDist(p)}));
   if(S.f.sort==="near")return rows.sort((a,b)=>(a.d??99)-(b.d??99));
   return rows.sort((a,b)=>(b.s.again-b.s.no)-(a.s.again-a.s.no)||b.s.rs.length-a.s.rs.length||(b.p.createdAt||0)-(a.p.createdAt||0))}
@@ -351,7 +363,7 @@ function renderMap(){if(!map)return;layer.clearLayers();for(const k in markers)d
   $("mapNote").textContent=approx?"점선 원은 동네 안 대략 위치예요":"점을 누르면 식당 정보가 떠요"}
 function focusOnMap(p){const q=pos(p);if(!map||!q)return;map.setView(q.ll,Math.max(map.getZoom(),15));renderMap();const m=markers[p.id];if(m)m.openPopup()}
 function openInList(id){S.open=id;S.confirmDel=null;const p=S.places.find(x=>x.id===id);
-  if(p&&filtered().indexOf(p)<0){S.f.area="";S.f.cat="";S.f.price="";S.f.solo=false;saveF()}
+  if(p&&filtered().indexOf(p)<0){S.f.area="";S.f.cat="";S.f.price="";S.f.solo=false;saveF();S.q="";$("q").value="";$("qClear").hidden=true}
   renderAll();const n=document.querySelector('[data-pid="'+CSS.escape(id)+'"]');if(n)n.scrollIntoView({behavior:"smooth",block:"center"})}
 
 /* list */
@@ -359,7 +371,7 @@ function renderList(){const L2=$("list");
   if(!S.loaded)return;
   const items=sorted(filtered());$("count").textContent=items.length+" / "+S.places.length+"곳";
   if(!S.places.length){L2.replaceChildren(el("div",{class:"empty",text:"아직 등록된 식당이 없어요. 아래에서 첫 번째 곳을 올려주세요."}));return}
-  if(!items.length){L2.replaceChildren(el("div",{class:"empty",text:"조건에 맞는 곳이 없어요. 위 조건을 하나 풀어보세요."}));return}
+  if(!items.length){L2.replaceChildren(el("div",{class:"empty",text:S.q?"'"+S.q+"'(이)라는 이름의 식당이 없어요. 다른 이름으로 찾거나, 아래에서 새로 등록해 주세요.":"조건에 맞는 곳이 없어요. 위 조건을 하나 풀어보세요."}));return}
   L2.replaceChildren(...items.map(({p,s})=>{const open=S.open===p.id;
     const tags=[];if(p.solo)tags.push(el("span",{class:"tag",text:"혼밥"}));if(p.group)tags.push(el("span",{class:"tag",text:"단체"}));
     if(p.reserve)tags.push(el("span",{class:"tag",text:"예약"}));
@@ -400,6 +412,12 @@ function reviewForm(p){const name="v-"+p.id;const dr=drafts[p.id]||{v:"again",t:
     const ok=await send("addReview",{placeId:p.id,verdict:v,text:txt.value.trim().slice(0,80)});
     if(ok){delete drafts[p.id];toast("평가를 남겼어요")}else btn.disabled=false});
   return f}
+
+/* search */
+let qT=null;
+$("q").addEventListener("input",()=>{const v=$("q").value;$("qClear").hidden=!v;clearTimeout(qT);qT=setTimeout(()=>{S.q=v.trim();renderMap();renderList()},120)});
+$("q").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();$("q").blur();const r=filtered();if(r.length===1)openInList(r[0].id)}if(e.key==="Escape"&&$("q").value){$("q").value="";$("q").dispatchEvent(new Event("input"))}});
+$("qClear").addEventListener("click",()=>{$("q").value="";$("q").dispatchEvent(new Event("input"));$("q").focus()});
 
 /* add form */
 AREAS.forEach(a=>$("aArea").append(el("option",{value:a,text:a})));

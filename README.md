@@ -60,3 +60,7 @@
 - 처음 목록은 블로그·리뷰·당근 동네업체 정보로 모은 거라 폐업한 곳이 섞여 있을 수 있어요.
 - 직접 올린 식당과 평가만 직접 지울 수 있어요. 같은 폰·브라우저에서만 '내 것'으로 인식돼요.
 - 지도 © OpenStreetMap 기여자
+
+---
+
+<a href="https://github.com/lloydknam"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/brand/lockup-dark.png"><img src="assets/brand/lockup-light.png" alt="Lloyd's Balcony Lab · with claude · GitHub(@lloydknam)" height="48"></picture></a>

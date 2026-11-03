@@ -9,7 +9,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "손만두떡국 1.8만, 손만두술국 1.9만"
+  "note": "손만두떡국 1.8만, 손만두술국 1.9만",
+  "lat": 37.529894685893034,
+  "lng": 126.9208260526319,
+  "kakaoUrl": "http://place.map.kakao.com/14650000",
+  "kakaoAddr": "서울 영등포구 국회대로72길 11",
+  "kakaoName": "진진만두 국회점",
+  "geo": "ok"
  },
  {
   "id": "yd-e03b3d3f44",
@@ -21,7 +27,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "평양냉면 1.4만, 순면 1.6만"
+  "note": "평양냉면 1.4만, 순면 1.6만",
+  "lat": 37.53077816623998,
+  "lng": 126.92157407940762,
+  "kakaoUrl": "http://place.map.kakao.com/23699720",
+  "kakaoAddr": "서울 영등포구 국회대로76길 10",
+  "kakaoName": "정인면옥 본점",
+  "geo": "ok"
  },
  {
   "id": "yd-29cd55604e",
@@ -33,7 +45,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "간장게장과 돌솥밥 4.7만"
+  "note": "간장게장과 돌솥밥 4.7만",
+  "lat": 37.52693667981763,
+  "lng": 126.91686622657583,
+  "kakaoUrl": "http://place.map.kakao.com/25148510",
+  "kakaoAddr": "서울 영등포구 국회대로62길 15",
+  "kakaoName": "화해당 여의도점",
+  "geo": "ok"
  },
  {
   "id": "yd-528606127d",
@@ -45,7 +63,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "상황삼계탕 1.8만, 한방삼계탕 2만"
+  "note": "상황삼계탕 1.8만, 한방삼계탕 2만",
+  "lat": 37.5305304865671,
+  "lng": 126.920370575181,
+  "kakaoUrl": "http://place.map.kakao.com/26591162",
+  "kakaoAddr": "서울 영등포구 국회대로72길 5",
+  "kakaoName": "고봉삼계탕",
+  "geo": "ok"
  },
  {
   "id": "yd-d4a61e6e22",
@@ -57,7 +81,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "소 양지 육수 양지탕, 소면·밥 추가 가능"
+  "note": "소 양지 육수 양지탕, 소면·밥 추가 가능",
+  "lat": 37.5298635045089,
+  "lng": 126.920013778698,
+  "kakaoUrl": "http://place.map.kakao.com/855596144",
+  "kakaoAddr": "서울 영등포구 국회대로70길 7",
+  "kakaoName": "여의도양지탕 본관",
+  "geo": "ok"
  },
  {
   "id": "yd-b2f9047856",
@@ -69,7 +99,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "쟁반짜장 9천, 짬뽕, 탕수육"
+  "note": "쟁반짜장 9천, 짬뽕, 탕수육",
+  "lat": 37.5297693974458,
+  "lng": 126.919421054293,
+  "kakaoUrl": "http://place.map.kakao.com/16532272",
+  "kakaoAddr": "서울 영등포구 국회대로 780",
+  "kakaoName": "다원",
+  "geo": "ok"
  },
  {
   "id": "yd-a100fed03c",
@@ -81,7 +117,13 @@
   "solo": true,
   "group": false,
   "reserve": false,
-  "note": "수제버거, 바스버거 8,200원"
+  "note": "수제버거, 바스버거 8,200원",
+  "lat": 37.529929577599994,
+  "lng": 126.91913125698349,
+  "kakaoUrl": "http://place.map.kakao.com/1642466970",
+  "kakaoAddr": "서울 영등포구 국회대로 780",
+  "kakaoName": "바스버거 국회의사당점",
+  "geo": "ok"
  },
  {
   "id": "yd-0a371acc26",
@@ -93,7 +135,10 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "이북식 평양냉면"
+  "note": "이북식 평양냉면",
+  "lat": 37.5309293878191,
+  "lng": 126.921083475319,
+  "geo": "addr"
  },
  {
   "id": "yd-4feb144add",
@@ -105,7 +150,13 @@
   "solo": true,
   "group": false,
   "reserve": false,
-  "note": "순두부찌개, 돌솥밥"
+  "note": "순두부찌개, 돌솥밥",
+  "lat": 37.5309292079969,
+  "lng": 126.92108404119,
+  "kakaoUrl": "http://place.map.kakao.com/509436033",
+  "kakaoAddr": "서울 영등포구 국회대로 800",
+  "kakaoName": "완뚝순두부 여의도점",
+  "geo": "ok"
  },
  {
   "id": "yd-cacc915955",
@@ -117,7 +168,13 @@
   "solo": false,
   "group": true,
   "reserve": false,
-  "note": "정식 1.5만, 삼겹살 1.2만, 코스 있음"
+  "note": "정식 1.5만, 삼겹살 1.2만, 코스 있음",
+  "lat": 37.5285989176689,
+  "lng": 126.920635096524,
+  "kakaoUrl": "http://place.map.kakao.com/11006368",
+  "kakaoAddr": "서울 영등포구 국회대로70길 22",
+  "kakaoName": "대보름",
+  "geo": "ok"
  },
  {
   "id": "yd-dc0adffd15",
@@ -129,7 +186,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "짜장면 7천, 차돌짬뽕 9천"
+  "note": "짜장면 7천, 차돌짬뽕 9천",
+  "lat": 37.52922986401524,
+  "lng": 126.92100098124371,
+  "kakaoUrl": "http://place.map.kakao.com/1257117300",
+  "kakaoAddr": "서울 영등포구 국회대로70길 19",
+  "kakaoName": "금룡",
+  "geo": "ok"
  },
  {
   "id": "yd-59339d1a97",
@@ -141,7 +204,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "장모님밥상 9천"
+  "note": "장모님밥상 9천",
+  "lat": 37.526756196232014,
+  "lng": 126.91646481547387,
+  "kakaoUrl": "http://place.map.kakao.com/14518847",
+  "kakaoAddr": "서울 영등포구 국회대로62길 14",
+  "kakaoName": "봉태민 여의도점",
+  "geo": "ok"
  },
  {
   "id": "yd-f05d6dd2a7",
@@ -153,7 +222,13 @@
   "solo": false,
   "group": true,
   "reserve": false,
-  "note": "산채정식 1.5만, 큰상 2.1만"
+  "note": "산채정식 1.5만, 큰상 2.1만",
+  "lat": 37.5298539913965,
+  "lng": 126.921955179463,
+  "kakaoUrl": "http://place.map.kakao.com/9012726",
+  "kakaoAddr": "서울 영등포구 국회대로74길 19",
+  "kakaoName": "만나",
+  "geo": "ok"
  },
  {
   "id": "yd-d257b35997",
@@ -165,7 +240,10 @@
   "solo": true,
   "group": false,
   "reserve": false,
-  "note": "곰탕 1.9만"
+  "note": "곰탕 1.9만",
+  "lat": 37.5275117444834,
+  "lng": 126.919665809662,
+  "geo": "addr"
  },
  {
   "id": "yd-4eae8ba67f",
@@ -177,7 +255,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "장어덮밥정식 5만, 초밥, 사시미"
+  "note": "장어덮밥정식 5만, 초밥, 사시미",
+  "lat": 37.52820021526056,
+  "lng": 126.92265832184749,
+  "kakaoUrl": "http://place.map.kakao.com/13098122",
+  "kakaoAddr": "서울 영등포구 은행로 30",
+  "kakaoName": "타마",
+  "geo": "ok"
  },
  {
   "id": "yd-de915bc531",
@@ -189,7 +273,8 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "이탈리안, 파스타"
+  "note": "이탈리안, 파스타",
+  "geo": "miss"
  },
  {
   "id": "yd-462e1ffb57",
@@ -201,7 +286,13 @@
   "solo": true,
   "group": false,
   "reserve": false,
-  "note": "김밥 5~6천원대"
+  "note": "김밥 5~6천원대",
+  "lat": 37.5297628661898,
+  "lng": 126.924537004035,
+  "kakaoUrl": "http://place.map.kakao.com/447177936",
+  "kakaoAddr": "서울 영등포구 은행로 54",
+  "kakaoName": "삼청당 서여의도점",
+  "geo": "ok"
  },
  {
   "id": "yd-a085ea4fc4",
@@ -213,7 +304,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "로스카츠"
+  "note": "로스카츠",
+  "lat": 37.529729705952,
+  "lng": 126.924814216882,
+  "kakaoUrl": "http://place.map.kakao.com/454971325",
+  "kakaoAddr": "서울 영등포구 은행로 54",
+  "kakaoName": "겐카츠",
+  "geo": "ok"
  },
  {
   "id": "yd-6d6ef6f02f",
@@ -225,7 +322,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "즉석떡볶이 1인분 7,500원"
+  "note": "즉석떡볶이 1인분 7,500원",
+  "lat": 37.5298079061141,
+  "lng": 126.924521119817,
+  "kakaoUrl": "http://place.map.kakao.com/1477958539",
+  "kakaoAddr": "서울 영등포구 은행로 54",
+  "kakaoName": "오늘은즉떡 2호점",
+  "geo": "ok"
  },
  {
   "id": "yd-3f456c31e5",
@@ -237,7 +340,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "직화 제육, 고등어구이, 계란찜"
+  "note": "직화 제육, 고등어구이, 계란찜",
+  "lat": 37.53001524823444,
+  "lng": 126.92469626997548,
+  "kakaoUrl": "http://place.map.kakao.com/20749402",
+  "kakaoAddr": "서울 영등포구 은행로 58",
+  "kakaoName": "다복집",
+  "geo": "ok"
  },
  {
   "id": "yd-de3e657ae0",
@@ -249,7 +358,10 @@
   "solo": true,
   "group": false,
   "reserve": false,
-  "note": "선지해장국 8천, 뼈다귀해장국 1.1만"
+  "note": "선지해장국 8천, 뼈다귀해장국 1.1만",
+  "lat": 37.5290821496185,
+  "lng": 126.921888669221,
+  "geo": "addr"
  },
  {
   "id": "yd-b75aa069e3",
@@ -261,19 +373,28 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "칼국수 1만, 보쌈"
+  "note": "칼국수 1만, 보쌈",
+  "lat": 37.5290821496185,
+  "lng": 126.921888669221,
+  "geo": "addr"
  },
  {
   "id": "yd-4e9002804d",
   "name": "백암 왕 순대",
-  "area": "국회·서여의도",
+  "area": "여의나루",
   "category": "한식",
   "price": "1~1.5만",
   "address": "여의공원로 101 국민일보 지하1층",
   "solo": true,
   "group": false,
   "reserve": false,
-  "note": "순대국 1.1만, 순대정식 1.4만"
+  "note": "순대국 1.1만, 순대정식 1.4만",
+  "lat": 37.5262412524652,
+  "lng": 126.931090732203,
+  "kakaoUrl": "http://place.map.kakao.com/15575931",
+  "kakaoAddr": "서울 영등포구 여의나루로 117",
+  "kakaoName": "백암왕순대",
+  "geo": "ok"
  },
  {
   "id": "yd-65bdebe97f",
@@ -285,7 +406,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "베트남 음식"
+  "note": "베트남 음식",
+  "lat": 37.52603036643393,
+  "lng": 126.91829265613414,
+  "kakaoUrl": "http://place.map.kakao.com/10868994",
+  "kakaoAddr": "서울 영등포구 의사당대로 38",
+  "kakaoName": "하롱베이의하루 여의도본점",
+  "geo": "ok"
  },
  {
   "id": "yd-10d921e594",
@@ -297,91 +424,133 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "치즈돈까스"
+  "note": "치즈돈까스",
+  "lat": 37.526537141271,
+  "lng": 126.918106683928,
+  "geo": "addr"
  },
  {
   "id": "yd-82b9156c20",
   "name": "일일향 여의도점",
-  "area": "국회·서여의도",
+  "area": "여의도역·IFC",
   "category": "중식",
   "price": "1~1.5만",
   "address": "의사당대로 83 오투타워 2층",
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "짜장면 9천, 옛날짬뽕 1.2만"
+  "note": "짜장면 9천, 옛날짬뽕 1.2만",
+  "lat": 37.5233857915949,
+  "lng": 126.923473266172,
+  "kakaoUrl": "http://place.map.kakao.com/1033345535",
+  "kakaoAddr": "서울 영등포구 의사당대로 83",
+  "kakaoName": "일일향 여의도점",
+  "geo": "ok"
  },
  {
   "id": "yd-eac7746d00",
   "name": "해봉정육 여의도점",
-  "area": "국회·서여의도",
+  "area": "여의도역·IFC",
   "category": "고기",
   "price": "1.5만~",
   "address": "의사당대로 83 오투타워 3층",
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "해봉시그니처 150g 4.7만"
+  "note": "해봉시그니처 150g 4.7만",
+  "lat": 37.5233668558964,
+  "lng": 126.923450660542,
+  "kakaoUrl": "http://place.map.kakao.com/1178870549",
+  "kakaoAddr": "서울 영등포구 의사당대로 83",
+  "kakaoName": "해봉정육 여의도점",
+  "geo": "ok"
  },
  {
   "id": "yd-695d2ea578",
   "name": "오복수산참치",
-  "area": "국회·서여의도",
+  "area": "여의도역·IFC",
   "category": "해산물",
   "price": "",
   "address": "의사당대로 83",
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "참치 코스"
+  "note": "참치 코스",
+  "lat": 37.5233677568981,
+  "lng": 126.923450659622,
+  "kakaoUrl": "http://place.map.kakao.com/1976028871",
+  "kakaoAddr": "서울 영등포구 의사당대로 83",
+  "kakaoName": "오복수산참치 오투타워여의도점",
+  "geo": "ok"
  },
  {
   "id": "yd-b1b82dc063",
   "name": "퍼스트 플러스 에이드",
-  "area": "국회·서여의도",
+  "area": "여의도역·IFC",
   "category": "양식",
   "price": "",
   "address": "의사당대로 83",
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "두부면 라자냐, 부라타 샐러드"
+  "note": "두부면 라자냐, 부라타 샐러드",
+  "lat": 37.52333712137228,
+  "lng": 126.92344842842617,
+  "kakaoUrl": "http://place.map.kakao.com/889532039",
+  "kakaoAddr": "서울 영등포구 의사당대로 83",
+  "kakaoName": "퍼스트플러스에이드",
+  "geo": "ok"
  },
  {
   "id": "yd-34b53222d4",
   "name": "여의도 할매탕",
-  "area": "국회·서여의도",
+  "area": "여의도역·IFC",
   "category": "해산물",
   "price": "",
   "address": "의사당대로 97",
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "연포탕"
+  "note": "연포탕",
+  "lat": 37.522516139033,
+  "lng": 126.924586046016,
+  "geo": "addr"
  },
  {
   "id": "yd-d44038a729",
   "name": "청도 미나리식당",
-  "area": "국회·서여의도",
+  "area": "여의도역·IFC",
   "category": "한식",
   "price": "1~1.5만",
   "address": "의사당대로 108",
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "미나리 샤브샤브 1인 1.5만"
+  "note": "미나리 샤브샤브 1인 1.5만",
+  "lat": 37.5210146876069,
+  "lng": 126.923991521056,
+  "kakaoUrl": "http://place.map.kakao.com/254652353",
+  "kakaoAddr": "서울 영등포구 의사당대로 108",
+  "kakaoName": "청도미나리식당 여의도점",
+  "geo": "ok"
  },
  {
   "id": "yd-e7bf1aa335",
   "name": "조도",
-  "area": "국회·서여의도",
+  "area": "증권가",
   "category": "일식",
   "price": "1.5만~",
   "address": "의사당대로1길 11",
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "숯불구이 이자카야, 8만원 코스"
+  "note": "숯불구이 이자카야, 8만원 코스",
+  "lat": 37.5192119431584,
+  "lng": 126.92858257069,
+  "kakaoUrl": "http://place.map.kakao.com/35978359",
+  "kakaoAddr": "서울 영등포구 의사당대로1길 11",
+  "kakaoName": "조도",
+  "geo": "ok"
  },
  {
   "id": "yd-d76bd94960",
@@ -393,7 +562,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "수제비"
+  "note": "수제비",
+  "lat": 37.52379685902885,
+  "lng": 126.92379864775435,
+  "kakaoUrl": "http://place.map.kakao.com/18771168",
+  "kakaoAddr": "서울 영등포구 국제금융로2길 36",
+  "kakaoName": "왕왕수제비떡만두국",
+  "geo": "ok"
  },
  {
   "id": "yd-32fd34e67a",
@@ -405,7 +580,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "일본 가정식, 돈카츠 1.2만, 사케동 1.4만"
+  "note": "일본 가정식, 돈카츠 1.2만, 사케동 1.4만",
+  "lat": 37.523544600442,
+  "lng": 126.923832841858,
+  "kakaoUrl": "http://place.map.kakao.com/1264222907",
+  "kakaoAddr": "서울 영등포구 국제금융로2길 36",
+  "kakaoName": "쿠사",
+  "geo": "ok"
  },
  {
   "id": "yd-8b38a5c72a",
@@ -417,7 +598,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "낙지덮밥, 차돌된장"
+  "note": "낙지덮밥, 차돌된장",
+  "lat": 37.5228996535825,
+  "lng": 126.924098208026,
+  "kakaoUrl": "http://place.map.kakao.com/1838037991",
+  "kakaoAddr": "서울 영등포구 국제금융로2길 37",
+  "kakaoName": "와인주막차차 여의도점",
+  "geo": "ok"
  },
  {
   "id": "yd-4a2fe0da06",
@@ -429,7 +616,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "낙곱새 1.4만"
+  "note": "낙곱새 1.4만",
+  "lat": 37.52386555653834,
+  "lng": 126.9241424797356,
+  "kakaoUrl": "http://place.map.kakao.com/1605621986",
+  "kakaoAddr": "서울 영등포구 국제금융로2길 32",
+  "kakaoName": "사위식당 여의도점",
+  "geo": "ok"
  },
  {
   "id": "yd-13fd50b7cf",
@@ -441,7 +634,13 @@
   "solo": false,
   "group": false,
   "reserve": true,
-  "note": "한우, 런치 코스 4.9만부터"
+  "note": "한우, 런치 코스 4.9만부터",
+  "lat": 37.5238601476218,
+  "lng": 126.924137960188,
+  "kakaoUrl": "http://place.map.kakao.com/1508081407",
+  "kakaoAddr": "서울 영등포구 국제금융로2길 32",
+  "kakaoName": "모도우 여의도점",
+  "geo": "ok"
  },
  {
   "id": "yd-9c91b52e60",
@@ -453,7 +652,10 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "규카츠 정식 1.95만"
+  "note": "규카츠 정식 1.95만",
+  "lat": 37.5238640247561,
+  "lng": 126.924142368161,
+  "geo": "addr"
  },
  {
   "id": "yd-3e1732550b",
@@ -465,7 +667,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "김치말이국수, 뚝불, 감자찌개"
+  "note": "김치말이국수, 뚝불, 감자찌개",
+  "lat": 37.52378078346889,
+  "lng": 126.92687454596852,
+  "kakaoUrl": "http://place.map.kakao.com/16094498",
+  "kakaoAddr": "서울 영등포구 여의나루로 71",
+  "kakaoName": "전주식당",
+  "geo": "ok"
  },
  {
   "id": "yd-db532306eb",
@@ -477,7 +685,10 @@
   "solo": true,
   "group": false,
   "reserve": false,
-  "note": "일본 라멘"
+  "note": "일본 라멘",
+  "lat": 37.5251355582821,
+  "lng": 126.924908764095,
+  "geo": "addr"
  },
  {
   "id": "yd-09df111830",
@@ -489,7 +700,13 @@
   "solo": true,
   "group": false,
   "reserve": false,
-  "note": "제일 우동, 제일 국수"
+  "note": "제일 우동, 제일 국수",
+  "lat": 37.5255999790638,
+  "lng": 126.925548038729,
+  "kakaoUrl": "http://place.map.kakao.com/18369973",
+  "kakaoAddr": "서울 영등포구 국제금융로 10",
+  "kakaoName": "제일제면소 여의도IFC점",
+  "geo": "ok"
  },
  {
   "id": "yd-1447aecdc8",
@@ -501,7 +718,10 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "한우 육회비빔밥, 육수불고기 세트"
+  "note": "한우 육회비빔밥, 육수불고기 세트",
+  "lat": 37.5251355582821,
+  "lng": 126.924908764095,
+  "geo": "addr"
  },
  {
   "id": "yd-732f465763",
@@ -513,7 +733,10 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "쭈꾸미칼국수 1.5만"
+  "note": "쭈꾸미칼국수 1.5만",
+  "lat": 37.5251355582821,
+  "lng": 126.924908764095,
+  "geo": "addr"
  },
  {
   "id": "yd-62274ecfef",
@@ -525,7 +748,10 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "IFC몰 지하1층"
+  "note": "IFC몰 지하1층",
+  "lat": 37.5251355582821,
+  "lng": 126.924908764095,
+  "geo": "addr"
  },
  {
   "id": "yd-c3c56ea4ff",
@@ -537,7 +763,10 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "멕시칸"
+  "note": "멕시칸",
+  "lat": 37.5251355582821,
+  "lng": 126.924908764095,
+  "geo": "addr"
  },
  {
   "id": "yd-b0bef6e035",
@@ -549,7 +778,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "싱가포르 음식"
+  "note": "싱가포르 음식",
+  "lat": 37.525177884849505,
+  "lng": 126.92487648030702,
+  "kakaoUrl": "http://place.map.kakao.com/659325663",
+  "kakaoAddr": "서울 영등포구 국제금융로 10",
+  "kakaoName": "점보씨푸드 IFC몰점",
+  "geo": "ok"
  },
  {
   "id": "yd-00591f8c84",
@@ -561,7 +796,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "카이센동"
+  "note": "카이센동",
+  "lat": 37.5233677568981,
+  "lng": 126.923450659622,
+  "kakaoUrl": "http://place.map.kakao.com/1976028871",
+  "kakaoAddr": "서울 영등포구 의사당대로 83",
+  "kakaoName": "오복수산참치 오투타워여의도점",
+  "geo": "ok"
  },
  {
   "id": "yd-995000211b",
@@ -573,7 +814,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "브런치"
+  "note": "브런치",
+  "lat": 37.5251317086376,
+  "lng": 126.92594671297,
+  "kakaoUrl": "http://place.map.kakao.com/1591991216",
+  "kakaoAddr": "서울 영등포구 국제금융로 10",
+  "kakaoName": "유주키친",
+  "geo": "ok"
  },
  {
   "id": "yd-3ec39ab77b",
@@ -585,7 +832,8 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "가츠 샌드, 트러플 감자튀김"
+  "note": "가츠 샌드, 트러플 감자튀김",
+  "geo": "miss"
  },
  {
   "id": "yd-b89558f327",
@@ -597,31 +845,49 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "마라탕면, 통새우 쇼마이, 솥밥"
+  "note": "마라탕면, 통새우 쇼마이, 솥밥",
+  "lat": 37.525806769130206,
+  "lng": 126.92774026437235,
+  "kakaoUrl": "http://place.map.kakao.com/1535652208",
+  "kakaoAddr": "서울 영등포구 여의대로 108",
+  "kakaoName": "호우섬 더현대서울점",
+  "geo": "ok"
  },
  {
   "id": "yd-0ce31150e2",
   "name": "정돈 프리미엄 더현대 서울점",
-  "area": "여의도역·IFC",
+  "area": "증권가",
   "category": "일식",
   "price": "1.5만~",
   "address": "여의대로 108 더현대 서울 6층",
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "히레카츠 2.1만"
+  "note": "히레카츠 2.1만",
+  "lat": 37.52520122398314,
+  "lng": 126.92910856147604,
+  "kakaoUrl": "http://place.map.kakao.com/973481737",
+  "kakaoAddr": "서울 영등포구 여의대로 108",
+  "kakaoName": "정돈 프리미엄 더현대서울",
+  "geo": "ok"
  },
  {
   "id": "yd-4b84a9d438",
   "name": "소희원",
-  "area": "여의도역·IFC",
+  "area": "여의나루",
   "category": "한식",
   "price": "",
   "address": "여의대로 128",
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "솥밥, 소고기·돼지고기 구이"
+  "note": "솥밥, 소고기·돼지고기 구이",
+  "lat": 37.5278853817221,
+  "lng": 126.929230466248,
+  "kakaoUrl": "http://place.map.kakao.com/553012050",
+  "kakaoAddr": "서울 영등포구 여의대로 128",
+  "kakaoName": "소희원",
+  "geo": "ok"
  },
  {
   "id": "yd-786b92de0d",
@@ -633,7 +899,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "초밥, 사시미 코스"
+  "note": "초밥, 사시미 코스",
+  "lat": 37.524506956214715,
+  "lng": 126.92396535284841,
+  "kakaoUrl": "http://place.map.kakao.com/431221286",
+  "kakaoAddr": "서울 영등포구 여의대로 66",
+  "kakaoName": "권초밥하이",
+  "geo": "ok"
  },
  {
   "id": "yd-948f69c59d",
@@ -645,19 +917,25 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "제첩 국밥 파스타"
+  "note": "제첩 국밥 파스타",
+  "lat": 37.5248391165921,
+  "lng": 126.924184821656,
+  "geo": "addr"
  },
  {
   "id": "yd-80bda577c3",
   "name": "세상의모든아침 여의도점",
-  "area": "여의도역·IFC",
+  "area": "국회·서여의도",
   "category": "양식",
   "price": "1.5만~",
   "address": "여의대로 24 50층",
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "한강 전망, 파스타 2.8만"
+  "note": "한강 전망, 파스타 2.8만",
+  "lat": 37.5221803249647,
+  "lng": 126.919916550827,
+  "geo": "addr"
  },
  {
   "id": "yd-3fe12d3a9f",
@@ -669,7 +947,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "꼬막짬뽕 3.2만, 트러플 자장면"
+  "note": "꼬막짬뽕 3.2만, 트러플 자장면",
+  "lat": 37.5215483023316,
+  "lng": 126.922942337782,
+  "kakaoUrl": "http://place.map.kakao.com/1080059014",
+  "kakaoAddr": "서울 영등포구 의사당대로 96",
+  "kakaoName": "무탄 여의도점",
+  "geo": "ok"
  },
  {
   "id": "yd-35239a12fe",
@@ -681,7 +965,13 @@
   "solo": true,
   "group": false,
   "reserve": false,
-  "note": "닭칼국수 1.1만, 콩국수 1.4만"
+  "note": "닭칼국수 1.1만, 콩국수 1.4만",
+  "lat": 37.52059128119736,
+  "lng": 126.9269500559961,
+  "kakaoUrl": "http://place.map.kakao.com/8094563",
+  "kakaoAddr": "서울 영등포구 국제금융로6길 33",
+  "kakaoName": "진주집",
+  "geo": "ok"
  },
  {
   "id": "yd-806a51b077",
@@ -693,7 +983,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "제육직화 1.1만, 낙지직화 1.3만"
+  "note": "제육직화 1.1만, 낙지직화 1.3만",
+  "lat": 37.5207534483037,
+  "lng": 126.926928404924,
+  "kakaoUrl": "http://place.map.kakao.com/21332962",
+  "kakaoAddr": "서울 영등포구 국제금융로6길 33",
+  "kakaoName": "별미볶음점 본점",
+  "geo": "ok"
  },
  {
   "id": "yd-e70847f0ff",
@@ -705,7 +1001,10 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "점심 샤브샤브 1.5만"
+  "note": "점심 샤브샤브 1.5만",
+  "lat": 37.5207908297398,
+  "lng": 126.926911965929,
+  "geo": "addr"
  },
  {
   "id": "yd-6949e5a98b",
@@ -717,7 +1016,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "회덮밥, 꼬막비빔밥, 점심 굴국밥"
+  "note": "회덮밥, 꼬막비빔밥, 점심 굴국밥",
+  "lat": 37.520757030612,
+  "lng": 126.926893333946,
+  "kakaoUrl": "http://place.map.kakao.com/2106521009",
+  "kakaoAddr": "서울 영등포구 국제금융로6길 33",
+  "kakaoName": "여의도초장집",
+  "geo": "ok"
  },
  {
   "id": "yd-4514ca2fd7",
@@ -729,7 +1034,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "짜장면, 냉짬뽕"
+  "note": "짜장면, 냉짬뽕",
+  "lat": 37.5208327448957,
+  "lng": 126.926941902117,
+  "kakaoUrl": "http://place.map.kakao.com/8157558",
+  "kakaoAddr": "서울 영등포구 국제금융로6길 33",
+  "kakaoName": "홍콩",
+  "geo": "ok"
  },
  {
   "id": "yd-dfccf9f44d",
@@ -741,7 +1052,13 @@
   "solo": true,
   "group": false,
   "reserve": false,
-  "note": "북엇국"
+  "note": "북엇국",
+  "lat": 37.5207547611772,
+  "lng": 126.929082225872,
+  "kakaoUrl": "http://place.map.kakao.com/7922943",
+  "kakaoAddr": "서울 영등포구 국제금융로8길 19",
+  "kakaoName": "상은북어국",
+  "geo": "ok"
  },
  {
   "id": "yd-f0d3669c0a",
@@ -753,7 +1070,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "손만두술국, 손만두떡국, 어복쟁반"
+  "note": "손만두술국, 손만두떡국, 어복쟁반",
+  "lat": 37.52023826217958,
+  "lng": 126.92723206929043,
+  "kakaoUrl": "http://place.map.kakao.com/21534557",
+  "kakaoAddr": "서울 영등포구 국제금융로8길 34",
+  "kakaoName": "진진만두 여의도점",
+  "geo": "ok"
  },
  {
   "id": "yd-327e0e8936",
@@ -765,7 +1088,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "샤브샤브"
+  "note": "샤브샤브",
+  "lat": 37.5197450228958,
+  "lng": 126.928065107001,
+  "kakaoUrl": "http://place.map.kakao.com/1562368555",
+  "kakaoAddr": "서울 영등포구 국제금융로8길 31",
+  "kakaoName": "모던샤브하우스 여의도점",
+  "geo": "ok"
  },
  {
   "id": "yd-b375603d80",
@@ -777,7 +1106,13 @@
   "solo": true,
   "group": false,
   "reserve": false,
-  "note": "인라멘 1.1만, 마제소바 1.2만"
+  "note": "인라멘 1.1만, 마제소바 1.2만",
+  "lat": 37.5212988495287,
+  "lng": 126.92888714152,
+  "kakaoUrl": "http://place.map.kakao.com/967509219",
+  "kakaoAddr": "서울 영등포구 국제금융로8길 16",
+  "kakaoName": "하카타분코 오토코쥬쿠 여의도점",
+  "geo": "ok"
  },
  {
   "id": "yd-9482fa7fa5",
@@ -789,7 +1124,13 @@
   "solo": true,
   "group": false,
   "reserve": false,
-  "note": "돼지곰탕 1만"
+  "note": "돼지곰탕 1만",
+  "lat": 37.5203210127766,
+  "lng": 126.928475180591,
+  "kakaoUrl": "http://place.map.kakao.com/332390911",
+  "kakaoAddr": "서울 영등포구 국제금융로8길 25",
+  "kakaoName": "천청돈감",
+  "geo": "ok"
  },
  {
   "id": "yd-bc513ba582",
@@ -801,7 +1142,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "런치 불고기 정찬 3.1만"
+  "note": "런치 불고기 정찬 3.1만",
+  "lat": 37.5220167389955,
+  "lng": 126.930044837865,
+  "kakaoUrl": "http://place.map.kakao.com/209854309",
+  "kakaoAddr": "서울 영등포구 국제금융로8길 2",
+  "kakaoName": "여운관",
+  "geo": "ok"
  },
  {
   "id": "yd-8b37bf17a6",
@@ -813,7 +1160,13 @@
   "solo": false,
   "group": false,
   "reserve": true,
-  "note": "숯불 기반 코스"
+  "note": "숯불 기반 코스",
+  "lat": 37.5194614126433,
+  "lng": 126.928403604964,
+  "kakaoUrl": "http://place.map.kakao.com/1364719063",
+  "kakaoAddr": "서울 영등포구 국제금융로8길 27-8",
+  "kakaoName": "수티문",
+  "geo": "ok"
  },
  {
   "id": "yd-5c9dfdd578",
@@ -825,7 +1178,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "새우장냉소바 1.3만, 연어덮밥 1.6만"
+  "note": "새우장냉소바 1.3만, 연어덮밥 1.6만",
+  "lat": 37.5260716975088,
+  "lng": 126.930805803223,
+  "kakaoUrl": "http://place.map.kakao.com/491228525",
+  "kakaoAddr": "서울 영등포구 여의나루로 113",
+  "kakaoName": "소몽",
+  "geo": "ok"
  },
  {
   "id": "yd-387a24041f",
@@ -837,7 +1196,13 @@
   "solo": true,
   "group": false,
   "reserve": false,
-  "note": "차돌박이쌀국수 1만"
+  "note": "차돌박이쌀국수 1만",
+  "lat": 37.5260536536117,
+  "lng": 126.930765093478,
+  "kakaoUrl": "http://place.map.kakao.com/365139836",
+  "kakaoAddr": "서울 영등포구 여의나루로 113",
+  "kakaoName": "미분당 여의도점",
+  "geo": "ok"
  },
  {
   "id": "yd-42f62d6912",
@@ -849,7 +1214,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "치킨 버섯 리조또 2.3만"
+  "note": "치킨 버섯 리조또 2.3만",
+  "lat": 37.5260554582605,
+  "lng": 126.930769616968,
+  "kakaoUrl": "http://place.map.kakao.com/504597486",
+  "kakaoAddr": "서울 영등포구 여의나루로 113",
+  "kakaoName": "모와",
+  "geo": "ok"
  },
  {
   "id": "yd-edb2a8f1a5",
@@ -861,79 +1232,109 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "치즈카츠 1.79만"
+  "note": "치즈카츠 1.79만",
+  "lat": 37.5262304186596,
+  "lng": 126.931053409537,
+  "kakaoUrl": "http://place.map.kakao.com/1427899286",
+  "kakaoAddr": "서울 영등포구 여의나루로 117",
+  "kakaoName": "동백카츠 여의도한강공원점",
+  "geo": "ok"
  },
  {
   "id": "yd-6737f6c685",
   "name": "한미옥 여의도직영점",
-  "area": "여의나루",
+  "area": "증권가",
   "category": "고기",
   "price": "1.5만~",
   "address": "여의나루로 81 1층",
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "차돌구절판"
+  "note": "차돌구절판",
+  "lat": 37.52426333542692,
+  "lng": 126.92771234021089,
+  "kakaoUrl": "http://place.map.kakao.com/910950585",
+  "kakaoAddr": "서울 영등포구 여의나루로 81",
+  "kakaoName": "한미옥 여의도직영점",
+  "geo": "ok"
  },
  {
   "id": "yd-ea4fc57ff5",
   "name": "동해 대구탕",
-  "area": "여의나루",
+  "area": "여의도역·IFC",
   "category": "해산물",
   "price": "",
   "address": "여의나루로 57",
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "대구탕"
+  "note": "대구탕",
+  "lat": 37.523046311083,
+  "lng": 126.925615622918,
+  "geo": "addr"
  },
  {
   "id": "yd-3f33f085ad",
   "name": "아루히",
-  "area": "여의나루",
+  "area": "여의도역·IFC",
   "category": "일식",
   "price": "",
   "address": "여의나루로 42",
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "스시"
+  "note": "스시",
+  "lat": 37.5214694204797,
+  "lng": 126.924972958655,
+  "kakaoUrl": "http://place.map.kakao.com/1247032398",
+  "kakaoAddr": "서울 영등포구 여의나루로 42",
+  "kakaoName": "아루히 니와",
+  "geo": "ok"
  },
  {
   "id": "yd-e2e9b32b64",
   "name": "이자와 여의도직영점",
-  "area": "여의나루",
+  "area": "여의도역·IFC",
   "category": "일식",
   "price": "",
   "address": "여의나루로 42 203호",
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "규카츠"
+  "note": "규카츠",
+  "lat": 37.521470230225,
+  "lng": 126.924971147893,
+  "geo": "addr"
  },
  {
   "id": "yd-b80e3e30f5",
   "name": "풀향기 보쌈 칼국수",
-  "area": "여의나루",
+  "area": "여의도역·IFC",
   "category": "한식",
   "price": "",
   "address": "여의나루로 42",
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "보쌈, 칼국수"
+  "note": "보쌈, 칼국수",
+  "lat": 37.521470230225,
+  "lng": 126.924971147893,
+  "geo": "addr"
  },
  {
   "id": "yd-b1a0e964c3",
   "name": "고운님",
-  "area": "여의나루",
+  "area": "여의도역·IFC",
   "category": "한식",
   "price": "~1만",
   "address": "여의나루로 77-1",
   "solo": true,
   "group": false,
   "reserve": false,
-  "note": "점심 6천원, 요일별 메뉴"
+  "note": "점심 6천원, 요일별 메뉴",
+  "lat": 37.5243933646946,
+  "lng": 126.92714963712,
+  "geo": "addr"
  },
  {
   "id": "yd-4a71a89b64",
@@ -945,7 +1346,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "수제비 1만, 파전"
+  "note": "수제비 1만, 파전",
+  "lat": 37.526152949040615,
+  "lng": 126.9310817631017,
+  "kakaoUrl": "http://place.map.kakao.com/13289961",
+  "kakaoAddr": "서울 영등포구 여의나루로 117",
+  "kakaoName": "영원식당",
+  "geo": "ok"
  },
  {
   "id": "yd-187f2aebb9",
@@ -957,7 +1364,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "희정부대찌개 1.3만"
+  "note": "희정부대찌개 1.3만",
+  "lat": 37.5262339360571,
+  "lng": 126.930905207061,
+  "kakaoUrl": "http://place.map.kakao.com/16622191",
+  "kakaoAddr": "서울 영등포구 여의나루로 117",
+  "kakaoName": "희정식당",
+  "geo": "ok"
  },
  {
   "id": "yd-c318b3c1ef",
@@ -969,7 +1382,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "버섯매운탕 칼국수 1.5만"
+  "note": "버섯매운탕 칼국수 1.5만",
+  "lat": 37.52020584896475,
+  "lng": 126.93179988990671,
+  "kakaoUrl": "http://place.map.kakao.com/20746242",
+  "kakaoAddr": "서울 영등포구 국제금융로 86",
+  "kakaoName": "가양칼국수버섯매운탕",
+  "geo": "ok"
  },
  {
   "id": "yd-2a72575140",
@@ -981,7 +1400,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "소고기군만두 1.1만, 오향장육, 탕수육"
+  "note": "소고기군만두 1.1만, 오향장육, 탕수육",
+  "lat": 37.52020494927552,
+  "lng": 126.93180215312694,
+  "kakaoUrl": "http://place.map.kakao.com/10500536",
+  "kakaoAddr": "서울 영등포구 국제금융로 86",
+  "kakaoName": "서궁",
+  "geo": "ok"
  },
  {
   "id": "yd-915642a617",
@@ -993,7 +1418,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "히츠마부시 2.5만부터"
+  "note": "히츠마부시 2.5만부터",
+  "lat": 37.5200114571528,
+  "lng": 126.93219033013,
+  "kakaoUrl": "http://place.map.kakao.com/978813692",
+  "kakaoAddr": "서울 영등포구 국제금융로 86",
+  "kakaoName": "양산도 여의도점",
+  "geo": "ok"
  },
  {
   "id": "yd-da71e17104",
@@ -1005,43 +1436,67 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "팟타이 1.4만, 얌운센 1.4만"
+  "note": "팟타이 1.4만, 얌운센 1.4만",
+  "lat": 37.52004292789,
+  "lng": 126.932078313006,
+  "kakaoUrl": "http://place.map.kakao.com/10364831",
+  "kakaoAddr": "서울 영등포구 국제금융로 86",
+  "kakaoName": "란나타이",
+  "geo": "ok"
  },
  {
   "id": "yd-74c37207f9",
   "name": "오르조 르브텀 여의도",
-  "area": "샛강·63",
+  "area": "증권가",
   "category": "양식",
   "price": "",
   "address": "국제금융로 70 1층 109호",
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "프렌치토스트, 에그베네딕트, 브런치"
+  "note": "프렌치토스트, 에그베네딕트, 브런치",
+  "lat": 37.5215692433444,
+  "lng": 126.93055769899007,
+  "kakaoUrl": "http://place.map.kakao.com/1221570815",
+  "kakaoAddr": "서울 영등포구 국제금융로 70",
+  "kakaoName": "오르조르브텀 여의도점",
+  "geo": "ok"
  },
  {
   "id": "yd-479071fcfc",
   "name": "스시 다정",
-  "area": "샛강·63",
+  "area": "증권가",
   "category": "일식",
   "price": "1.5만~",
   "address": "국제금융로 70",
   "solo": false,
   "group": false,
   "reserve": true,
-  "note": "스시, 디너 8.8만"
+  "note": "스시, 디너 8.8만",
+  "lat": 37.5214945312679,
+  "lng": 126.930678808809,
+  "kakaoUrl": "http://place.map.kakao.com/1249098604",
+  "kakaoAddr": "서울 영등포구 국제금융로 70",
+  "kakaoName": "스시다정",
+  "geo": "ok"
  },
  {
   "id": "yd-2c000d5cb8",
   "name": "다미",
-  "area": "샛강·63",
+  "area": "국회·서여의도",
   "category": "해산물",
   "price": "1~1.5만",
   "address": "샛강역 근처",
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "생대구탕 1.5만, 꽁치구이 1.3만"
+  "note": "생대구탕 1.5만, 꽁치구이 1.3만",
+  "lat": 37.5299958733948,
+  "lng": 126.91989823978705,
+  "kakaoUrl": "http://place.map.kakao.com/16040529",
+  "kakaoAddr": "서울 영등포구 국회대로70길 7",
+  "kakaoName": "다미",
+  "geo": "ok"
  },
  {
   "id": "yd-3b11c23430",
@@ -1053,7 +1508,13 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "비스트로, 쏨땀 삼겹살 구이"
+  "note": "비스트로, 쏨땀 삼겹살 구이",
+  "lat": 37.5191988826928,
+  "lng": 126.930860791089,
+  "kakaoUrl": "http://place.map.kakao.com/1309526612",
+  "kakaoAddr": "서울 영등포구 여의대방로 379",
+  "kakaoName": "디스코서울",
+  "geo": "ok"
  },
  {
   "id": "yd-89a1bc9b61",
@@ -1065,7 +1526,13 @@
   "solo": true,
   "group": false,
   "reserve": false,
-  "note": "순대국"
+  "note": "순대국",
+  "lat": 37.51925139233756,
+  "lng": 126.93129172468807,
+  "kakaoUrl": "http://place.map.kakao.com/21423297",
+  "kakaoAddr": "서울 영등포구 여의대방로 383",
+  "kakaoName": "화목순대국",
+  "geo": "ok"
  },
  {
   "id": "yd-6006c04e04",
@@ -1077,7 +1544,10 @@
   "solo": true,
   "group": false,
   "reserve": false,
-  "note": "돈꼬츠라멘 1만"
+  "note": "돈꼬츠라멘 1만",
+  "lat": 37.5193909949479,
+  "lng": 126.932765535417,
+  "geo": "addr"
  },
  {
   "id": "yd-8b3ec18181",
@@ -1089,19 +1559,31 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "삼겹살, 소갈비살"
+  "note": "삼겹살, 소갈비살",
+  "lat": 37.5194235602559,
+  "lng": 126.932992875204,
+  "kakaoUrl": "http://place.map.kakao.com/10504261",
+  "kakaoAddr": "서울 영등포구 여의대방로 394",
+  "kakaoName": "서글렁탕",
+  "geo": "ok"
  },
  {
   "id": "yd-1e0a5ce851",
   "name": "백합집 여의도",
-  "area": "샛강·63",
+  "area": "증권가",
   "category": "해산물",
   "price": "1~1.5만",
   "address": "여의대방로67길 18 지하1층",
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "백합칼국수 1.1만, 제육덮밥 1만"
+  "note": "백합칼국수 1.1만, 제육덮밥 1만",
+  "lat": 37.5203662901132,
+  "lng": 126.930363115675,
+  "kakaoUrl": "http://place.map.kakao.com/1683500468",
+  "kakaoAddr": "서울 영등포구 여의대방로67길 18",
+  "kakaoName": "백합집",
+  "geo": "ok"
  },
  {
   "id": "yd-3861e279a6",
@@ -1113,19 +1595,28 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "제육쌈밥, 우렁쌈밥, 김치찌개"
+  "note": "제육쌈밥, 우렁쌈밥, 김치찌개",
+  "lat": 37.519548254555744,
+  "lng": 126.93049056928888,
+  "kakaoUrl": "http://place.map.kakao.com/13705766",
+  "kakaoAddr": "서울 영등포구 여의대방로67길 9",
+  "kakaoName": "수정쌈밥",
+  "geo": "ok"
  },
  {
   "id": "yd-86e7427e7c",
   "name": "닥터로빈 파크센터점",
-  "area": "샛강·63",
+  "area": "국회·서여의도",
   "category": "양식",
   "price": "1.5만~",
   "address": "여의대로 8 메리어트파크센터 1층",
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "건강식 파스타·리조또 1.8만대"
+  "note": "건강식 파스타·리조또 1.8만대",
+  "lat": 37.5212177736272,
+  "lng": 126.918583649607,
+  "geo": "addr"
  },
  {
   "id": "yd-3913f854eb",
@@ -1137,7 +1628,13 @@
   "solo": false,
   "group": false,
   "reserve": true,
-  "note": "63빌딩 중식, 코스 6.9만부터"
+  "note": "63빌딩 중식, 코스 6.9만부터",
+  "lat": 37.5198311199145,
+  "lng": 126.940281933018,
+  "kakaoUrl": "http://place.map.kakao.com/11891739",
+  "kakaoAddr": "서울 영등포구 63로 50",
+  "kakaoName": "백리향",
+  "geo": "ok"
  },
  {
   "id": "yd-3c998188b6",
@@ -1149,7 +1646,13 @@
   "solo": false,
   "group": false,
   "reserve": true,
-  "note": "63빌딩 일식"
+  "note": "63빌딩 일식",
+  "lat": 37.5198022695234,
+  "lng": 126.940245757776,
+  "kakaoUrl": "http://place.map.kakao.com/13070102",
+  "kakaoAddr": "서울 영등포구 63로 50",
+  "kakaoName": "슈치쿠",
+  "geo": "ok"
  },
  {
   "id": "yd-0cef586ede",
@@ -1161,19 +1664,31 @@
   "solo": false,
   "group": false,
   "reserve": true,
-  "note": "63빌딩 양식, 런치 코스"
+  "note": "63빌딩 양식, 런치 코스",
+  "lat": 37.51991578554775,
+  "lng": 126.94022530571483,
+  "kakaoUrl": "http://place.map.kakao.com/10693192",
+  "kakaoAddr": "서울 영등포구 63로 50",
+  "kakaoName": "워킹온더클라우드",
+  "geo": "ok"
  },
  {
   "id": "yd-11938da62a",
   "name": "창고43 여의도",
-  "area": "기타",
+  "area": "국회·서여의도",
   "category": "고기",
   "price": "",
   "address": "",
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "한우 구이"
+  "note": "한우 구이",
+  "lat": 37.53097850763953,
+  "lng": 126.92070271975109,
+  "kakaoUrl": "http://place.map.kakao.com/391022836",
+  "kakaoAddr": "서울 영등포구 국회대로 800",
+  "kakaoName": "창고43 서여의도점",
+  "geo": "ok"
  },
  {
   "id": "yd-43ed29b44a",
@@ -1185,19 +1700,26 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "특양구이, 대창구이"
+  "note": "특양구이, 대창구이",
+  "geo": "miss"
  },
  {
   "id": "yd-44fd7b7c4a",
   "name": "흑돈가 여의도",
-  "area": "기타",
+  "area": "증권가",
   "category": "고기",
   "price": "",
   "address": "",
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "제주 오겹살"
+  "note": "제주 오겹살",
+  "lat": 37.520880636180465,
+  "lng": 126.93014883876948,
+  "kakaoUrl": "http://place.map.kakao.com/12643139",
+  "kakaoAddr": "서울 영등포구 여의대방로69길 23",
+  "kakaoName": "흑돈가 여의도직영점",
+  "geo": "ok"
  },
  {
   "id": "yd-b5f678ab7d",
@@ -1209,19 +1731,26 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "흑돼지, 코스 2.9만"
+  "note": "흑돼지, 코스 2.9만",
+  "geo": "miss"
  },
  {
   "id": "yd-985c670f49",
   "name": "여의도 연탄집",
-  "area": "기타",
+  "area": "샛강·63",
   "category": "고기",
   "price": "",
   "address": "",
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "차돌, 생삼겹"
+  "note": "차돌, 생삼겹",
+  "lat": 37.51796664923822,
+  "lng": 126.93301227663558,
+  "kakaoUrl": "http://place.map.kakao.com/14566442",
+  "kakaoAddr": "서울 영등포구 여의대방로68길 15",
+  "kakaoName": "여의도연탄집",
+  "geo": "ok"
  },
  {
   "id": "yd-048b707e8b",
@@ -1233,7 +1762,8 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "제주 흑돼지 삼겹살"
+  "note": "제주 흑돼지 삼겹살",
+  "geo": "miss"
  },
  {
   "id": "yd-cccb4fdc0e",
@@ -1245,19 +1775,26 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "오리, 황제백숙"
+  "note": "오리, 황제백숙",
+  "geo": "miss"
  },
  {
   "id": "yd-c016198a7c",
   "name": "청하",
-  "area": "기타",
+  "area": "샛강·63",
   "category": "해산물",
   "price": "",
   "address": "",
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "회, 활전복"
+  "note": "회, 활전복",
+  "lat": 37.5208678011866,
+  "lng": 126.931308341884,
+  "kakaoUrl": "http://place.map.kakao.com/8095989",
+  "kakaoAddr": "서울 영등포구 국제금융로 78",
+  "kakaoName": "청하",
+  "geo": "ok"
  },
  {
   "id": "yd-66db78d659",
@@ -1269,7 +1806,8 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "대구탕, 북어국"
+  "note": "대구탕, 북어국",
+  "geo": "miss"
  },
  {
   "id": "yd-891bfe515f",
@@ -1281,19 +1819,26 @@
   "solo": false,
   "group": true,
   "reserve": false,
-  "note": "한정식, 점심특선"
+  "note": "한정식, 점심특선",
+  "geo": "miss"
  },
  {
   "id": "yd-eaa6d9e379",
   "name": "한암동 여의도점",
-  "area": "기타",
+  "area": "여의도역·IFC",
   "category": "한식",
   "price": "",
   "address": "",
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "도미 솥밥, 곰탕"
+  "note": "도미 솥밥, 곰탕",
+  "lat": 37.5238601476218,
+  "lng": 126.924137960188,
+  "kakaoUrl": "http://place.map.kakao.com/1517959102",
+  "kakaoAddr": "서울 영등포구 국제금융로2길 32",
+  "kakaoName": "한암동 여의도점",
+  "geo": "ok"
  },
  {
   "id": "yd-8a1d2bb592",
@@ -1305,19 +1850,26 @@
   "solo": false,
   "group": false,
   "reserve": true,
-  "note": "오마카세"
+  "note": "오마카세",
+  "geo": "miss"
  },
  {
   "id": "yd-ba56e58964",
   "name": "도깨비굴",
-  "area": "기타",
+  "area": "증권가",
   "category": "일식",
   "price": "",
   "address": "",
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "도깨비 라멘, 부타돈, 연어덮밥"
+  "note": "도깨비 라멘, 부타돈, 연어덮밥",
+  "lat": 37.52033857670919,
+  "lng": 126.92626818703336,
+  "kakaoUrl": "http://place.map.kakao.com/76798371",
+  "kakaoAddr": "서울 영등포구 의사당대로 127",
+  "kakaoName": "도깨비굴",
+  "geo": "ok"
  },
  {
   "id": "yd-f027773884",
@@ -1329,19 +1881,26 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "해물탕면, 우육탕면, 삼선짬뽕"
+  "note": "해물탕면, 우육탕면, 삼선짬뽕",
+  "geo": "miss"
  },
  {
   "id": "yd-1d93d5ded7",
   "name": "차이797 여의도",
-  "area": "기타",
+  "area": "여의도역·IFC",
   "category": "중식",
   "price": "",
   "address": "",
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "중식"
+  "note": "중식",
+  "lat": 37.521830233411,
+  "lng": 126.925624183175,
+  "kakaoUrl": "http://place.map.kakao.com/1874252635",
+  "kakaoAddr": "서울 영등포구 여의나루로 50",
+  "kakaoName": "차이797 여의도점",
+  "geo": "ok"
  },
  {
   "id": "yd-b92496720e",
@@ -1353,31 +1912,44 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "이탈리안, 파스타, 피자"
+  "note": "이탈리안, 파스타, 피자",
+  "geo": "miss"
  },
  {
   "id": "yd-096acec6f3",
   "name": "일마지오",
-  "area": "기타",
+  "area": "증권가",
   "category": "양식",
   "price": "",
   "address": "",
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "이탈리안, 포모도로, 볼로네제"
+  "note": "이탈리안, 포모도로, 볼로네제",
+  "lat": 37.5208485874961,
+  "lng": 126.929285754973,
+  "kakaoUrl": "http://place.map.kakao.com/15289989",
+  "kakaoAddr": "서울 영등포구 국제금융로8길 19",
+  "kakaoName": "일마지오 여의도점",
+  "geo": "ok"
  },
  {
   "id": "yd-555d146337",
   "name": "심퍼티쿠시",
-  "area": "기타",
+  "area": "여의도역·IFC",
   "category": "양식",
   "price": "",
   "address": "",
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "파스타"
+  "note": "파스타",
+  "lat": 37.521363640441,
+  "lng": 126.923009269574,
+  "kakaoUrl": "http://place.map.kakao.com/228613367",
+  "kakaoAddr": "서울 영등포구 의사당대로 96",
+  "kakaoName": "심퍼티쿠시 여의도점",
+  "geo": "ok"
  },
  {
   "id": "yd-68ccd202c5",
@@ -1389,7 +1961,8 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "소고기 구이"
+  "note": "소고기 구이",
+  "geo": "miss"
  },
  {
   "id": "yd-48c954c3c4",
@@ -1401,6 +1974,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "인도 음식"
+  "note": "인도 음식",
+  "geo": "miss"
  }
 ]

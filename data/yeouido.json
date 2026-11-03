@@ -789,7 +789,7 @@
  {
   "id": "yd-00591f8c84",
   "name": "오복수산 여의도",
-  "area": "여의도역·IFC",
+  "area": "기타",
   "category": "일식",
   "price": "",
   "address": "",
@@ -797,12 +797,7 @@
   "group": false,
   "reserve": false,
   "note": "카이센동",
-  "lat": 37.5233677568981,
-  "lng": 126.923450659622,
-  "kakaoUrl": "http://place.map.kakao.com/1976028871",
-  "kakaoAddr": "서울 영등포구 의사당대로 83",
-  "kakaoName": "오복수산참치 오투타워여의도점",
-  "geo": "ok"
+  "geo": "miss"
  },
  {
   "id": "yd-995000211b",

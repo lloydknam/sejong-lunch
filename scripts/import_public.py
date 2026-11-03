@@ -107,14 +107,14 @@ def category(mid, sub):
     """우리 분류로 바꿉니다. 점심 식당이 아니면 None."""
     if EXCLUDE.search(f"{mid} {sub}".replace("떡볶이", "")):
         return None
+    if "일식" in mid:
+        return "일식"
     if re.search(r"곱창|족발|보쌈|고기|갈비|삼겹|구이/찜", sub) and "해산물" not in sub and "생선" not in sub:
         return "고기"
-    if re.search(r"횟집|해산물|생선|회/|복어|조개", sub):
+    if re.search(r"횟집|해산물|생선|복 요리|복어|조개", sub):
         return "해산물"
     if re.search(r"김밥|분식|떡볶이|만두", sub):
         return "분식"
-    if "일식" in mid:
-        return "일식"
     if "중식" in mid:
         return "중식"
     if re.search(r"동남아|베트남|태국|인도|아시아", mid + sub):
@@ -126,8 +126,16 @@ def category(mid, sub):
     return "기타"
 
 
+def clean_name(s):
+    """신고 상호에 붙은 법인 표기와 잡문구를 걷어냅니다."""
+    s = (s or "").split(";")[-1]
+    s = re.sub(r"\(주\)|（주）|㈜|주식회사|유한회사|\(유\)", "", s)
+    s = re.sub(r"^(오픈|임시|신규)[_\s-]+", "", s)
+    return s.strip(" _-")
+
+
 def norm(s, strip):
-    s = re.sub(r"\s+", "", s or "")
+    s = re.sub(r"\s+", "", clean_name(s))
     s = re.sub(strip, "", s)
     s = re.sub(r"[()&·+,.\-_'\"]", "", s)
     return re.sub(r"(본점|직영점|점)$", "", s)
@@ -178,7 +186,7 @@ def merge_region(region, rows):
         n = norm(p["name"], strip)
         key = road_key(p.get("address"))
         exact = [r for r in food if n and n in (r["_n"], r["_nb"])]
-        close = [r for r in food if len(n) >= 3 and len(r["_n"]) >= 3 and (n in r["_nb"] or r["_n"] in n)]
+        close = [r for r in food if len(n) >= 3 and len(r["_n"]) >= 3 and (n in r["_nb"] or n.startswith(r["_n"]))]
         hit = None
         if key:
             hit = next((r for r in exact + close if road_of(r) == key), None)
@@ -211,7 +219,9 @@ def merge_region(region, rows):
             dup += 1
             continue
         seen.add(sig)
-        name = " ".join(x for x in ((r.get("상호명") or "").strip(), (r.get("지점명") or "").strip()) if x)
+        name = " ".join(x for x in (clean_name(r.get("상호명")), (r.get("지점명") or "").strip()) if x)
+        if not name:
+            continue
         added.append({"id": "sg-" + r["상가업소번호"], "src": "public", "name": name[:40],
                       "area": region["area"](r, region["centers"]), "category": r["_cat"], "price": "",
                       "address": r.get("도로명주소") or r.get("지번주소") or "", "note": r.get("상권업종소분류명", ""),

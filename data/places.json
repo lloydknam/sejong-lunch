@@ -9,12 +9,7 @@
   "solo": true,
   "group": false,
   "reserve": false,
-  "note": "숙성회 초밥 전문, 점심은 초밥 위주",
-  "lat": 36.514305164435,
-  "lng": 127.25860201701016,
-  "kakaoUrl": "http://place.map.kakao.com/858396904",
-  "kakaoAddr": "세종특별자치시 보듬3로 8-20",
-  "geo": "ok"
+  "note": "숙성회 초밥 전문, 점심은 초밥 위주"
  },
  {
   "id": "seed-dongdong",
@@ -26,12 +21,7 @@
   "solo": true,
   "group": false,
   "reserve": false,
-  "note": "칼국수",
-  "lat": 36.49026575412782,
-  "lng": 127.25618509759468,
-  "kakaoUrl": "http://place.map.kakao.com/1277991570",
-  "kakaoAddr": "세종특별자치시 한누리대로 291",
-  "geo": "ok"
+  "note": "칼국수"
  },
  {
   "id": "seed-sunnam",
@@ -43,12 +33,7 @@
   "solo": true,
   "group": false,
   "reserve": false,
-  "note": "시래기 국밥, 집밥 느낌",
-  "lat": 36.4787774330107,
-  "lng": 127.2879630795394,
-  "kakaoUrl": "http://place.map.kakao.com/83515538",
-  "kakaoAddr": "세종특별자치시 한누리대로 2144",
-  "geo": "ok"
+  "note": "시래기 국밥, 집밥 느낌"
  },
  {
   "id": "seed-jjukkumi",
@@ -60,12 +45,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "쭈꾸미볶음",
-  "lat": 36.5141609857661,
-  "lng": 127.25859930455546,
-  "kakaoUrl": "http://place.map.kakao.com/314453357",
-  "kakaoAddr": "세종특별자치시 보듬3로 8-20",
-  "geo": "ok"
+  "note": "쭈꾸미볶음"
  },
  {
   "id": "seed-jigeumseong",
@@ -77,8 +57,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "가성비, 양 많음",
-  "geo": "miss"
+  "note": "가성비, 양 많음"
  },
  {
   "id": "seed-chaophraya",
@@ -90,8 +69,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "태국 음식, 차로 이동",
-  "geo": "miss"
+  "note": "태국 음식, 차로 이동"
  },
  {
   "id": "s2-01828ef206",
@@ -103,12 +81,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "",
-  "lat": 36.47878464221143,
-  "lng": 127.28796310621345,
-  "kakaoUrl": "http://place.map.kakao.com/2019756937",
-  "kakaoAddr": "세종특별자치시 한누리대로 2144",
-  "geo": "ok"
+  "note": ""
  },
  {
   "id": "s2-0320c772c4",
@@ -120,12 +93,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "콩국수·칼국수",
-  "lat": 36.48324593793156,
-  "lng": 127.29328143476431,
-  "kakaoUrl": "http://place.map.kakao.com/564011313",
-  "kakaoAddr": "세종특별자치시 시청대로 209",
-  "geo": "ok"
+  "note": "콩국수·칼국수"
  },
  {
   "id": "s2-0375a9be0f",
@@ -137,8 +105,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "국밥·밀면",
-  "geo": "miss"
+  "note": "국밥·밀면"
  },
  {
   "id": "s2-03fc3117eb",
@@ -150,12 +117,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "피자·파스타",
-  "lat": 36.4799950424427,
-  "lng": 127.286780276642,
-  "kakaoUrl": "http://place.map.kakao.com/874047685",
-  "kakaoAddr": "세종특별자치시 시청대로 137",
-  "geo": "ok"
+  "note": "피자·파스타"
  },
  {
   "id": "s2-04723fd78a",
@@ -167,12 +129,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "순두부",
-  "lat": 36.60156680615947,
-  "lng": 127.28956212857847,
-  "kakaoUrl": "http://place.map.kakao.com/901181786",
-  "kakaoAddr": "세종특별자치시 조치원읍 문화길 23",
-  "geo": "ok"
+  "note": "순두부"
  },
  {
   "id": "s2-07934e1b22",
@@ -184,10 +141,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "피자",
-  "lat": 36.5108691968191,
-  "lng": 127.261188967524,
-  "geo": "addr"
+  "note": "피자"
  },
  {
   "id": "s2-079358aa12",
@@ -199,12 +153,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "호텔 레스토랑",
-  "lat": 36.5123054488286,
-  "lng": 127.241874586628,
-  "kakaoUrl": "http://place.map.kakao.com/333776245",
-  "kakaoAddr": "세종특별자치시 보듬3로 160",
-  "geo": "ok"
+  "note": "호텔 레스토랑"
  },
  {
   "id": "s2-0862c4a0ed",
@@ -216,10 +165,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "보쌈·족발",
-  "lat": 36.4927814962446,
-  "lng": 127.257449302265,
-  "geo": "addr"
+  "note": "보쌈·족발"
  },
  {
   "id": "s2-0895c28b82",
@@ -231,12 +177,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "쌀국수",
-  "lat": 36.601772527914676,
-  "lng": 127.29786586284749,
-  "kakaoUrl": "http://place.map.kakao.com/984818862",
-  "kakaoAddr": "세종특별자치시 조치원읍 새내로 111",
-  "geo": "ok"
+  "note": "쌀국수"
  },
  {
   "id": "s2-0a8ad5dc70",
@@ -248,12 +189,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "피자",
-  "lat": 36.4865313383461,
-  "lng": 127.250249148286,
-  "kakaoUrl": "http://place.map.kakao.com/531617907",
-  "kakaoAddr": "세종특별자치시 새롬중앙로 63",
-  "geo": "ok"
+  "note": "피자"
  },
  {
   "id": "s2-0bc31f51af",
@@ -265,12 +201,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "족발",
-  "lat": 36.491440838737645,
-  "lng": 127.25745234291516,
-  "kakaoUrl": "http://place.map.kakao.com/1274094274",
-  "kakaoAddr": "세종특별자치시 나성북1로 23",
-  "geo": "ok"
+  "note": "족발"
  },
  {
   "id": "s2-0d3805c797",
@@ -282,12 +213,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "마라탕",
-  "lat": 36.511349687052,
-  "lng": 127.249573257636,
-  "kakaoUrl": "http://place.map.kakao.com/312323670",
-  "kakaoAddr": "세종특별자치시 보듬3로 91",
-  "geo": "ok"
+  "note": "마라탕"
  },
  {
   "id": "s2-0d764f1220",
@@ -299,12 +225,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "회",
-  "lat": 36.48964847896307,
-  "lng": 127.25785041437103,
-  "kakaoUrl": "http://place.map.kakao.com/1846438015",
-  "kakaoAddr": "세종특별자치시 나성북로 9",
-  "geo": "ok"
+  "note": "회"
  },
  {
   "id": "s2-0eef0c8b30",
@@ -316,12 +237,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "",
-  "lat": 36.5041316273335,
-  "lng": 127.271758762791,
-  "kakaoUrl": "http://place.map.kakao.com/900094286",
-  "kakaoAddr": "세종특별자치시 도움8로 91",
-  "geo": "ok"
+  "note": ""
  },
  {
   "id": "s2-1245c60271",
@@ -333,8 +249,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "국수",
-  "geo": "miss"
+  "note": "국수"
  },
  {
   "id": "s2-14e5aca20a",
@@ -346,12 +261,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "",
-  "lat": 36.501133859146314,
-  "lng": 127.23646646832682,
-  "kakaoUrl": "http://place.map.kakao.com/805715756",
-  "kakaoAddr": "세종특별자치시 만남로 16",
-  "geo": "ok"
+  "note": ""
  },
  {
   "id": "s2-1546233977",
@@ -363,12 +273,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "국수",
-  "lat": 36.6034150112906,
-  "lng": 127.299062491896,
-  "kakaoUrl": "http://place.map.kakao.com/1348651005",
-  "kakaoAddr": "세종특별자치시 조치원읍 새내14길 23",
-  "geo": "ok"
+  "note": "국수"
  },
  {
   "id": "s2-16822b70fa",
@@ -380,12 +285,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "김밥",
-  "lat": 36.512096102592146,
-  "lng": 127.24334082307381,
-  "kakaoUrl": "http://place.map.kakao.com/799333430",
-  "kakaoAddr": "세종특별자치시 아름서길 3",
-  "geo": "ok"
+  "note": "김밥"
  },
  {
   "id": "s2-1719c0f36a",
@@ -397,12 +297,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "파스타",
-  "lat": 36.48265064359194,
-  "lng": 127.26132343344148,
-  "kakaoUrl": "http://place.map.kakao.com/478486667",
-  "kakaoAddr": "세종특별자치시 한누리대로 194",
-  "geo": "ok"
+  "note": "파스타"
  },
  {
   "id": "s2-189001965c",
@@ -414,12 +309,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "냉면",
-  "lat": 36.462626674129,
-  "lng": 127.280853601828,
-  "kakaoUrl": "http://place.map.kakao.com/31365486",
-  "kakaoAddr": "세종특별자치시 금남면 용포로 42-3",
-  "geo": "ok"
+  "note": "냉면"
  },
  {
   "id": "s2-19c571e546",
@@ -431,10 +321,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "아구요리",
-  "lat": 36.508651672254,
-  "lng": 127.234266325589,
-  "geo": "addr"
+  "note": "아구요리"
  },
  {
   "id": "s2-1aefe9e598",
@@ -446,12 +333,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "초밥·만두",
-  "lat": 36.50433943512956,
-  "lng": 127.24922369597985,
-  "kakaoUrl": "http://place.map.kakao.com/1854805463",
-  "kakaoAddr": "세종특별자치시 도움3로 105-8",
-  "geo": "ok"
+  "note": "초밥·만두"
  },
  {
   "id": "s2-1c2d8cf3ea",
@@ -463,12 +345,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "매운탕",
-  "lat": 36.52067079921973,
-  "lng": 127.3552964819057,
-  "kakaoUrl": "http://place.map.kakao.com/10619116",
-  "kakaoAddr": "세종특별자치시 연동면 태산로 163-6",
-  "geo": "ok"
+  "note": "매운탕"
  },
  {
   "id": "s2-1d62ec3b3d",
@@ -480,12 +357,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "추어탕",
-  "lat": 36.50792577022204,
-  "lng": 127.26237395818745,
-  "kakaoUrl": "http://place.map.kakao.com/172088330",
-  "kakaoAddr": "세종특별자치시 한누리대로 496",
-  "geo": "ok"
+  "note": "추어탕"
  },
  {
   "id": "s2-216e62fa02",
@@ -497,12 +369,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "규카츠",
-  "lat": 36.490514856045,
-  "lng": 127.257681415357,
-  "kakaoUrl": "http://place.map.kakao.com/803161085",
-  "kakaoAddr": "세종특별자치시 나성로 133-15",
-  "geo": "ok"
+  "note": "규카츠"
  },
  {
   "id": "s2-2454ee7e18",
@@ -514,12 +381,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "동태탕·보쌈",
-  "lat": 36.47769453852654,
-  "lng": 127.28783967611008,
-  "kakaoUrl": "http://place.map.kakao.com/319232757",
-  "kakaoAddr": "세종특별자치시 한누리대로 2149",
-  "geo": "ok"
+  "note": "동태탕·보쌈"
  },
  {
   "id": "s2-248cdc4aae",
@@ -531,12 +393,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "초밥",
-  "lat": 36.48324198423,
-  "lng": 127.262882153392,
-  "kakaoUrl": "http://place.map.kakao.com/1616632113",
-  "kakaoAddr": "세종특별자치시 나성로 41",
-  "geo": "ok"
+  "note": "초밥"
  },
  {
   "id": "s2-251899aae2",
@@ -548,12 +405,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "",
-  "lat": 36.48401860545224,
-  "lng": 127.29386129243426,
-  "kakaoUrl": "http://place.map.kakao.com/869037819",
-  "kakaoAddr": "세종특별자치시 시청대로 219",
-  "geo": "ok"
+  "note": ""
  },
  {
   "id": "s2-2560faefa3",
@@ -565,12 +417,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "",
-  "lat": 36.49296251865433,
-  "lng": 127.25595067381444,
-  "kakaoUrl": "http://place.map.kakao.com/78944019",
-  "kakaoAddr": "세종특별자치시 한누리대로 321",
-  "geo": "ok"
+  "note": ""
  },
  {
   "id": "s2-27fd0da649",
@@ -582,12 +429,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "국밥",
-  "lat": 36.4955378479674,
-  "lng": 127.262665882485,
-  "kakaoUrl": "http://place.map.kakao.com/132683780",
-  "kakaoAddr": "세종특별자치시 갈매로 353",
-  "geo": "ok"
+  "note": "국밥"
  },
  {
   "id": "s2-2b51a2f00f",
@@ -599,8 +441,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "라멘",
-  "geo": "miss"
+  "note": "라멘"
  },
  {
   "id": "s2-2be04b1c80",
@@ -612,12 +453,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "고등어 정식",
-  "lat": 36.50243708435286,
-  "lng": 127.22329128527483,
-  "kakaoUrl": "http://place.map.kakao.com/1635803058",
-  "kakaoAddr": "세종특별자치시 장군면 월현윗길 38-7",
-  "geo": "ok"
+  "note": "고등어 정식"
  },
  {
   "id": "s2-2cbd8deba3",
@@ -629,12 +465,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "라멘",
-  "lat": 36.527310963309425,
-  "lng": 127.3705345024803,
-  "kakaoUrl": "http://place.map.kakao.com/1425695765",
-  "kakaoAddr": "세종특별자치시 부강면 부강외천로 24",
-  "geo": "ok"
+  "note": "라멘"
  },
  {
   "id": "s2-2fc9189ed8",
@@ -646,10 +477,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "갈비김치찌개",
-  "lat": 36.5188165226093,
-  "lng": 127.236224290637,
-  "geo": "addr"
+  "note": "갈비김치찌개"
  },
  {
   "id": "s2-2fcdcfa998",
@@ -661,12 +489,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "떡볶이",
-  "lat": 36.511250669885804,
-  "lng": 127.24908956421211,
-  "kakaoUrl": "http://place.map.kakao.com/278406322",
-  "kakaoAddr": "세종특별자치시 보듬3로 95",
-  "geo": "ok"
+  "note": "떡볶이"
  },
  {
   "id": "s2-3156d74b02",
@@ -678,12 +501,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "스테이크",
-  "lat": 36.46308199605231,
-  "lng": 127.27728405158905,
-  "kakaoUrl": "http://place.map.kakao.com/1399452111",
-  "kakaoAddr": "세종특별자치시 금남면 용포2길 43-4",
-  "geo": "ok"
+  "note": "스테이크"
  },
  {
   "id": "s2-3636a85bbe",
@@ -695,12 +513,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "순대국밥",
-  "lat": 36.5294760043721,
-  "lng": 127.368050347275,
-  "kakaoUrl": "http://place.map.kakao.com/19341987",
-  "kakaoAddr": "세종특별자치시 부강면 부강4길 15",
-  "geo": "ok"
+  "note": "순대국밥"
  },
  {
   "id": "s2-36d8ada0e4",
@@ -712,12 +525,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "막국수",
-  "lat": 36.5003297237863,
-  "lng": 127.220143174733,
-  "kakaoUrl": "http://place.map.kakao.com/868734511",
-  "kakaoAddr": "세종특별자치시 장군면 장척로 561-8",
-  "geo": "ok"
+  "note": "막국수"
  },
  {
   "id": "s2-39cf32a2f5",
@@ -729,12 +537,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "국밥",
-  "lat": 36.50446949040172,
-  "lng": 127.27060016741478,
-  "kakaoUrl": "http://place.map.kakao.com/1437640911",
-  "kakaoAddr": "세종특별자치시 도움8로 81",
-  "geo": "ok"
+  "note": "국밥"
  },
  {
   "id": "s2-3c8f84ae24",
@@ -746,12 +549,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "파스타·리조또·브런치",
-  "lat": 36.48796046765248,
-  "lng": 127.26246285327895,
-  "kakaoUrl": "http://place.map.kakao.com/1544316492",
-  "kakaoAddr": "세종특별자치시 국세청로 45",
-  "geo": "ok"
+  "note": "파스타·리조또·브런치"
  },
  {
   "id": "s2-3d651037c8",
@@ -763,12 +561,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "",
-  "lat": 36.5192723552016,
-  "lng": 127.252699096762,
-  "kakaoUrl": "http://place.map.kakao.com/512528818",
-  "kakaoAddr": "세종특별자치시 보듬7로 61",
-  "geo": "ok"
+  "note": ""
  },
  {
   "id": "s2-3d808e3d94",
@@ -780,12 +573,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "낙지볶음·연포탕 (2017년 기사)",
-  "lat": 36.5044868856059,
-  "lng": 127.270479673708,
-  "kakaoUrl": "http://place.map.kakao.com/23305037",
-  "kakaoAddr": "세종특별자치시 도움8로 81",
-  "geo": "ok"
+  "note": "낙지볶음·연포탕 (2017년 기사)"
  },
  {
   "id": "s2-3f721e6896",
@@ -797,12 +585,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "곱창",
-  "lat": 36.51342705748029,
-  "lng": 127.25877883139938,
-  "kakaoUrl": "http://place.map.kakao.com/1250521705",
-  "kakaoAddr": "세종특별자치시 보듬3로 8-12",
-  "geo": "ok"
+  "note": "곱창"
  },
  {
   "id": "s2-40a4e06898",
@@ -814,12 +597,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "족발",
-  "lat": 36.514691053724555,
-  "lng": 127.25851175693147,
-  "kakaoUrl": "http://place.map.kakao.com/330613882",
-  "kakaoAddr": "세종특별자치시 보듬3로 8-20",
-  "geo": "ok"
+  "note": "족발"
  },
  {
   "id": "s2-418c64ee06",
@@ -831,12 +609,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "샤브샤브",
-  "lat": 36.5048078259439,
-  "lng": 127.24889255534,
-  "kakaoUrl": "http://place.map.kakao.com/523419191",
-  "kakaoAddr": "세종특별자치시 도움3로 105-2",
-  "geo": "ok"
+  "note": "샤브샤브"
  },
  {
   "id": "s2-42c46718e8",
@@ -848,10 +621,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "",
-  "lat": 36.502894990751,
-  "lng": 127.25807415615,
-  "geo": "addr"
+  "note": ""
  },
  {
   "id": "s2-46ff27f57e",
@@ -863,8 +633,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "태국 음식 (2017년 기사)",
-  "geo": "miss"
+  "note": "태국 음식 (2017년 기사)"
  },
  {
   "id": "s2-4df96c3d7c",
@@ -876,12 +645,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "마라탕",
-  "lat": 36.4956252518089,
-  "lng": 127.249227022239,
-  "kakaoUrl": "http://place.map.kakao.com/1825923227",
-  "kakaoAddr": "세종특별자치시 다정중앙로 58",
-  "geo": "ok"
+  "note": "마라탕"
  },
  {
   "id": "s2-4ebd6cc18d",
@@ -893,12 +657,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "김밥·우동",
-  "lat": 36.5041379836748,
-  "lng": 127.271737576485,
-  "kakaoUrl": "http://place.map.kakao.com/428996640",
-  "kakaoAddr": "세종특별자치시 도움8로 91",
-  "geo": "ok"
+  "note": "김밥·우동"
  },
  {
   "id": "s2-4eff3d3522",
@@ -910,8 +669,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "해물탕·아구찜 (2017년 기사)",
-  "geo": "miss"
+  "note": "해물탕·아구찜 (2017년 기사)"
  },
  {
   "id": "s2-503ba8d305",
@@ -923,12 +681,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "마라탕",
-  "lat": 36.5116704566664,
-  "lng": 127.242603818021,
-  "kakaoUrl": "http://place.map.kakao.com/1367341634",
-  "kakaoAddr": "세종특별자치시 아름서1길 13-9",
-  "geo": "ok"
+  "note": "마라탕"
  },
  {
   "id": "s2-552c5489f1",
@@ -940,12 +693,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "여러 나라 메뉴",
-  "lat": 36.4944415381664,
-  "lng": 127.248600445956,
-  "kakaoUrl": "http://place.map.kakao.com/1606083947",
-  "kakaoAddr": "세종특별자치시 다정중앙로 45",
-  "geo": "ok"
+  "note": "여러 나라 메뉴"
  },
  {
   "id": "s2-58054174f8",
@@ -957,10 +705,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "장어",
-  "lat": 36.5073923683263,
-  "lng": 127.262295915819,
-  "geo": "addr"
+  "note": "장어"
  },
  {
   "id": "s2-5a174dcae0",
@@ -972,12 +717,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "밀면·콩국수",
-  "lat": 36.4839349277409,
-  "lng": 127.293808526892,
-  "kakaoUrl": "http://place.map.kakao.com/157521986",
-  "kakaoAddr": "세종특별자치시 시청대로 219",
-  "geo": "ok"
+  "note": "밀면·콩국수"
  },
  {
   "id": "s2-5a2bc48c5a",
@@ -989,12 +729,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "",
-  "lat": 36.4868891423944,
-  "lng": 127.250227979291,
-  "kakaoUrl": "http://place.map.kakao.com/1289869845",
-  "kakaoAddr": "세종특별자치시 새롬중앙로 67",
-  "geo": "ok"
+  "note": ""
  },
  {
   "id": "s2-5e1359f359",
@@ -1006,8 +741,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "갈비",
-  "geo": "miss"
+  "note": "갈비"
  },
  {
   "id": "s2-609310c159",
@@ -1019,12 +753,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "",
-  "lat": 36.5143069715473,
-  "lng": 127.258599790252,
-  "kakaoUrl": "http://place.map.kakao.com/1700817966",
-  "kakaoAddr": "세종특별자치시 보듬3로 8-20",
-  "geo": "ok"
+  "note": ""
  },
  {
   "id": "s2-64d18f7ad2",
@@ -1036,12 +765,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "생태탕 (2017년 기사)",
-  "lat": 36.50807467271702,
-  "lng": 127.26022001176948,
-  "kakaoUrl": "http://place.map.kakao.com/1539032246",
-  "kakaoAddr": "세종특별자치시 절재로 172",
-  "geo": "ok"
+  "note": "생태탕 (2017년 기사)"
  },
  {
   "id": "s2-64d6f270ea",
@@ -1053,10 +777,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "",
-  "lat": 36.4773679090003,
-  "lng": 127.288904442966,
-  "geo": "addr"
+  "note": ""
  },
  {
   "id": "s2-65294477d4",
@@ -1068,12 +789,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "보리밥·쭈꾸미",
-  "lat": 36.47998784931045,
-  "lng": 127.28677355478763,
-  "kakaoUrl": "http://place.map.kakao.com/1103217787",
-  "kakaoAddr": "세종특별자치시 시청대로 137",
-  "geo": "ok"
+  "note": "보리밥·쭈꾸미"
  },
  {
   "id": "s2-6529f5e670",
@@ -1085,8 +801,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "감자탕·순대",
-  "geo": "miss"
+  "note": "감자탕·순대"
  },
  {
   "id": "s2-6836b7034e",
@@ -1098,10 +813,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "순대국밥",
-  "lat": 36.490700325848,
-  "lng": 127.301624066,
-  "geo": "addr"
+  "note": "순대국밥"
  },
  {
   "id": "s2-6cacc836ce",
@@ -1113,12 +825,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "순두부·생선구이",
-  "lat": 36.5190412407931,
-  "lng": 127.235281682627,
-  "kakaoUrl": "http://place.map.kakao.com/43704895",
-  "kakaoAddr": "세종특별자치시 마음로 272-22",
-  "geo": "ok"
+  "note": "순두부·생선구이"
  },
  {
   "id": "s2-6d53705081",
@@ -1130,10 +837,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "찜닭",
-  "lat": 36.5024846587384,
-  "lng": 127.250093868275,
-  "geo": "addr"
+  "note": "찜닭"
  },
  {
   "id": "s2-6d62f2e73c",
@@ -1145,8 +849,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "부대찌개",
-  "geo": "miss"
+  "note": "부대찌개"
  },
  {
   "id": "s2-6e1282a531",
@@ -1158,8 +861,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "생면 파스타·스테이크",
-  "geo": "miss"
+  "note": "생면 파스타·스테이크"
  },
  {
   "id": "s2-700e7607fc",
@@ -1171,12 +873,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "보리밥",
-  "lat": 36.6039737084558,
-  "lng": 127.289207880302,
-  "kakaoUrl": "http://place.map.kakao.com/1591371956",
-  "kakaoAddr": "세종특별자치시 조치원읍 세종로 2427",
-  "geo": "ok"
+  "note": "보리밥"
  },
  {
   "id": "s2-70a7d27bc1",
@@ -1188,8 +885,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "꼬마김밥",
-  "geo": "miss"
+  "note": "꼬마김밥"
  },
  {
   "id": "s2-7334776af1",
@@ -1201,12 +897,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "",
-  "lat": 36.4793150279199,
-  "lng": 127.255276425914,
-  "kakaoUrl": "http://place.map.kakao.com/1856968334",
-  "kakaoAddr": "세종특별자치시 노을3로 84",
-  "geo": "ok"
+  "note": ""
  },
  {
   "id": "s2-73d9bb60af",
@@ -1218,12 +909,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "한우",
-  "lat": 36.5006307727542,
-  "lng": 127.230604948359,
-  "kakaoUrl": "http://place.map.kakao.com/2092315128",
-  "kakaoAddr": "세종특별자치시 장군면 월현윗길 173-12",
-  "geo": "ok"
+  "note": "한우"
  },
  {
   "id": "s2-7432127057",
@@ -1235,12 +921,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "돈카츠",
-  "lat": 36.505050863162445,
-  "lng": 127.23342543104783,
-  "kakaoUrl": "http://place.map.kakao.com/1406610307",
-  "kakaoAddr": "세종특별자치시 마음로 67",
-  "geo": "ok"
+  "note": "돈카츠"
  },
  {
   "id": "s2-75cd30bde3",
@@ -1252,12 +933,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "화로구이",
-  "lat": 36.46861152017276,
-  "lng": 127.28075134365228,
-  "kakaoUrl": "http://place.map.kakao.com/1658746626",
-  "kakaoAddr": "세종특별자치시 금남면 용포로 115",
-  "geo": "ok"
+  "note": "화로구이"
  },
  {
   "id": "s2-76913e8a51",
@@ -1269,12 +945,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "국밥",
-  "lat": 36.4969569686292,
-  "lng": 127.258632497875,
-  "kakaoUrl": "http://place.map.kakao.com/167350869",
-  "kakaoAddr": "세종특별자치시 가름로 170-14",
-  "geo": "ok"
+  "note": "국밥"
  },
  {
   "id": "s2-7c01d1804b",
@@ -1286,10 +957,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "닭도리탕",
-  "lat": 36.5131131389938,
-  "lng": 127.260704077872,
-  "geo": "addr"
+  "note": "닭도리탕"
  },
  {
   "id": "s2-7c376e4575",
@@ -1301,12 +969,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "연탄구이",
-  "lat": 36.5146222236314,
-  "lng": 127.257837229112,
-  "kakaoUrl": "http://place.map.kakao.com/439460722",
-  "kakaoAddr": "세종특별자치시 보듬3로 8-27",
-  "geo": "ok"
+  "note": "연탄구이"
  },
  {
   "id": "s2-7e53faaa41",
@@ -1318,10 +981,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "꼬막",
-  "lat": 36.4902461277372,
-  "lng": 127.258890199895,
-  "geo": "addr"
+  "note": "꼬막"
  },
  {
   "id": "s2-802ba3ca60",
@@ -1333,12 +993,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "",
-  "lat": 36.59506334648168,
-  "lng": 127.30188335306183,
-  "kakaoUrl": "http://place.map.kakao.com/22379403",
-  "kakaoAddr": "세종특별자치시 조치원읍 산책2길 45",
-  "geo": "ok"
+  "note": ""
  },
  {
   "id": "s2-816f01cc2a",
@@ -1350,10 +1005,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "밀면",
-  "lat": 36.482813152508,
-  "lng": 127.261844115214,
-  "geo": "addr"
+  "note": "밀면"
  },
  {
   "id": "s2-826e3bf72b",
@@ -1365,8 +1017,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "국밥",
-  "geo": "miss"
+  "note": "국밥"
  },
  {
   "id": "s2-848f8651e3",
@@ -1378,12 +1029,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "냉면·막국수",
-  "lat": 36.5094444272976,
-  "lng": 127.22283139487,
-  "kakaoUrl": "http://place.map.kakao.com/1012642824",
-  "kakaoAddr": "세종특별자치시 장군면 대교길 149",
-  "geo": "ok"
+  "note": "냉면·막국수"
  },
  {
   "id": "s2-86cbcf670e",
@@ -1395,10 +1041,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "쌀국수·분짜",
-  "lat": 36.4779099639115,
-  "lng": 127.290238012216,
-  "geo": "addr"
+  "note": "쌀국수·분짜"
  },
  {
   "id": "s2-86f16a0704",
@@ -1410,8 +1053,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "양고기",
-  "geo": "miss"
+  "note": "양고기"
  },
  {
   "id": "s2-8c54dd3ece",
@@ -1423,12 +1065,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "육개장",
-  "lat": 36.490563770504,
-  "lng": 127.302845602867,
-  "kakaoUrl": "http://place.map.kakao.com/733811100",
-  "kakaoAddr": "세종특별자치시 한누리대로 1948",
-  "geo": "ok"
+  "note": "육개장"
  },
  {
   "id": "s2-8db200c779",
@@ -1440,12 +1077,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "돈카츠·마제소바",
-  "lat": 36.47723214190012,
-  "lng": 127.28638401149406,
-  "kakaoUrl": "http://place.map.kakao.com/2003681999",
-  "kakaoAddr": "세종특별자치시 한누리대로 2165",
-  "geo": "ok"
+  "note": "돈카츠·마제소바"
  },
  {
   "id": "s2-8df7baf205",
@@ -1457,12 +1089,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "국밥",
-  "lat": 36.51087004638597,
-  "lng": 127.24357922984045,
-  "kakaoUrl": "http://place.map.kakao.com/965515528",
-  "kakaoAddr": "세종특별자치시 아름서1길 23",
-  "geo": "ok"
+  "note": "국밥"
  },
  {
   "id": "s2-8e6f66c5e4",
@@ -1474,12 +1101,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "삼겹살·청국장 (2017년 기사)",
-  "lat": 36.5998343075105,
-  "lng": 127.301754415024,
-  "kakaoUrl": "http://place.map.kakao.com/565298793",
-  "kakaoAddr": "세종특별자치시 조치원읍 새내8길 55",
-  "geo": "ok"
+  "note": "삼겹살·청국장 (2017년 기사)"
  },
  {
   "id": "s2-8f2e8c47fe",
@@ -1491,12 +1113,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "돈카츠",
-  "lat": 36.508353731129375,
-  "lng": 127.26282303829005,
-  "kakaoUrl": "http://place.map.kakao.com/801955844",
-  "kakaoAddr": "세종특별자치시 절재로 194",
-  "geo": "ok"
+  "note": "돈카츠"
  },
  {
   "id": "s2-91bf998279",
@@ -1508,10 +1125,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "덮밥",
-  "lat": 36.4897960421941,
-  "lng": 127.256156542828,
-  "geo": "addr"
+  "note": "덮밥"
  },
  {
   "id": "s2-9329d6c2de",
@@ -1523,12 +1137,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "한식뷔페",
-  "lat": 36.5289263497441,
-  "lng": 127.366279062962,
-  "kakaoUrl": "http://place.map.kakao.com/21848503",
-  "kakaoAddr": "세종특별자치시 부강면 부강로 33",
-  "geo": "ok"
+  "note": "한식뷔페"
  },
  {
   "id": "s2-934f8c5530",
@@ -1540,12 +1149,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "떡볶이",
-  "lat": 36.6158413213083,
-  "lng": 127.288248370531,
-  "kakaoUrl": "http://place.map.kakao.com/21491705",
-  "kakaoAddr": "세종특별자치시 조치원읍 신안새동네길 56-1",
-  "geo": "ok"
+  "note": "떡볶이"
  },
  {
   "id": "s2-93a744b687",
@@ -1557,12 +1161,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "보리밥",
-  "lat": 36.487782849603,
-  "lng": 127.250772115467,
-  "kakaoUrl": "http://place.map.kakao.com/242545469",
-  "kakaoAddr": "세종특별자치시 새롬중앙로 90",
-  "geo": "ok"
+  "note": "보리밥"
  },
  {
   "id": "s2-93ee950ec7",
@@ -1574,12 +1173,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "삼계탕",
-  "lat": 36.4848043562294,
-  "lng": 127.252560329227,
-  "kakaoUrl": "http://place.map.kakao.com/1534479018",
-  "kakaoAddr": "세종특별자치시 새롬중앙로 34",
-  "geo": "ok"
+  "note": "삼계탕"
  },
  {
   "id": "s2-9785510309",
@@ -1591,8 +1185,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "해장국",
-  "geo": "miss"
+  "note": "해장국"
  },
  {
   "id": "s2-97943d0bab",
@@ -1604,10 +1197,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "감자탕",
-  "lat": 36.4930119021507,
-  "lng": 127.255782531634,
-  "geo": "addr"
+  "note": "감자탕"
  },
  {
   "id": "s2-97e01a3ec9",
@@ -1619,12 +1209,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "해장국",
-  "lat": 36.5953759427588,
-  "lng": 127.296176125424,
-  "kakaoUrl": "http://place.map.kakao.com/1371008722",
-  "kakaoAddr": "세종특별자치시 조치원읍 충현로 77",
-  "geo": "ok"
+  "note": "해장국"
  },
  {
   "id": "s2-9a683b133b",
@@ -1636,12 +1221,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "감자탕",
-  "lat": 36.48385919276932,
-  "lng": 127.29382386418014,
-  "kakaoUrl": "http://place.map.kakao.com/1761183835",
-  "kakaoAddr": "세종특별자치시 시청대로 219",
-  "geo": "ok"
+  "note": "감자탕"
  },
  {
   "id": "s2-9d579921c6",
@@ -1653,12 +1233,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "닭갈비",
-  "lat": 36.6047101996995,
-  "lng": 127.291320818782,
-  "kakaoUrl": "http://place.map.kakao.com/1013637569",
-  "kakaoAddr": "세종특별자치시 조치원읍 행복5길 14",
-  "geo": "ok"
+  "note": "닭갈비"
  },
  {
   "id": "s2-a003d3c289",
@@ -1670,12 +1245,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "한식뷔페",
-  "lat": 36.4985211411035,
-  "lng": 127.330942329513,
-  "kakaoUrl": "http://place.map.kakao.com/1689780442",
-  "kakaoAddr": "세종특별자치시 집현중앙7로 6",
-  "geo": "ok"
+  "note": "한식뷔페"
  },
  {
   "id": "s2-a0c1d11bcb",
@@ -1687,12 +1257,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "파스타",
-  "lat": 36.520145199244695,
-  "lng": 127.23571486550284,
-  "kakaoUrl": "http://place.map.kakao.com/862296762",
-  "kakaoAddr": "세종특별자치시 마음안1로 137",
-  "geo": "ok"
+  "note": "파스타"
  },
  {
   "id": "s2-a1e21fb142",
@@ -1704,8 +1269,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "부대찌개",
-  "geo": "miss"
+  "note": "부대찌개"
  },
  {
   "id": "s2-a4dad398ef",
@@ -1717,12 +1281,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "이탈리안",
-  "lat": 36.4990823617844,
-  "lng": 127.256327986549,
-  "kakaoUrl": "http://place.map.kakao.com/1201427348",
-  "kakaoAddr": "세종특별자치시 가름로 143",
-  "geo": "ok"
+  "note": "이탈리안"
  },
  {
   "id": "s2-aa82effa71",
@@ -1734,12 +1293,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "밥상",
-  "lat": 36.501131550006,
-  "lng": 127.258850644949,
-  "kakaoUrl": "http://place.map.kakao.com/1649871070",
-  "kakaoAddr": "세종특별자치시 한누리대로 411",
-  "geo": "ok"
+  "note": "밥상"
  },
  {
   "id": "s2-ac4d878896",
@@ -1751,12 +1305,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "순대국밥",
-  "lat": 36.4676169472182,
-  "lng": 127.280620565931,
-  "kakaoUrl": "http://place.map.kakao.com/27087828",
-  "kakaoAddr": "세종특별자치시 금남면 용포로 97-11",
-  "geo": "ok"
+  "note": "순대국밥"
  },
  {
   "id": "s2-ae67633790",
@@ -1768,12 +1317,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "곰탕",
-  "lat": 36.4855712568551,
-  "lng": 127.258028849353,
-  "kakaoUrl": "http://place.map.kakao.com/2136792067",
-  "kakaoAddr": "세종특별자치시 한누리대로 237",
-  "geo": "ok"
+  "note": "곰탕"
  },
  {
   "id": "s2-b3c0453695",
@@ -1785,12 +1329,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "멸치국수",
-  "lat": 36.485862473083074,
-  "lng": 127.25034743490036,
-  "kakaoUrl": "http://place.map.kakao.com/376208148",
-  "kakaoAddr": "세종특별자치시 새롬중앙로 55",
-  "geo": "ok"
+  "note": "멸치국수"
  },
  {
   "id": "s2-b54ca8f22e",
@@ -1802,12 +1341,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "볶음밥",
-  "lat": 36.6001228705193,
-  "lng": 127.289318679552,
-  "kakaoUrl": "http://place.map.kakao.com/238799759",
-  "kakaoAddr": "세종특별자치시 조치원읍 문화4길 1",
-  "geo": "ok"
+  "note": "볶음밥"
  },
  {
   "id": "s2-b6d26e26ca",
@@ -1819,12 +1353,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "갈비탕",
-  "lat": 36.5082937884203,
-  "lng": 127.257249159906,
-  "kakaoUrl": "http://place.map.kakao.com/1776109842",
-  "kakaoAddr": "세종특별자치시 다솜1로 113",
-  "geo": "ok"
+  "note": "갈비탕"
  },
  {
   "id": "s2-b6d6071f19",
@@ -1836,12 +1365,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "된장 요리",
-  "lat": 36.5080727214266,
-  "lng": 127.261113041058,
-  "kakaoUrl": "http://place.map.kakao.com/424519093",
-  "kakaoAddr": "세종특별자치시 한누리대로 499",
-  "geo": "ok"
+  "note": "된장 요리"
  },
  {
   "id": "s2-b6d797a1b7",
@@ -1853,8 +1377,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "쌀국수",
-  "geo": "miss"
+  "note": "쌀국수"
  },
  {
   "id": "s2-b7e22e04e8",
@@ -1866,12 +1389,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "김밥",
-  "lat": 36.481418842505,
-  "lng": 127.260048272835,
-  "kakaoUrl": "http://place.map.kakao.com/20138198",
-  "kakaoAddr": "세종특별자치시 노을3로 19",
-  "geo": "ok"
+  "note": "김밥"
  },
  {
   "id": "s2-b94a94bc30",
@@ -1883,8 +1401,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "해장국",
-  "geo": "miss"
+  "note": "해장국"
  },
  {
   "id": "s2-b9d3089e81",
@@ -1896,12 +1413,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "메기매운탕",
-  "lat": 36.5998685372543,
-  "lng": 127.227015114055,
-  "kakaoUrl": "http://place.map.kakao.com/19832335",
-  "kakaoAddr": "세종특별자치시 연서면 도신고복로 585",
-  "geo": "ok"
+  "note": "메기매운탕"
  },
  {
   "id": "s2-ba9abed91a",
@@ -1913,12 +1425,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "곰탕·육개장",
-  "lat": 36.482879482637514,
-  "lng": 127.25928315998979,
-  "kakaoUrl": "http://place.map.kakao.com/1692984207",
-  "kakaoAddr": "세종특별자치시 노을3로 14",
-  "geo": "ok"
+  "note": "곰탕·육개장"
  },
  {
   "id": "s2-bd89492ee0",
@@ -1930,12 +1437,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "",
-  "lat": 36.49561785753072,
-  "lng": 127.26560265361618,
-  "kakaoUrl": "http://place.map.kakao.com/1508097729",
-  "kakaoAddr": "세종특별자치시 가름로 232",
-  "geo": "ok"
+  "note": ""
  },
  {
   "id": "s2-bdf46d3ed3",
@@ -1947,10 +1449,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "탄탄면",
-  "lat": 36.5077999111818,
-  "lng": 127.262236341296,
-  "geo": "addr"
+  "note": "탄탄면"
  },
  {
   "id": "s2-be4524e86b",
@@ -1962,12 +1461,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "",
-  "lat": 36.52177831494805,
-  "lng": 127.24891117350022,
-  "kakaoUrl": "http://place.map.kakao.com/27201802",
-  "kakaoAddr": "세종특별자치시 바른7길 45",
-  "geo": "ok"
+  "note": ""
  },
  {
   "id": "s2-c3a9fa0328",
@@ -1979,12 +1473,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "떡볶이",
-  "lat": 36.50439259592981,
-  "lng": 127.24922721509968,
-  "kakaoUrl": "http://place.map.kakao.com/239344897",
-  "kakaoAddr": "세종특별자치시 도움3로 105-8",
-  "geo": "ok"
+  "note": "떡볶이"
  },
  {
   "id": "s2-c552e5f613",
@@ -1996,12 +1485,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "태국 요리",
-  "lat": 36.49244666037291,
-  "lng": 127.30305270952985,
-  "kakaoUrl": "http://place.map.kakao.com/348247626",
-  "kakaoAddr": "세종특별자치시 국책연구원3로 12",
-  "geo": "ok"
+  "note": "태국 요리"
  },
  {
   "id": "s2-c5957e80dd",
@@ -2013,8 +1497,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "백숙",
-  "geo": "miss"
+  "note": "백숙"
  },
  {
   "id": "s2-c5a754f6f7",
@@ -2026,10 +1509,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "안주·회식",
-  "lat": 36.5134266970215,
-  "lng": 127.258778830199,
-  "geo": "addr"
+  "note": "안주·회식"
  },
  {
   "id": "s2-c6de374654",
@@ -2041,10 +1521,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "정식",
-  "lat": 36.5181562608389,
-  "lng": 127.232594857684,
-  "geo": "addr"
+  "note": "정식"
  },
  {
   "id": "s2-c726d42c31",
@@ -2056,12 +1533,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "아구찜",
-  "lat": 36.515389999995676,
-  "lng": 127.25867261042072,
-  "kakaoUrl": "http://place.map.kakao.com/1754941033",
-  "kakaoAddr": "세종특별자치시 한누리대로 583",
-  "geo": "ok"
+  "note": "아구찜"
  },
  {
   "id": "s2-c74b3095fd",
@@ -2073,12 +1545,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "",
-  "lat": 36.49571713074788,
-  "lng": 127.26350469206163,
-  "kakaoUrl": "http://place.map.kakao.com/151047678",
-  "kakaoAddr": "세종특별자치시 갈매로 364",
-  "geo": "ok"
+  "note": ""
  },
  {
   "id": "s2-c7f6ba762b",
@@ -2090,12 +1557,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "초밥",
-  "lat": 36.4799950397387,
-  "lng": 127.286781392522,
-  "kakaoUrl": "http://place.map.kakao.com/486707270",
-  "kakaoAddr": "세종특별자치시 시청대로 137",
-  "geo": "ok"
+  "note": "초밥"
  },
  {
   "id": "s2-c80d5237b1",
@@ -2107,12 +1569,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "태국 요리",
-  "lat": 36.478114640288894,
-  "lng": 127.29000600622716,
-  "kakaoUrl": "http://place.map.kakao.com/952806248",
-  "kakaoAddr": "세종특별자치시 호려울로 45",
-  "geo": "ok"
+  "note": "태국 요리"
  },
  {
   "id": "s2-c835a76223",
@@ -2124,10 +1581,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "떡볶이",
-  "lat": 36.4783499120552,
-  "lng": 127.289160385804,
-  "geo": "addr"
+  "note": "떡볶이"
  },
  {
   "id": "s2-c968984487",
@@ -2139,10 +1593,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "두부 요리",
-  "lat": 36.5192982072916,
-  "lng": 127.248889720431,
-  "geo": "addr"
+  "note": "두부 요리"
  },
  {
   "id": "s2-c982d1b235",
@@ -2154,12 +1605,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "마라탕",
-  "lat": 36.478349186831224,
-  "lng": 127.28916216849952,
-  "kakaoUrl": "http://place.map.kakao.com/503289052",
-  "kakaoAddr": "세종특별자치시 한누리대로 2135",
-  "geo": "ok"
+  "note": "마라탕"
  },
  {
   "id": "s2-caab8bcbae",
@@ -2171,12 +1617,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "국수",
-  "lat": 36.4921744488838,
-  "lng": 127.303786020062,
-  "kakaoUrl": "http://place.map.kakao.com/1071867858",
-  "kakaoAddr": "세종특별자치시 국책연구원3로 6",
-  "geo": "ok"
+  "note": "국수"
  },
  {
   "id": "s2-cb87f8e642",
@@ -2188,12 +1629,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "카레",
-  "lat": 36.49172089780334,
-  "lng": 127.26127577565589,
-  "kakaoUrl": "http://place.map.kakao.com/489339616",
-  "kakaoAddr": "세종특별자치시 나성북1로 51",
-  "geo": "ok"
+  "note": "카레"
  },
  {
   "id": "s2-cda1a7aa62",
@@ -2205,12 +1641,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "족발",
-  "lat": 36.49055631861262,
-  "lng": 127.25767708852148,
-  "kakaoUrl": "http://place.map.kakao.com/337760853",
-  "kakaoAddr": "세종특별자치시 나성로 133-15",
-  "geo": "ok"
+  "note": "족발"
  },
  {
   "id": "s2-cf2f8d9ea5",
@@ -2222,12 +1653,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "",
-  "lat": 36.5082508733246,
-  "lng": 127.262471056923,
-  "kakaoUrl": "http://place.map.kakao.com/515598281",
-  "kakaoAddr": "세종특별자치시 절재로 194",
-  "geo": "ok"
+  "note": ""
  },
  {
   "id": "s2-d2dd17737e",
@@ -2239,12 +1665,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "국밥",
-  "lat": 36.4974697478329,
-  "lng": 127.30865856822999,
-  "kakaoUrl": "http://place.map.kakao.com/1396576168",
-  "kakaoAddr": "세종특별자치시 한누리대로 1864",
-  "geo": "ok"
+  "note": "국밥"
  },
  {
   "id": "s2-d4b20a6c9c",
@@ -2256,12 +1677,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "초밥",
-  "lat": 36.51217025786042,
-  "lng": 127.24232740572273,
-  "kakaoUrl": "http://place.map.kakao.com/141424916",
-  "kakaoAddr": "세종특별자치시 보듬3로 158",
-  "geo": "ok"
+  "note": "초밥"
  },
  {
   "id": "s2-d5a422f812",
@@ -2273,12 +1689,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "쌈밥",
-  "lat": 36.48225207308663,
-  "lng": 127.26144149887661,
-  "kakaoUrl": "http://place.map.kakao.com/313245878",
-  "kakaoAddr": "세종특별자치시 한누리대로 194",
-  "geo": "ok"
+  "note": "쌈밥"
  },
  {
   "id": "s2-d6bb2d5a18",
@@ -2290,12 +1701,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "보리밥",
-  "lat": 36.4991022133242,
-  "lng": 127.237142268579,
-  "kakaoUrl": "http://place.map.kakao.com/1829779533",
-  "kakaoAddr": "세종특별자치시 다정5길 23",
-  "geo": "ok"
+  "note": "보리밥"
  },
  {
   "id": "s2-d74ff8e523",
@@ -2307,12 +1713,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "초밥",
-  "lat": 36.4957018252255,
-  "lng": 127.262680945766,
-  "kakaoUrl": "http://place.map.kakao.com/112803654",
-  "kakaoAddr": "세종특별자치시 갈매로 353",
-  "geo": "ok"
+  "note": "초밥"
  },
  {
   "id": "s2-d90a6fc159",
@@ -2324,8 +1725,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "중식 코스",
-  "geo": "miss"
+  "note": "중식 코스"
  },
  {
   "id": "s2-d9118a9a7a",
@@ -2337,12 +1737,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "라멘",
-  "lat": 36.50415461099194,
-  "lng": 127.27155903647748,
-  "kakaoUrl": "http://place.map.kakao.com/24824107",
-  "kakaoAddr": "세종특별자치시 도움8로 91",
-  "geo": "ok"
+  "note": "라멘"
  },
  {
   "id": "s2-da8acb6336",
@@ -2354,8 +1749,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "아구찜",
-  "geo": "miss"
+  "note": "아구찜"
  },
  {
   "id": "s2-dbbb58331f",
@@ -2367,12 +1761,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "",
-  "lat": 36.6005554380628,
-  "lng": 127.299524209428,
-  "kakaoUrl": "http://place.map.kakao.com/2013731679",
-  "kakaoAddr": "세종특별자치시 조치원읍 새내10길 23",
-  "geo": "ok"
+  "note": ""
  },
  {
   "id": "s2-dc32e2d299",
@@ -2384,12 +1773,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "",
-  "lat": 36.494692102258846,
-  "lng": 127.2604096151144,
-  "kakaoUrl": "http://place.map.kakao.com/1470083803",
-  "kakaoAddr": "세종특별자치시 다솜로 50",
-  "geo": "ok"
+  "note": ""
  },
  {
   "id": "s2-df3a5ee88b",
@@ -2401,12 +1785,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "",
-  "lat": 36.5195134540326,
-  "lng": 127.257942773313,
-  "kakaoUrl": "http://place.map.kakao.com/124964193",
-  "kakaoAddr": "세종특별자치시 보듬7로 20",
-  "geo": "ok"
+  "note": ""
  },
  {
   "id": "s2-df90ac535e",
@@ -2418,12 +1797,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "감자탕·족발",
-  "lat": 36.48713777520644,
-  "lng": 127.25112715456405,
-  "kakaoUrl": "http://place.map.kakao.com/870910276",
-  "kakaoAddr": "세종특별자치시 새롬중앙로 62-15",
-  "geo": "ok"
+  "note": "감자탕·족발"
  },
  {
   "id": "s2-dfab32c91e",
@@ -2435,8 +1809,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "",
-  "geo": "miss"
+  "note": ""
  },
  {
   "id": "s2-e011ce41e9",
@@ -2448,8 +1821,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "마라탕",
-  "geo": "miss"
+  "note": "마라탕"
  },
  {
   "id": "s2-e3e21c6dfd",
@@ -2461,10 +1833,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "삼겹살·갈비",
-  "lat": 36.453788211669,
-  "lng": 127.264220288354,
-  "geo": "addr"
+  "note": "삼겹살·갈비"
  },
  {
   "id": "s2-e3e3af6eff",
@@ -2476,10 +1845,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "뼈해장국",
-  "lat": 36.600373908728,
-  "lng": 127.294769254913,
-  "geo": "addr"
+  "note": "뼈해장국"
  },
  {
   "id": "s2-e4c6e9ff1e",
@@ -2491,12 +1857,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "감자탕",
-  "lat": 36.47443158663332,
-  "lng": 127.27673086404958,
-  "kakaoUrl": "http://place.map.kakao.com/307658227",
-  "kakaoAddr": "세종특별자치시 대평로 86",
-  "geo": "ok"
+  "note": "감자탕"
  },
  {
   "id": "s2-e5662c291f",
@@ -2508,12 +1869,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "",
-  "lat": 36.47360305012971,
-  "lng": 127.28868036442357,
-  "kakaoUrl": "http://place.map.kakao.com/8463843",
-  "kakaoAddr": "세종특별자치시 금남면 금남구즉로 90",
-  "geo": "ok"
+  "note": ""
  },
  {
   "id": "s2-e83362ebc8",
@@ -2525,12 +1881,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "",
-  "lat": 36.49061330734419,
-  "lng": 127.25799423385453,
-  "kakaoUrl": "http://place.map.kakao.com/849359988",
-  "kakaoAddr": "세종특별자치시 나성로 133-9",
-  "geo": "ok"
+  "note": ""
  },
  {
   "id": "s2-e8c5b69d56",
@@ -2542,12 +1893,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "석갈비·숯불갈비",
-  "lat": 36.59993660783987,
-  "lng": 127.26192408775027,
-  "kakaoUrl": "http://place.map.kakao.com/11058055",
-  "kakaoAddr": "세종특별자치시 연서면 도신고복로 1131-7",
-  "geo": "ok"
+  "note": "석갈비·숯불갈비"
  },
  {
   "id": "s2-ea5771e1a8",
@@ -2559,12 +1905,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "국밥",
-  "lat": 36.4828135132135,
-  "lng": 127.261844004835,
-  "kakaoUrl": "http://place.map.kakao.com/3281060",
-  "kakaoAddr": "세종특별자치시 정부2청사로 10",
-  "geo": "ok"
+  "note": "국밥"
  },
  {
   "id": "s2-eaa384c2bf",
@@ -2576,12 +1917,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "피자",
-  "lat": 36.48596029207978,
-  "lng": 127.30049752550455,
-  "kakaoUrl": "http://place.map.kakao.com/1685233514",
-  "kakaoAddr": "세종특별자치시 소담3로 8",
-  "geo": "ok"
+  "note": "피자"
  },
  {
   "id": "s2-eaef6253c0",
@@ -2593,12 +1929,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "두부 정식 (2017년 기사)",
-  "lat": 36.4790972843066,
-  "lng": 127.34412860434,
-  "kakaoUrl": "http://place.map.kakao.com/26923159",
-  "kakaoAddr": "세종특별자치시 금남면 대박길 9",
-  "geo": "ok"
+  "note": "두부 정식 (2017년 기사)"
  },
  {
   "id": "s2-eb142b7ff3",
@@ -2610,12 +1941,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "육개장",
-  "lat": 36.508297460315845,
-  "lng": 127.26259512327785,
-  "kakaoUrl": "http://place.map.kakao.com/26926329",
-  "kakaoAddr": "세종특별자치시 절재로 194",
-  "geo": "ok"
+  "note": "육개장"
  },
  {
   "id": "s2-eeacad96bc",
@@ -2627,8 +1953,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "피자",
-  "geo": "miss"
+  "note": "피자"
  },
  {
   "id": "s2-f0678feeca",
@@ -2640,12 +1965,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "치킨",
-  "lat": 36.5190412407715,
-  "lng": 127.235281682626,
-  "kakaoUrl": "http://place.map.kakao.com/1519671689",
-  "kakaoAddr": "세종특별자치시 마음로 272-22",
-  "geo": "ok"
+  "note": "치킨"
  },
  {
   "id": "s2-f1064e4e89",
@@ -2657,12 +1977,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "북경오리·탕수육",
-  "lat": 36.4823369922518,
-  "lng": 127.262167135716,
-  "kakaoUrl": "http://place.map.kakao.com/451331774",
-  "kakaoAddr": "세종특별자치시 나성남로 7-16",
-  "geo": "ok"
+  "note": "북경오리·탕수육"
  },
  {
   "id": "s2-f2738de37f",
@@ -2674,12 +1989,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "아구찜",
-  "lat": 36.5855019013108,
-  "lng": 127.295546171868,
-  "kakaoUrl": "http://place.map.kakao.com/1100470960",
-  "kakaoAddr": "세종특별자치시 조치원읍 허만석로 39",
-  "geo": "ok"
+  "note": "아구찜"
  },
  {
   "id": "s2-f4845b5d13",
@@ -2691,12 +2001,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "갈치 요리",
-  "lat": 36.50836171150724,
-  "lng": 127.26206286573175,
-  "kakaoUrl": "http://place.map.kakao.com/1957974401",
-  "kakaoAddr": "세종특별자치시 절재로 194",
-  "geo": "ok"
+  "note": "갈치 요리"
  },
  {
   "id": "s2-f614fe7a76",
@@ -2708,12 +2013,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "쌀국수·태국 요리",
-  "lat": 36.50419247951346,
-  "lng": 127.27155023882207,
-  "kakaoUrl": "http://place.map.kakao.com/24586375",
-  "kakaoAddr": "세종특별자치시 도움8로 91",
-  "geo": "ok"
+  "note": "쌀국수·태국 요리"
  },
  {
   "id": "s2-f770078faf",
@@ -2725,8 +2025,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "마라탕",
-  "geo": "miss"
+  "note": "마라탕"
  },
  {
   "id": "s2-f7c7c4a2c6",
@@ -2738,12 +2037,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "포케·샐러드",
-  "lat": 36.50013112218021,
-  "lng": 127.25599435669604,
-  "kakaoUrl": "http://place.map.kakao.com/1910189570",
-  "kakaoAddr": "세종특별자치시 다솜1로 21",
-  "geo": "ok"
+  "note": "포케·샐러드"
  },
  {
   "id": "s2-fb8d882a98",
@@ -2755,12 +2049,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "냉면·국수",
-  "lat": 36.511993127708784,
-  "lng": 127.24956527630889,
-  "kakaoUrl": "http://place.map.kakao.com/27542529",
-  "kakaoAddr": "세종특별자치시 보듬3로 92",
-  "geo": "ok"
+  "note": "냉면·국수"
  },
  {
   "id": "s2-fd14fb38a9",
@@ -2772,10 +2061,7 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "",
-  "lat": 36.5122212865965,
-  "lng": 127.243378277938,
-  "geo": "addr"
+  "note": ""
  },
  {
   "id": "s2-fe0f2ad2d8",
@@ -2787,11 +2073,6 @@
   "solo": false,
   "group": false,
   "reserve": false,
-  "note": "고기 구이",
-  "lat": 36.483275738905306,
-  "lng": 127.29325588050654,
-  "kakaoUrl": "http://place.map.kakao.com/1696439774",
-  "kakaoAddr": "세종특별자치시 시청대로 209",
-  "geo": "ok"
+  "note": "고기 구이"
  }
 ]

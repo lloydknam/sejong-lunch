@@ -1,7 +1,9 @@
-# 세종청사 점심
+# 점심 지도 (세종청사·여의도)
 
-세종청사 동료들이 다녀온 점심 식당을 함께 모으고 평가하는 지도 사이트예요.
-식권 뽑기, 동네·종류·가격 필터, 청사에서 가까운 순 정렬, 실제 지도(OpenStreetMap)를 지원해요.
+세종청사와 여의도에서 동료들이 다녀온 점심 식당을 함께 모으고 평가하는 지도 사이트예요.
+맨 위에서 지역을 바꿀 수 있고, 식권 뽑기, 동네·종류·가격 필터, 기준점에서 가까운 순 정렬, 실제 지도(OpenStreetMap)를 지원해요.
+
+지역별 바로가기: [세종청사](https://lloydknam.github.io/sejong-lunch/?r=sejong) · [여의도](https://lloydknam.github.io/sejong-lunch/?r=yeouido)
 
 사이트 주소: https://lloydknam.github.io/sejong-lunch/
 
@@ -10,7 +12,8 @@
 | 파일 | 하는 일 |
 |---|---|
 | `index.html` | 사이트 전체 화면 |
-| `data/places.json` | 처음 넣어둔 식당 목록 (웹 검색으로 모은 173곳) |
+| `data/places.json` | 세종 식당 목록 (웹 검색으로 모은 173곳) |
+| `data/yeouido.json` | 여의도 식당 목록 (웹 검색으로 모은 117곳) |
 | `config.js` | 구글 시트 저장소 주소, 카카오 JavaScript 키 |
 | `apps-script/Code.gs` | 구글 시트에 붙여넣는 저장소 코드 |
 | `scripts/geocode.py` | 카카오 API로 식당 위치를 찾는 스크립트 |
@@ -58,6 +61,8 @@
 ## 알아둘 점
 
 - 처음 목록은 블로그·리뷰·당근 동네업체 정보로 모은 거라 폐업한 곳이 섞여 있을 수 있어요.
+- 여의도 목록의 가격대는 출처에 나온 메뉴 가격 기준이고, '기타' 동네 20곳은 위치를 몰라서 카카오 위치 찾기 전에는 지도에 안 나와요.
+- 새 지역을 넣으려면 `index.html`의 `REGIONS`, `apps-script/Code.gs`의 `REGIONS`, `scripts/geocode.py`의 `REGIONS`에 같이 추가해요.
 - 직접 올린 식당과 평가만 직접 지울 수 있어요. 같은 폰·브라우저에서만 '내 것'으로 인식돼요.
 - 지도 © OpenStreetMap 기여자
 

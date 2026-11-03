@@ -1,4 +1,4 @@
-"""data/places.json의 식당 위치를 카카오 로컬 API로 찾아 채웁니다.
+"""지역별 식당 목록(data/places.json, data/yeouido.json)의 위치를 카카오 로컬 API로 찾아 채웁니다.
 
 GitHub Actions에서 KAKAO_REST_KEY 비밀값으로 실행돼요. 직접 돌릴 때는:
     KAKAO_REST_KEY=... python scripts/geocode.py
@@ -17,7 +17,13 @@ import urllib.parse
 import urllib.request
 
 KEY = os.environ.get("KAKAO_REST_KEY", "").strip()
-PATH = os.path.join(os.path.dirname(__file__), "..", "data", "places.json")
+DATA = os.path.join(os.path.dirname(__file__), "..", "data")
+REGIONS = [
+    {"file": "places.json", "query": "세종 ", "x": "127.26", "y": "36.50", "radius": "20000",
+     "addr_has": "세종", "addr_prefix": "세종특별자치시 ", "addr_skip": "세종", "strip": r"(세종특별자치시|세종시|세종)"},
+    {"file": "yeouido.json", "query": "여의도 ", "x": "126.925", "y": "37.525", "radius": "3000",
+     "addr_has": "여의도동", "addr_prefix": "서울 영등포구 ", "addr_skip": "서울", "strip": r"(여의도)"},
+]
 FORCE = "--force" in sys.argv
 
 
@@ -28,9 +34,9 @@ def call(endpoint, params):
         return json.load(res).get("documents", [])
 
 
-def norm(s):
+def norm(s, strip):
     s = re.sub(r"\s+", "", s)
-    s = re.sub(r"(세종특별자치시|세종시|세종)", "", s)
+    s = re.sub(strip, "", s)
     s = re.sub(r"[()&·+,.\-]", "", s)
     return s
 
@@ -44,38 +50,36 @@ def common_len(a, b):
     return best
 
 
-def match(name, docs):
-    n = norm(name)
+def match(name, docs, region):
+    n = norm(name, region["strip"])
     for d in docs:
-        if not str(d.get("address_name", "")).startswith("세종"):
+        if region["addr_has"] not in str(d.get("address_name", "")):
             continue
-        c = norm(d.get("place_name", ""))
+        c = norm(d.get("place_name", ""), region["strip"])
         need = min(3, len(n), len(c))
         if need and common_len(n, c) >= need:
             return d
     return None
 
 
-def main():
-    if not KEY:
-        print("KAKAO_REST_KEY가 없어서 건너뜁니다.")
-        return
-    places = json.load(open(PATH, encoding="utf-8"))
+def geocode_region(region):
+    path = os.path.join(DATA, region["file"])
+    places = json.load(open(path, encoding="utf-8"))
     changed = 0
     for p in places:
         if p.get("geo") and not FORCE:
             continue
         try:
-            docs = call("keyword", {"query": "세종 " + p["name"], "x": "127.26", "y": "36.50",
-                                    "radius": "20000", "category_group_code": "FD6", "size": "5"})
-            d = match(p["name"], docs)
+            docs = call("keyword", {"query": region["query"] + p["name"], "x": region["x"], "y": region["y"],
+                                    "radius": region["radius"], "category_group_code": "FD6", "size": "5"})
+            d = match(p["name"], docs, region)
             if d:
                 p.update(lat=float(d["y"]), lng=float(d["x"]), kakaoUrl=d.get("place_url", ""),
                          kakaoAddr=d.get("road_address_name") or d.get("address_name", ""), geo="ok")
             elif p.get("address"):
                 addr = p["address"]
-                if not addr.startswith("세종"):
-                    addr = "세종특별자치시 " + addr
+                if not addr.startswith(region["addr_skip"]):
+                    addr = region["addr_prefix"] + addr
                 a = call("address", {"query": addr})
                 if a:
                     p.update(lat=float(a[0]["y"]), lng=float(a[0]["x"]), geo="addr")
@@ -87,11 +91,19 @@ def main():
         except Exception as e:  # 네트워크 오류는 다음 실행에서 다시 시도
             print("오류:", p["name"], e)
         time.sleep(0.15)
-    json.dump(places, open(PATH, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    json.dump(places, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     counts = {}
     for p in places:
         counts[p.get("geo", "-")] = counts.get(p.get("geo", "-"), 0) + 1
-    print(f"처리 {changed}곳 · 결과 {counts}")
+    print(f"{region['file']}: 처리 {changed}곳 · 결과 {counts}")
+
+
+def main():
+    if not KEY:
+        print("KAKAO_REST_KEY가 없어서 건너뜁니다.")
+        return
+    for region in REGIONS:
+        geocode_region(region)
 
 
 if __name__ == "__main__":

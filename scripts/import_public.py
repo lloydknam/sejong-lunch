@@ -103,6 +103,16 @@ def rows_of(z, keyword):
 EXCLUDE = re.compile(r"커피|카페|제과|빵|아이스크림|빙수|음료|주스|주점|호프|맥주|구내식당|도시락|반찬|떡|디저트|요거트|편의점|단체급식")
 
 
+# 업종이 음식으로 잡혀도 점심 식당이 아닌 곳 (카페·술집·기관 구내식당 운영사 등)
+NAME_EXCLUDE = re.compile(r"커피|베이커리|케이크|포차|호프|술집|이자카야|맥주|업소명없음|보드게임|만화|오락실|후니드|아워홈|웰스토리|푸디스트|"
+                          r"씨앤코컴퍼니|구내|본관3식당|한화호텔앤드리조트|호텔아이파크|코퍼레이션|자활센터")
+CAFE_OK = re.compile(r"본죽|김밥|떡볶이|마마스")
+
+
+def not_lunch(name):
+    return bool(NAME_EXCLUDE.search(name)) or ("카페" in name and not CAFE_OK.search(name))
+
+
 def category(mid, sub):
     """우리 분류로 바꿉니다. 점심 식당이 아니면 None."""
     if EXCLUDE.search(f"{mid} {sub}".replace("떡볶이", "")):
@@ -210,7 +220,7 @@ def merge_region(region, rows):
             p["area"] = nearest_area(p["lat"], p["lng"], region["centers"])
 
     names = {norm(p["name"], strip) for p in curated}
-    added, seen, dup = [], set(), 0
+    added, seen, dup, dropped = [], set(), 0, 0
     for r in food:
         if r["상가업소번호"] in used:
             continue
@@ -220,7 +230,8 @@ def merge_region(region, rows):
             continue
         seen.add(sig)
         name = " ".join(x for x in (clean_name(r.get("상호명")), (r.get("지점명") or "").strip()) if x)
-        if not name:
+        if not name or not_lunch(name):
+            dropped += 1
             continue
         added.append({"id": "sg-" + r["상가업소번호"], "src": "public", "name": name[:40],
                       "area": region["area"](r, region["centers"]), "category": r["_cat"], "price": "",
@@ -230,7 +241,7 @@ def merge_region(region, rows):
     out = curated + added
     with open(path, "w", encoding="utf-8") as f:
         f.write("[\n" + ",\n".join(json.dumps(p, ensure_ascii=False, separators=(",", ":")) for p in out) + "\n]\n")
-    print(f"\n=== {region['file']}: 맛집 후보 {len(curated)} {dict(res)} · 새로 추가 {len(added)} · 중복 제외 {dup} · 합계 {len(out)}")
+    print(f"\n=== {region['file']}: 맛집 후보 {len(curated)} {dict(res)} · 새로 추가 {len(added)} · 중복 제외 {dup} · 이름으로 제외 {dropped} · 합계 {len(out)}")
     print("분류:", cats.most_common())
     print("제외:", skipped.most_common(25))
     print("업종 대응:", subs.most_common(70))

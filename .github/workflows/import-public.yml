@@ -2,9 +2,6 @@ name: 공공데이터 식당 가져오기
 
 on:
   workflow_dispatch:
-  push:
-    branches: [import-public-data]
-    paths: [scripts/import_public.py, .github/workflows/import-public.yml]
 
 permissions:
   contents: write

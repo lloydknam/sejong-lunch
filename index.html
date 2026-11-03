@@ -300,7 +300,7 @@ const anchor=()=>R.anchors[S.f.anchor]||R.anchors[0];
 function govDist(p){const q=pos(p);return q&&q.exact?distKm(anchor().ll,q.ll):null}
 /* for ordering only: an approximate spot still beats no order at all */
 function sortDist(p){const q=pos(p);return q?distKm(anchor().ll,q.ll):99}
-function fmtKm(k){return k<1?Math.round(k*10)*100+"m":k.toFixed(1)+"km"}
+function fmtKm(k){return k<.95?Math.round(k*10)*100+"m":k.toFixed(1)+"km"}
 
 /* data */
 const seedCache={};

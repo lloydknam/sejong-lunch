@@ -6,7 +6,6 @@
  *
  * 스크립트 속성(선택, [프로젝트 설정 → 스크립트 속성]):
  *   PASSCODE    : 팀 암호. 설정하면 암호를 아는 사람만 등록·평가할 수 있어요.
- *   KAKAO_KEY   : 카카오 REST API 키. 설정하면 새로 등록한 식당의 위치를 자동으로 찾아요.
  */
 
 const PLACE_H = ['id','name','area','category','price','address','solo','group','reserve','note','nick','owner','createdAt','lat','lng','kakaoUrl','deleted','region'];
@@ -14,12 +13,10 @@ const REVIEW_H = ['id','placeId','verdict','text','nick','owner','createdAt','de
 const DEFAULT_REGION = 'sejong';
 const REGIONS = {
   sejong: {
-    areas: ['어진동','나성동','도담동','보람동','아름동','종촌동','고운동','새롬동','다정동','한솔동','대평동','소담동','반곡동','집현동','조치원읍','금남면','장군면','기타'],
-    query: '세종 ', x: '127.26', y: '36.50', radius: 20000, addr: '세종'
+    areas: ['어진동','나성동','도담동','보람동','아름동','종촌동','고운동','새롬동','다정동','한솔동','대평동','소담동','반곡동','집현동','조치원읍','금남면','장군면','기타']
   },
   yeouido: {
-    areas: ['국회·서여의도','여의도역·IFC','증권가','여의나루','샛강·63','기타'],
-    query: '여의도 ', x: '126.925', y: '37.525', radius: 3000, addr: '여의도동'
+    areas: ['국회·서여의도','여의도역·IFC','증권가','여의나루','샛강·63','기타']
   }
 };
 const CATS = ['한식','일식','중식','양식','아시아','분식','고기','해산물','카페·빵','기타'];
@@ -106,12 +103,7 @@ function addPlace_(b, owner, props) {
   const category = CATS.indexOf(b.category) >= 0 ? b.category : '기타';
   const price = PRICES.indexOf(b.price) >= 0 ? b.price : '';
   const address = str_(b.address, 60);
-  let lat = '', lng = '', kakaoUrl = '';
-  const kakao = props.getProperty('KAKAO_KEY');
-  if (kakao) {
-    const hit = kakaoLookup_(kakao, name, region);
-    if (hit) { lat = hit.lat; lng = hit.lng; kakaoUrl = hit.url; }
-  }
+  const lat = '', lng = '', kakaoUrl = '';
   const id = 'u-' + Utilities.getUuid().slice(0, 12);
   sheet_('places', PLACE_H).appendRow([
     id, name, area, category, price, address, !!b.solo, !!b.group, !!b.reserve, str_(b.note, 60),
@@ -141,14 +133,4 @@ function softDelete_(name, headers, id, owner) {
     }
   }
   return json_({ ok: false, error: 'not_found' });
-}
-
-function kakaoLookup_(key, name, region) {
-  const url = 'https://dapi.kakao.com/v2/local/search/keyword.json?query=' + encodeURIComponent(region.query + name) +
-    '&x=' + region.x + '&y=' + region.y + '&radius=' + region.radius + '&category_group_code=FD6&size=5';
-  const res = UrlFetchApp.fetch(url, { headers: { Authorization: 'KakaoAK ' + key }, muteHttpExceptions: true });
-  if (res.getResponseCode() !== 200) return null;
-  const docs = JSON.parse(res.getContentText()).documents || [];
-  const doc = docs.find(d => String(d.address_name).indexOf(region.addr) >= 0);
-  return doc ? { lat: Number(doc.y), lng: Number(doc.x), url: doc.place_url } : null;
 }

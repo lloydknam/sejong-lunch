@@ -9,7 +9,7 @@
 <meta name="description" content="여의도와 세종청사에서 동료들이 다녀온 식당을 함께 모으고 평가하는 맛집지도">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@900&display=swap">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 <style>
 /* Layout: one phone-width column — lunch-countdown header, meal-ticket picker, real map, filter chips, then the shared list. */
@@ -72,16 +72,32 @@ header{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;
 .btn{appearance:none;border:0;border-radius:8px;padding:10px 16px;font-weight:600;cursor:pointer;background:var(--ink);color:var(--ink-fg)}
 .btn:disabled{opacity:.5;cursor:default}
 .btn.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
-.coupons{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+/* 종이 식권 한 장: 세 칸이 절취선으로 이어져 있고, 칸마다 다른 색 종이에 한 가지 잉크로 인쇄 */
+.coupons{display:grid;grid-template-columns:repeat(3,1fr);filter:drop-shadow(0 2px 2px rgba(42,30,92,.28))}
 .coupons.one{grid-template-columns:1fr}
-.coupon{appearance:none;position:relative;display:flex;flex-direction:column;align-items:center;gap:5px;padding:12px 6px 10px;border:2px solid var(--fg);border-radius:14px;color:var(--fg);cursor:pointer;font-family:var(--f-display);font-size:16px;line-height:1.1;box-shadow:3px 3px 0 var(--fg);
-  transition:transform .08s ease,box-shadow .08s ease}
-.coupon img{width:34px;height:34px}
-.coupon::before,.coupon::after{content:"";position:absolute;top:50%;width:12px;height:12px;margin-top:-6px;border-radius:50%;background:var(--bg);border:2px solid var(--fg)}
-.coupon::before{left:-8px;clip-path:inset(0 0 0 50%)}.coupon::after{right:-8px;clip-path:inset(0 50% 0 0)}
-.coupon[data-kind="pick"]{background:#FFB3A8}.coupon[data-kind="badge"]{background:#FFE45C}.coupon[data-kind="stock"]{background:#9FE4FF}
-.coupon:active:not(:disabled){transform:translate(2px,2px);box-shadow:1px 1px 0 var(--fg)}
-.coupon:disabled{opacity:.6;cursor:default}
+.coupon{appearance:none;position:relative;display:block;padding:6px;border:0;border-radius:0;background:var(--paper);color:var(--print);cursor:pointer;text-align:center;
+  transition:transform .12s ease;transform-origin:50% 0}
+.coupon:first-child{border-radius:6px 0 0 6px}
+.coupon:last-child{border-radius:0 6px 6px 0}
+.coupon:only-child{border-radius:6px}
+.coupon+.coupon{background-image:linear-gradient(var(--bg) 50%,transparent 50%);background-size:2px 8px;background-repeat:repeat-y;background-position:0 0}
+.coupon+.coupon::before,.coupon+.coupon::after{content:"";position:absolute;left:-6px;width:12px;height:12px;border-radius:50%;background:var(--bg);z-index:1}
+.coupon+.coupon::before{top:-6px}.coupon+.coupon::after{bottom:-6px}
+.coupon[data-kind="pick"]{--paper:#FFE3DC;--print:#A61E15}
+.coupon[data-kind="badge"]{--paper:#FFF1B8;--print:#6E4A00}
+.coupon[data-kind="stock"]{--paper:#D8F0FF;--print:#124A82}
+.cframe{position:relative;display:flex;flex-direction:column;align-items:center;gap:1px;height:100%;padding:6px 3px 7px;border:3px double var(--print);border-radius:2px}
+.cno{align-self:stretch;display:flex;justify-content:space-between;font-size:10px;font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.ckan{align-self:flex-start;margin-left:5px;font-family:"Noto Serif KR",serif;font-weight:900;font-size:25px;line-height:1.25;letter-spacing:.04em}
+.cname{font-family:var(--f-display);font-size:15px;line-height:1.2;white-space:nowrap}
+.cuse{margin-top:3px;font-size:10px;line-height:1.2}
+.cseal{position:absolute;right:5px;top:25px;width:29px;height:29px;transform:rotate(-14deg)}
+.coupon:disabled{cursor:default}
+.coupons.drawing .coupon:not(.torn){opacity:.55}
+.coupon.torn{transform:translateY(5px) rotate(-1.6deg)}
+.coupon:active:not(:disabled){transform:translateY(2px)}
+@media (max-width:350px){.ckan{font-size:20px;margin-left:2px}.cname{font-size:13px}.cseal{width:22px;height:22px;right:3px;top:23px}.cno{font-size:9px}}
+.coupons.one .ckan{align-self:center;margin-left:0}
 .ticket a{color:var(--ticket-fg);font-weight:600;font-size:13px}
 .shuffle .tname{opacity:.6}
 .ticket.won .tname{animation:pop .32s cubic-bezier(.3,1.6,.6,1)}
@@ -183,21 +199,17 @@ footer{font-size:12px;color:var(--muted);text-align:center}
 
   <nav class="regions" id="regions" aria-label="지역 선택"></nav>
 
-  <div id="modeBanner" class="banner" hidden></div>
-
-  <section class="themes" id="themes" aria-label="테마 메뉴" hidden></section>
+  <section class="coupons" id="coupons" aria-label="뽑기 식권"></section>
 
   <section class="ticket" id="ticket" data-kind="pick" aria-live="polite">
     <div class="stub"><span class="k">맛집 뽑기</span><span class="d" id="tdate"></span></div>
     <div class="tmain">
       <span class="tlabel" id="tlabel">오늘 뭐 먹지</span>
-      <div class="tname" id="tname">쿠폰을 고르세요</div>
-      <div class="tmeta" id="tmeta">쿠폰을 누르면 한 곳을 뽑아드려요.</div>
+      <div class="tname" id="tname">식권을 고르세요</div>
+      <div class="tmeta" id="tmeta">위 식권을 누르면 한 곳을 뽑아드려요.</div>
       <div class="trow"><span id="tlinks" class="links"></span></div>
     </div>
   </section>
-
-  <section class="coupons" id="coupons" aria-label="뽑기 쿠폰"></section>
 
   <div class="search" role="search">
     <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg>
@@ -211,12 +223,16 @@ footer{font-size:12px;color:var(--muted);text-align:center}
     <div class="legend"><span><i style="background:#00A08C"></i>맛집 후보</span><span class="th-only"><img src="assets/icons/badge.svg" alt="" width="13" height="13" style="vertical-align:-2px;margin-right:4px">금배지</span><span class="th-only"><img src="assets/icons/stock.svg" alt="" width="13" height="13" style="vertical-align:-2px;margin-right:4px">증권맨</span><span><i style="background:#8A87A3;width:7px;height:7px"></i>그 밖의 식당</span><span><i style="border:2px dashed var(--muted)"></i>동네 안 대략 위치</span></div>
   </section>
 
+  <section class="themes" id="themes" aria-label="테마 메뉴" hidden></section>
+
   <section class="filters" aria-label="조건">
     <div class="frow" id="fArea"><span class="fl">동네</span></div>
     <div class="frow" id="fCat"><span class="fl">종류</span></div>
     <div class="frow" id="fPrice"><span class="fl">가격</span></div>
     <div class="frow" id="fEtc"><span class="fl">기타</span></div>
   </section>
+
+  <div id="modeBanner" class="banner" hidden></div>
 
   <section style="display:flex;flex-direction:column;gap:10px">
     <div class="lhead">
@@ -387,8 +403,15 @@ function renderThemes(){const box=$("themes");box.hidden=!R.themes.length;box.re
       el("img",{src:t.icon,alt:""}),el("span",null,el("b",{text:t.label}),el("small",{text:n+"곳"}))))});
   if(S.f.theme)box.append(el("p",{class:"tdesc",text:THEMES[S.f.theme].desc}))}
 function renderCoupons(){const box=$("coupons");box.className="coupons"+(R.themes.length?"":" one");box.replaceChildren();
-  [["pick","맛집 뽑기","assets/icons/pick.svg"],...R.themes.map(k=>[k,THEMES[k].coupon,THEMES[k].icon])].forEach(([k,l,i])=>
-    box.append(el("button",{class:"coupon",type:"button","data-kind":k,onclick:()=>draw(k)},el("img",{src:i,alt:""}),l)))}
+  const d=new Date(),day=String(d.getMonth()+1).padStart(2,"0")+String(d.getDate()).padStart(2,"0");
+  [["pick","맛집 뽑기","assets/icons/pick.svg"],...R.themes.map(k=>[k,THEMES[k].coupon,THEMES[k].icon])].forEach(([k,l,i],n)=>
+    box.append(el("button",{class:"coupon",type:"button","data-kind":k,"aria-label":l,onclick:()=>draw(k)},
+      el("span",{class:"cframe"},
+        el("span",{class:"cno"},el("span",{text:"No."+day+"-"+(n+1)}),el("span",{text:"1매"})),
+        el("span",{class:"ckan",text:"식권"}),
+        el("img",{class:"cseal",src:i,alt:""}),
+        el("span",{class:"cname",text:l}),
+        el("span",{class:"cuse",text:"당일 한정"})))))}
 function renderFilters(){const used=new Set(S.places.map(p=>p.area));chips("fArea",R.areas.filter(a=>used.has(a)),"area");chips("fCat",CATS,"cat");chips("fPrice",PRICES,"price");
   const r=$("fEtc");r.querySelectorAll(".chip").forEach(n=>n.remove());
   r.append(el("button",{class:"chip",type:"button","aria-pressed":String(!!S.f.pick),onclick:()=>{S.f.pick=!S.f.pick;saveF();renderAll()},text:"맛집 후보만"}),
@@ -415,20 +438,20 @@ const mine=o=>o&&o.owner&&S.me&&o.owner===S.me;
 /* ticket */
 const WON={pick:"오늘의 맛집 당첨"};
 function showTicket(p){const T=$("ticket");T.classList.remove("shuffle");
-  if(!p){T.dataset.kind="pick";T.classList.remove("won");$("tlabel").textContent="오늘 뭐 먹지";$("tname").textContent="쿠폰을 고르세요";
-    $("tmeta").textContent="쿠폰을 누르면 한 곳을 뽑아드려요.";$("tlinks").replaceChildren();return}
+  if(!p){T.dataset.kind="pick";T.classList.remove("won");$("tlabel").textContent="오늘 뭐 먹지";$("tname").textContent="식권을 고르세요";
+    $("tmeta").textContent="위 식권을 누르면 한 곳을 뽑아드려요.";$("tlinks").replaceChildren();return}
   const k=S.pickKind||"pick";T.dataset.kind=k;$("tlabel").textContent=WON[k]||THEMES[k].won;$("tname").textContent=p.name;
   const s=stats(p.id);const bits=metaParts(p);if(p.note)bits.push(p.note);if(p.solo)bits.push("혼밥 가능");if(p.reserve)bits.push("예약 필수");
   if(s.rs.length)bits.push("또 갈래 "+s.again+" · 비추 "+s.no);
   $("tmeta").textContent=bits.join(" · ");$("tlinks").replaceChildren(...mapLinks(p))}
 function draw(kind){
   const pool=kind==="pick"?filtered().filter(p=>p.src!=="public"):filtered(true).filter(p=>p[kind]);
-  const T=$("ticket"),btns=[...document.querySelectorAll(".coupon")];T.dataset.kind=kind;T.classList.remove("won");S.picked=null;
+  const T=$("ticket"),box=$("coupons"),btns=[...box.querySelectorAll(".coupon")];const clear=()=>{box.classList.remove("drawing");btns.forEach(b=>{b.disabled=false;b.classList.remove("torn")})};T.dataset.kind=kind;T.classList.remove("won");S.picked=null;
   if(!pool.length){showTicket(null);T.dataset.kind=kind;$("tname").textContent="조건에 맞는 곳이 없어요";$("tmeta").textContent="동네나 종류 조건을 하나 풀어보세요.";return}
   const final=pool[Math.floor(Math.random()*pool.length)];
-  const r0=R;const done=()=>{btns.forEach(b=>b.disabled=false);if(r0!==R){showTicket(null);return}S.picked=final.id;S.pickKind=kind;showTicket(final);void T.offsetWidth;T.classList.add("won");focusOnMap(final)};
+  const r0=R;const done=()=>{clear();if(r0!==R){showTicket(null);return}S.picked=final.id;S.pickKind=kind;showTicket(final);void T.offsetWidth;T.classList.add("won");focusOnMap(final)};
   if(matchMedia("(prefers-reduced-motion: reduce)").matches||pool.length<2){done();return}
-  T.classList.add("shuffle");$("tlabel").textContent="뽑는 중";$("tlinks").replaceChildren();btns.forEach(b=>b.disabled=true);
+  T.classList.add("shuffle");$("tlabel").textContent="뽑는 중";$("tlinks").replaceChildren();box.classList.add("drawing");btns.forEach(b=>{b.disabled=true;if(b.dataset.kind===kind)b.classList.add("torn")});
   let i=0;const iv=setInterval(()=>{$("tname").textContent=pool[i++%pool.length].name;$("tmeta").textContent=""},70);
   setTimeout(()=>{clearInterval(iv);done()},650)}
 

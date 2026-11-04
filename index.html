@@ -66,7 +66,7 @@ header{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;
 .stub .d{font-size:11px;font-weight:600}
 .tmain{padding:16px 18px;display:flex;flex-direction:column;gap:8px;min-width:0}
 .tlabel{font-size:11px;letter-spacing:.12em;font-weight:600;opacity:.75}
-.tname{font-family:var(--f-display);font-size:32px;line-height:1.12;overflow-wrap:anywhere}
+.tname{font-family:var(--f-display);font-size:32px;line-height:1.12;overflow-wrap:anywhere;text-wrap:balance}
 .tmeta{font-size:13px}
 .trow{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:auto}
 .btn{appearance:none;border:0;border-radius:8px;padding:10px 16px;font-weight:600;cursor:pointer;background:var(--ink);color:var(--ink-fg)}
@@ -191,7 +191,7 @@ footer{font-size:12px;color:var(--muted);text-align:center}
     <div class="stub"><span class="k">맛집 뽑기</span><span class="d" id="tdate"></span></div>
     <div class="tmain">
       <span class="tlabel" id="tlabel">오늘 뭐 먹지</span>
-      <div class="tname" id="tname">쿠폰을 골라보세요</div>
+      <div class="tname" id="tname">쿠폰을 고르세요</div>
       <div class="tmeta" id="tmeta">쿠폰을 누르면 한 곳을 뽑아드려요.</div>
       <div class="trow"><span id="tlinks" class="links"></span></div>
     </div>
@@ -415,7 +415,7 @@ const mine=o=>o&&o.owner&&S.me&&o.owner===S.me;
 /* ticket */
 const WON={pick:"오늘의 맛집 당첨"};
 function showTicket(p){const T=$("ticket");T.classList.remove("shuffle");
-  if(!p){T.dataset.kind="pick";T.classList.remove("won");$("tlabel").textContent="오늘 뭐 먹지";$("tname").textContent="쿠폰을 골라보세요";
+  if(!p){T.dataset.kind="pick";T.classList.remove("won");$("tlabel").textContent="오늘 뭐 먹지";$("tname").textContent="쿠폰을 고르세요";
     $("tmeta").textContent="쿠폰을 누르면 한 곳을 뽑아드려요.";$("tlinks").replaceChildren();return}
   const k=S.pickKind||"pick";T.dataset.kind=k;$("tlabel").textContent=WON[k]||THEMES[k].won;$("tname").textContent=p.name;
   const s=stats(p.id);const bits=metaParts(p);if(p.note)bits.push(p.note);if(p.solo)bits.push("혼밥 가능");if(p.reserve)bits.push("예약 필수");

@@ -1,7 +1,7 @@
 # 맛집지도 (여의도·세종청사)
 
 여의도와 세종청사에서 동료들이 다녀온 점심 식당을 함께 모으고 평가하는 지도 사이트예요.
-맨 위에서 지역을 바꿀 수 있고, 식권 뽑기, 동네·종류·가격 필터, 기준점에서 가까운 순 정렬, 실제 지도(OpenStreetMap)를 지원해요.
+맨 위에서 지역을 바꿀 수 있고, 맛집·금배지·증권맨 뽑기 쿠폰, 금배지 단골집·증권맨 맛집 메뉴, 동네·종류·가격 필터, 기준점에서 가까운 순 정렬, 실제 지도(OpenStreetMap)를 지원해요.
 
 지역별 바로가기: [여의도](https://lloydknam.github.io/sejong-lunch/?r=yeouido) · [세종청사](https://lloydknam.github.io/sejong-lunch/?r=sejong)
 
@@ -48,6 +48,13 @@
 **Actions → 공공데이터 식당 가져오기 → Run workflow**를 누르면 새 자료로 다시 합쳐요. 직접 모은 맛집 후보와 평가는 그대로 남아요.
 
 카카오 로컬 API는 데이터를 저장하는 용도로 호출할 수 없어요. 그래서 검색 결과를 저장소에 넣지 않아요.
+
+## 테마 메뉴의 근거
+
+여의도 식당의 `badge`, `stock` 값에 표시 근거가 적혀 있고, 식당을 펼치면 그대로 보여요. 의원 이름이나 정당은 표시하지 않아요.
+
+- 금배지 단골집: [2022년 국회의원 정치자금 공동취재](https://www.khan.co.kr/article/202307050600011), [선관위 회계보고 집계](https://kookrator-kr.pages.dev/article/rank-members/), [2015년 더팩트 기사](https://news.tf.co.kr/read/ptoday/1488884.htm)
+- 증권맨 맛집: [증권가 직장인 추천 130](https://ujstory.com/entry/%EC%97%AC%EC%9D%98%EB%8F%84%EC%A0%90%EC%8B%AC-%EB%A7%9B%EC%A7%91-%EC%A6%9D%EA%B6%8C%EA%B0%80-%EC%A7%81%EC%9E%A5%EC%9D%B8-%EC%B6%94%EC%B2%9C-130), [에스콰이어 스시 오마카세](https://www.esquirekorea.co.kr/article/53278), [에스콰이어 순대국](https://www.esquirekorea.co.kr/article/79707)
 
 ## 알아둘 점
 

@@ -445,11 +445,17 @@ function showTicket(p){const T=$("ticket");T.classList.remove("shuffle");
   if(s.rs.length)bits.push("또 갈래 "+s.again+" · 비추 "+s.no);
   $("tmeta").textContent=bits.join(" · ");$("tlinks").replaceChildren(...mapLinks(p))}
 function draw(kind){
-  const pool=filtered(true).filter(p=>inTheme(p,kind));
-  const T=$("ticket"),box=$("coupons"),btns=[...box.querySelectorAll(".coupon")];const clear=()=>{box.classList.remove("drawing");btns.forEach(b=>{b.disabled=false;b.classList.remove("torn")})};T.dataset.kind=kind;T.classList.remove("won");S.picked=null;
+  const all=filtered(true).filter(p=>inTheme(p,kind));
+  /* 당첨된 곳이 지도에 보이도록 위치를 아는 식당에서 뽑아요 */
+  const located=all.filter(p=>pos(p));const pool=located.length?located:all;
+  const T=$("ticket"),box=$("coupons"),btns=[...box.querySelectorAll(".coupon")];
+  const clear=()=>{box.classList.remove("drawing");btns.forEach(b=>{b.disabled=false;b.classList.remove("torn")})};
+  T.classList.remove("won");S.picked=null;
   if(!pool.length){showTicket(null);T.dataset.kind=kind;$("tname").textContent="조건에 맞는 곳이 없어요";$("tmeta").textContent="동네나 종류 조건을 하나 풀어보세요.";return}
+  /* 뽑은 식권의 식당을 지도와 목록에 함께 보여줘요 */
+  S.f.theme=kind;S.limit=PAGE;S.open=null;saveF();if(map){map.closePopup();map.fitBounds(R.bounds)}renderAll();T.dataset.kind=kind;
   const final=pool[Math.floor(Math.random()*pool.length)];
-  const r0=R;const done=()=>{clear();if(r0!==R){showTicket(null);return}S.picked=final.id;S.pickKind=kind;showTicket(final);void T.offsetWidth;T.classList.add("won");focusOnMap(final)};
+  const r0=R;const done=()=>{clear();if(r0!==R){showTicket(null);return}S.picked=final.id;S.pickKind=kind;renderMap();showTicket(final);void T.offsetWidth;T.classList.add("won");const m=markers[final.id];if(m)m.openPopup()};
   if(matchMedia("(prefers-reduced-motion: reduce)").matches||pool.length<2){done();return}
   T.classList.add("shuffle");$("tlabel").textContent="뽑는 중";$("tlinks").replaceChildren();box.classList.add("drawing");btns.forEach(b=>{b.disabled=true;if(b.dataset.kind===kind)b.classList.add("torn")});
   let i=0;const iv=setInterval(()=>{$("tname").textContent=pool[i++%pool.length].name;$("tmeta").textContent=""},70);

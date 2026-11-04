@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>맛집지도</title>
-<link rel="icon" href="assets/icons/pick.svg" type="image/svg+xml">
+<link rel="icon" href="assets/icons/logo.svg" type="image/svg+xml">
 <meta name="theme-color" content="#E9F8FF">
 <meta name="description" content="여의도와 세종청사에서 동료들이 다녀온 식당을 함께 모으고 평가하는 맛집지도">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,7 +34,8 @@ button,input,select,textarea{font:inherit;color:inherit}
 a{color:var(--ink)}
 
 header{display:flex;align-items:center;justify-content:space-between;gap:8px}
-.brand h1{font-family:var(--f-display);font-size:29px;line-height:1;color:var(--ink);letter-spacing:-.01em;white-space:nowrap}
+.brand h1{font-family:var(--f-display);font-size:29px;line-height:1;color:var(--ink);letter-spacing:-.01em;white-space:nowrap;display:flex;align-items:center;gap:5px}
+.brand h1 img{display:block;width:29px;height:29px;flex:none}
 .clock{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:999px;background:var(--surface);font-size:11px;white-space:nowrap}
 .clock b{font-family:var(--f-mono);font-weight:500;font-variant-numeric:tabular-nums}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--muted)}
@@ -191,7 +192,7 @@ footer{font-size:12px;color:var(--muted);text-align:center}
 <div class="wrap">
   <header>
     <div class="brand">
-      <h1>맛집지도</h1>
+      <h1><img src="assets/icons/logo.svg" alt="" width="29" height="29">맛집지도</h1>
     </div>
     <div class="clock" id="clock" data-s="off"><span class="dot"></span><span id="clockText">점심시간 확인 중</span></div>
   </header>

@@ -1,9 +1,9 @@
-# 점심 지도 (세종청사·여의도)
+# 맛집지도 (여의도·세종청사)
 
-세종청사와 여의도에서 동료들이 다녀온 점심 식당을 함께 모으고 평가하는 지도 사이트예요.
+여의도와 세종청사에서 동료들이 다녀온 점심 식당을 함께 모으고 평가하는 지도 사이트예요.
 맨 위에서 지역을 바꿀 수 있고, 식권 뽑기, 동네·종류·가격 필터, 기준점에서 가까운 순 정렬, 실제 지도(OpenStreetMap)를 지원해요.
 
-지역별 바로가기: [세종청사](https://lloydknam.github.io/sejong-lunch/?r=sejong) · [여의도](https://lloydknam.github.io/sejong-lunch/?r=yeouido)
+지역별 바로가기: [여의도](https://lloydknam.github.io/sejong-lunch/?r=yeouido) · [세종청사](https://lloydknam.github.io/sejong-lunch/?r=sejong)
 
 사이트 주소: https://lloydknam.github.io/sejong-lunch/
 

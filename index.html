@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>세종청사 점심</title>
-<meta name="description" content="세종청사와 여의도에서 동료들이 다녀온 점심 식당을 함께 모으고 평가하는 지도">
+<title>맛집지도</title>
+<meta name="description" content="여의도와 세종청사에서 동료들이 다녀온 식당을 함께 모으고 평가하는 맛집지도">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
@@ -24,7 +24,6 @@
   :root{--bg:#121714;--surface:#1a211d;--line:#2c3631;--fg:#e4eae5;--muted:#9aa8a0;
     --ink:#5fbfa8;--ink-fg:#0c1411;--ticket:#d8ad2b;--ticket-fg:#221a06;--ticket-line:#8f6c0c;
     --good:#6cc48f;--warn:#e0b44a;--bad:#ef7d6f;--chip:#232b27;color-scheme:dark}
-  .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) brightness(.85) contrast(.9)}
 }
 *{box-sizing:border-box}
 html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -72,7 +71,7 @@ header{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;
 .mhead{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
 .mhead h2,.lhead h2{font-family:var(--f-display);font-size:22px}
 .mnote{font-size:12px;color:var(--muted)}
-#map{height:320px;border-radius:12px;border:1px solid var(--line);background:var(--chip);z-index:0}
+#map{height:320px;border-radius:12px;border:1px solid var(--line);background:#f2efe9;color:#1b2420;z-index:0}
 .leaflet-popup-content{font-family:var(--f-body);font-size:13px;margin:10px 12px}
 .pop b{display:block;font-size:14px}
 .pop .m{color:#5c6862}
@@ -150,8 +149,8 @@ footer{font-size:12px;color:var(--muted);text-align:center}
 <div class="wrap">
   <header>
     <div class="brand">
-      <h1 id="siteTitle">세종청사 점심</h1>
-      <p>동료들이 직접 다녀온 곳을 모으는 점심 지도</p>
+      <h1>맛집지도</h1>
+      <p>동료들이 직접 다녀온 곳을 모으는 지도</p>
     </div>
     <div class="clock" id="clock" data-s="off"><span class="dot"></span><span id="clockText">점심시간 확인 중</span></div>
   </header>
@@ -182,7 +181,7 @@ footer{font-size:12px;color:var(--muted);text-align:center}
   <section class="mapbox" aria-label="지도">
     <div class="mhead"><h2>지도</h2><span class="mnote" id="mapNote">점을 누르면 식당 정보가 떠요</span></div>
     <div id="map"></div>
-    <div class="legend"><span><i style="background:var(--ink)"></i>맛집 후보·평가 있는 곳</span><span><i style="background:var(--muted);width:7px;height:7px"></i>그 밖의 식당</span><span><i style="border:2px dashed var(--muted)"></i>동네 안 대략 위치</span></div>
+    <div class="legend"><span><i style="background:#1f5f52"></i>맛집 후보·평가 있는 곳</span><span><i style="background:#5c6862;width:7px;height:7px"></i>그 밖의 식당</span><span><i style="border:2px dashed var(--muted)"></i>동네 안 대략 위치</span></div>
   </section>
 
   <section class="filters" aria-label="조건">
@@ -239,18 +238,20 @@ const CATS=["한식","일식","중식","양식","아시아","분식","고기","�
 const PRICES=["~1만","1~1.5만","1.5만~"];
 const VERD={again:"또 갈래",ok:"무난",no:"비추"};
 const REGIONS={
-  sejong:{id:"sejong",label:"세종청사",title:"세종청사 점심",seed:"data/places.json",prefix:"세종 ",addrHint:"예: 세종1번가 2층",
-    areas:["어진동","나성동","도담동","보람동","아름동","종촌동","고운동","새롬동","다정동","한솔동","대평동","소담동","반곡동","집현동","조치원읍","금남면","장군면","기타"],
-    center:{"어진동":[36.503,127.258],"도담동":[36.514,127.257],"아름동":[36.517,127.243],"종촌동":[36.505,127.239],"고운동":[36.512,127.225],"나성동":[36.490,127.264],"다정동":[36.495,127.243],"새롬동":[36.485,127.249],"한솔동":[36.481,127.256],"대평동":[36.470,127.272],"보람동":[36.478,127.290],"소담동":[36.480,127.305],"반곡동":[36.497,127.313],"집현동":[36.513,127.310],"조치원읍":[36.601,127.298],"금남면":[36.462,127.285],"장군면":[36.507,127.198]},
-    jitter:[.006,.008],bounds:[[36.468,127.222],[36.522,127.318]],
-    anchors:[{name:"정부세종청사",short:"청사",ll:[36.5041,127.2621]}]},
-  yeouido:{id:"yeouido",label:"여의도",title:"여의도 점심",seed:"data/yeouido.json",prefix:"여의도 ",addrHint:"예: IFC몰 지하 2층",
+  yeouido:{id:"yeouido",label:"여의도",seed:"data/yeouido.json",prefix:"여의도 ",addrHint:"예: IFC몰 지하 2층",
     areas:["국회·서여의도","여의도역·IFC","증권가","여의나루","샛강·63","기타"],
     center:{"국회·서여의도":[37.5272,126.9192],"여의도역·IFC":[37.5235,126.9250],"증권가":[37.5222,126.9285],"여의나루":[37.5262,126.9322],"샛강·63":[37.5180,126.9315]},
     jitter:[.003,.004],bounds:[[37.5145,126.9110],[37.5335,126.9420]],
-    anchors:[{name:"국회의사당",short:"국회",ll:[37.5319,126.9144]},{name:"여의도역",short:"여의도역",ll:[37.5216,126.9243]}]}
+    anchors:[{name:"국회의사당",short:"국회",ll:[37.5319,126.9144]},{name:"여의도역",short:"여의도역",ll:[37.5216,126.9243]}]},
+  sejong:{id:"sejong",label:"세종청사",seed:"data/places.json",prefix:"세종 ",addrHint:"예: 세종1번가 2층",
+    areas:["어진동","나성동","도담동","보람동","아름동","종촌동","고운동","새롬동","다정동","한솔동","대평동","소담동","반곡동","집현동","조치원읍","금남면","장군면","기타"],
+    center:{"어진동":[36.503,127.258],"도담동":[36.514,127.257],"아름동":[36.517,127.243],"종촌동":[36.505,127.239],"고운동":[36.512,127.225],"나성동":[36.490,127.264],"다정동":[36.495,127.243],"새롬동":[36.485,127.249],"한솔동":[36.481,127.256],"대평동":[36.470,127.272],"보람동":[36.478,127.290],"소담동":[36.480,127.305],"반곡동":[36.497,127.313],"집현동":[36.513,127.310],"조치원읍":[36.601,127.298],"금남면":[36.462,127.285],"장군면":[36.507,127.198]},
+    jitter:[.006,.008],bounds:[[36.468,127.222],[36.522,127.318]],
+    anchors:[{name:"정부세종청사",short:"청사",ll:[36.5041,127.2621]}]}
 };
-const DEFAULT_REGION="sejong";
+const DEFAULT_REGION="yeouido";
+/* 지역 표시가 없는 예전 자료는 세종 것이에요 */
+const LEGACY_REGION="sejong";
 let R=REGIONS[DEFAULT_REGION];
 const $=id=>document.getElementById(id);
 const PAGE=60;
@@ -266,12 +267,12 @@ function el(tag,attrs,...kids){const n=document.createElement(tag);
 function toast(t){const n=$("toast");n.textContent=t;n.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>n.hidden=true,2400)}
 
 /* filters are remembered per region; Sejong keeps its original key */
-const filterKey=()=>R.id===DEFAULT_REGION?"lunchFilter":"lunchFilter:"+R.id;
+const filterKey=()=>R.id===LEGACY_REGION?"lunchFilter":"lunchFilter:"+R.id;
 function loadF(){const f={area:"",cat:"",price:"",solo:false,pick:false,sort:"score",anchor:0};
   try{const s=JSON.parse(store(filterKey())||"null");if(s&&typeof s==="object")Object.assign(f,s)}catch(e){}
   if(!R.areas.includes(f.area))f.area="";if(!R.anchors[f.anchor])f.anchor=0;return f}
 function saveF(){store(filterKey(),JSON.stringify(S.f))}
-const regionOf=p=>p.region||DEFAULT_REGION;
+const regionOf=p=>p.region||LEGACY_REGION;
 
 /* identity: a random token kept on this phone; the server only ever sees its hash */
 let token=store("lunchToken");
@@ -395,9 +396,9 @@ function initMap(){if(!window.L){$("map").replaceChildren(el("div",{class:"empty
   anchorLayer=L.layerGroup().addTo(map);layer=L.layerGroup().addTo(map);drawAnchors()}
 function drawAnchors(){if(!map)return;anchorLayer.clearLayers();
   R.anchors.forEach(a=>L.marker(a.ll,{icon:L.divIcon({className:"",html:'<span class="gov">'+a.name+'</span>',iconSize:null,iconAnchor:[0,0]}),interactive:false,keyboard:false}).addTo(anchorLayer))}
-function cssVar(n){return getComputedStyle(document.documentElement).getPropertyValue(n).trim()}
 function renderMap(){if(!map)return;layer.clearLayers();for(const k in markers)delete markers[k];
-  const ink=cssVar("--ink"),muted=cssVar("--muted"),tk=cssVar("--ticket"),good=cssVar("--good"),bad=cssVar("--bad");
+  /* 지도는 다크 모드에서도 밝아서 점 색을 고정해요 */
+  const ink="#1f5f52",muted="#5c6862",tk="#f1c232",good="#2f7d4f",bad="#b23b2e";
   let approx=0;
   filtered().forEach(p=>{const q=pos(p);if(!q)return;if(!q.exact)approx++;const s=stats(p.id);
     const on=S.open===p.id||S.picked===p.id;const col=s.again>s.no?good:s.no>s.again?bad:ink;
@@ -521,7 +522,7 @@ function renderAll(){renderBanner();renderFilters();renderMap();renderList();
 
 /* region switch */
 function applyRegion(id){R=REGIONS[id];S.f=loadF();S.places=[];S.open=null;S.picked=null;S.confirmDel=null;S.q="";S.error="";S.loaded=false;S.limit=PAGE;
-  store("lunchRegion",R.id);document.title=R.title;$("siteTitle").textContent=R.title;
+  store("lunchRegionV2",R.id);
   $("q").value="";$("qClear").hidden=true;
   $("aArea").replaceChildren(...R.areas.map(a=>el("option",{value:a,text:a})));$("aAddr").placeholder=R.addrHint;
   $("regions").querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.r===R.id)));
@@ -532,7 +533,7 @@ async function switchRegion(id){if(id===R.id)return;applyRegion(id);
   renderBanner();renderFilters();renderMap();showTicket(null);await load()}
 Object.values(REGIONS).forEach(r=>$("regions").append(el("button",{type:"button","data-r":r.id,"aria-pressed":"false",onclick:()=>switchRegion(r.id),text:r.label})));
 applyRegion((()=>{let q=null;try{q=new URLSearchParams(location.search).get("r")}catch(e){}
-  const c=[q,store("lunchRegion")].find(x=>x&&Object.prototype.hasOwnProperty.call(REGIONS,x));return c||DEFAULT_REGION})());
+  const c=[q,store("lunchRegionV2")].find(x=>x&&Object.prototype.hasOwnProperty.call(REGIONS,x));return c||DEFAULT_REGION})());
 
 (async()=>{S.me=await hashToken(token).catch(()=>null);initMap();await load();
   if(API)setInterval(()=>{if(document.visibilityState==="visible")refresh().then(renderAll)},60000)})();

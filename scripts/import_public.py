@@ -100,7 +100,7 @@ def rows_of(z, keyword):
     return rows
 
 
-EXCLUDE = re.compile(r"커피|카페|제과|빵|아이스크림|빙수|음료|주스|주점|호프|맥주|구내식당|도시락|반찬|떡|디저트|요거트|편의점|단체급식")
+EXCLUDE = re.compile(r"커피|카페|제과|빵|아이스크림|빙수|음료|주스|호프|맥주|구내식당|도시락|반찬|떡|디저트|요거트|편의점|단체급식")
 
 
 # 업종이 음식으로 잡혀도 점심 식당이 아닌 곳 (카페·술집·기관 구내식당 운영사 등)
@@ -117,6 +117,11 @@ def category(mid, sub):
     """우리 분류로 바꿉니다. 점심 식당이 아니면 None."""
     if EXCLUDE.search(f"{mid} {sub}".replace("떡볶이", "")):
         return None
+    # 요리 주점은 음식을 함께 내는 곳이라 기타로 넣고, 유흥 주점은 제외해요.
+    if "유흥" in sub:
+        return None
+    if "요리 주점" in sub:
+        return "기타"
     if "일식" in mid:
         return "일식"
     if re.search(r"곱창|족발|보쌈|고기|갈비|삼겹|구이/찜", sub) and "해산물" not in sub and "생선" not in sub:

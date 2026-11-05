@@ -27,21 +27,15 @@ html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset
 body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.55;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:10px 48px}
 [hidden]{display:none!important}
-.wrap{max-width:620px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+.wrap{max-width:620px;margin:0 auto;display:flex;flex-direction:column;gap:6px}
 h1,h2,h3{margin:0;text-wrap:balance;font-weight:400}
 button,input,select,textarea{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 a{color:var(--ink)}
 
-header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 8px}
+header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:2px 8px}
 .brand h1{font-family:var(--f-display);font-size:29px;line-height:1;color:var(--ink);letter-spacing:-.01em;white-space:nowrap;display:flex;align-items:center;gap:5px}
 .brand h1 img{display:block;width:29px;height:29px;flex:none}
-.clock{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:999px;background:var(--surface);font-size:11px;white-space:nowrap}
-.clock b{font-family:var(--f-mono);font-weight:500;font-variant-numeric:tabular-nums}
-.dot{width:7px;height:7px;border-radius:50%;background:var(--muted)}
-.clock[data-s="on"] .dot{background:var(--good)}
-.clock[data-s="soon"] .dot{background:var(--warn)}
-
 .regions{display:grid;grid-template-columns:1fr 1fr;gap:2px;padding:2px;background:var(--surface);border-radius:999px;box-shadow:inset 0 0 0 2px var(--fg);flex:none}
 .regions button{appearance:none;border:0;background:none;border-radius:999px;padding:2px 7px;font-family:var(--f-display);font-size:14px;line-height:1.3;white-space:nowrap;cursor:pointer;color:var(--fg)}
 .regions button[aria-pressed="true"]{background:var(--fg);color:#fff}
@@ -195,7 +189,6 @@ footer{font-size:12px;color:var(--muted);text-align:center}
       <h1><img src="assets/icons/logo.svg" alt="" width="29" height="29">맛집지도</h1>
     </div>
     <nav class="regions" id="regions" aria-label="지역 선택"></nav>
-    <div class="clock" id="clock" data-s="off"><span class="dot"></span><span id="clockText">점심시간 확인 중</span></div>
   </header>
 
   <section class="coupons" id="coupons" aria-label="뽑기 식권"></section>
@@ -211,7 +204,7 @@ footer{font-size:12px;color:var(--muted);text-align:center}
   </section>
 
   <section class="mapbox" aria-label="지도">
-    <div class="mhead"><h2>지도</h2><span class="mnote" id="mapNote">점을 누르면 식당 정보가 떠요</span></div>
+    <div class="mhead"><span class="mnote" id="mapNote">점을 누르면 식당 정보가 떠요</span></div>
     <div id="map"></div>
     <div class="legend"><span><i style="background:#00A08C"></i>맛집 후보</span><span class="th-only"><img src="assets/icons/badge.svg" alt="" width="13" height="13" style="vertical-align:-2px;margin-right:4px">금배지</span><span class="th-only"><img src="assets/icons/stock.svg" alt="" width="13" height="13" style="vertical-align:-2px;margin-right:4px">증권맨</span><span><i style="background:#8A87A3;width:7px;height:7px"></i>그 밖의 식당</span><span><i style="border:2px dashed var(--muted)"></i>동네 안 대략 위치</span></div>
   </section>
@@ -327,15 +320,9 @@ let token=store("lunchToken");
 if(!token||token.length<16){token=Array.from(crypto.getRandomValues(new Uint8Array(16)),b=>b.toString(16).padStart(2,"0")).join("");store("lunchToken",token)}
 async function hashToken(t){const buf=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(t));return Array.from(new Uint8Array(buf),b=>b.toString(16).padStart(2,"0")).join("").slice(0,16)}
 
-/* lunch clock */
-function tick(){const d=new Date();const m=d.getHours()*60+d.getMinutes();const day=d.getDay();
-  const c=$("clock"),t=$("clockText");const fmt=x=>x>=60?Math.floor(x/60)+"시간 "+(x%60)+"분":x+"분";
-  $("tdate").textContent=(d.getMonth()+1)+"."+String(d.getDate()).padStart(2,"0")+" "+["일","월","화","수","목","금","토"][day];
-  t.textContent="";
-  if(day===0||day===6){c.dataset.s="off";t.append("주말이에요");return}
-  if(m<720){c.dataset.s=720-m<=30?"soon":"off";t.append("점심까지 ",el("b",{text:fmt(720-m)}))}
-  else if(m<780){c.dataset.s="on";t.append("점심시간 · ",el("b",{text:fmt(780-m)})," 남음")}
-  else{c.dataset.s="off";t.append("오늘 점심 끝 · 내일 12:00")}}
+/* date label */
+function tick(){const d=new Date();
+  $("tdate").textContent=(d.getMonth()+1)+"."+String(d.getDate()).padStart(2,"0")+" "+["일","월","화","수","목","금","토"][d.getDay()];}
 tick();setInterval(tick,30000);
 
 /* geometry */

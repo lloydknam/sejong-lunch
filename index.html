@@ -39,7 +39,7 @@ header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-betw
 .regions{display:grid;grid-template-columns:1fr 1fr;gap:2px;padding:2px;background:var(--surface);border-radius:999px;box-shadow:inset 0 0 0 2px var(--fg);flex:none}
 .regions button{appearance:none;border:0;background:none;border-radius:999px;padding:2px 7px;font-family:var(--f-display);font-size:14px;line-height:1.3;white-space:nowrap;cursor:pointer;color:var(--fg)}
 .regions button[aria-pressed="true"]{background:var(--fg);color:#fff}
-.themes{display:flex;flex-wrap:wrap;gap:5px}
+.themes{display:flex;flex-wrap:wrap;gap:3px 5px}
 .theme{appearance:none;flex:1 1 auto;display:flex;align-items:center;justify-content:center;gap:4px;padding:3px 7px;border:1.5px solid var(--fg);border-radius:999px;background:var(--surface);color:var(--fg);cursor:pointer}
 .theme img{width:16px;height:16px;flex:none}
 .theme span{display:flex;align-items:baseline;gap:3px;white-space:nowrap}
@@ -47,7 +47,7 @@ header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-betw
 .theme small{font-size:10px;color:var(--muted)}
 .theme[aria-pressed="true"]{background:var(--ticket)}
 .theme[aria-pressed="true"] small{color:var(--fg)}
-.tdesc{flex:1 0 100%;margin:0;font-size:11px;line-height:1.35;color:var(--muted)}
+.tdesc{flex:1 0 100%;margin:-2px 0 0;font-size:11px;line-height:1.2;color:var(--muted)}
 @media (max-width:350px){.theme{padding:3px 5px}.theme img{width:13px;height:13px}.theme b{font-size:11px}.theme small{font-size:9px}}
 
 .ticket{position:relative;display:grid;grid-template-columns:32px 1fr;background:var(--ticket);color:var(--ticket-fg);border:2px solid var(--fg);border-radius:12px;min-height:84px;box-shadow:3px 3px 0 var(--fg)}
@@ -98,7 +98,7 @@ header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-betw
 .ticket.won .tname{animation:pop .32s cubic-bezier(.3,1.6,.6,1)}
 @keyframes pop{from{transform:scale(.86)}to{transform:scale(1)}}
 
-.mapbox{display:flex;flex-direction:column;gap:4px}
+.mapbox{display:flex;flex-direction:column;gap:2px}
 .mhead{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
 .mhead h2,.lhead h2{font-family:var(--f-display);font-size:17px}
 .mnote{font-size:11px;color:var(--muted)}
@@ -110,7 +110,7 @@ header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-betw
 .pop .m{color:#5c6862}
 .pop button{margin-top:6px;border:0;background:#DF2F24;color:#fff;border-radius:6px;padding:4px 10px;font-size:12px;cursor:pointer}
 .gov{display:inline-block;transform:translate(-50%,-50%);background:#2A1E5C;color:#fff;font-size:11px;font-weight:600;padding:2px 6px;border-radius:4px;white-space:nowrap;box-shadow:0 1px 3px rgba(0,0,0,.3)}
-.legend{display:flex;gap:10px;flex-wrap:wrap;font-size:11px;color:var(--muted)}
+.legend{display:flex;gap:2px 10px;flex-wrap:wrap;font-size:11px;line-height:1.3;color:var(--muted)}
 .legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
 
 .filters{display:flex;flex-direction:column;gap:5px}

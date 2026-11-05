@@ -204,9 +204,7 @@ footer{font-size:12px;color:var(--muted);text-align:center}
   </section>
 
   <section class="mapbox" aria-label="지도">
-    <div class="mhead"><span class="mnote" id="mapNote">점을 누르면 식당 정보가 떠요</span></div>
     <div id="map"></div>
-    <div class="legend"><span><i style="background:#00A08C"></i>맛집 후보</span><span class="th-only"><img src="assets/icons/badge.svg" alt="" width="13" height="13" style="vertical-align:-2px;margin-right:4px">금배지</span><span class="th-only"><img src="assets/icons/stock.svg" alt="" width="13" height="13" style="vertical-align:-2px;margin-right:4px">증권맨</span><span><i style="background:#8A87A3;width:7px;height:7px"></i>그 밖의 식당</span><span><i style="border:2px dashed var(--muted)"></i>동네 안 대략 위치</span></div>
   </section>
 
   <section class="themes" id="themes" aria-label="테마 메뉴" hidden></section>
@@ -467,7 +465,7 @@ function renderMap(){if(!map)return;layer.clearLayers();for(const k in markers)d
     const pop=el("div",{class:"pop"},el("b",{text:p.name}),el("span",{class:"m",text:metaParts(p).join(" · ")+(q.exact?"":" · 위치 대략")}),el("br"),
       el("button",{type:"button",onclick:()=>openInList(p.id),text:"목록에서 보기"}));
     m.bindPopup(pop);m.addTo(layer);markers[p.id]=m});
-  $("mapNote").textContent=approx?"점선 원은 동네 안 대략 위치예요":"점을 누르면 식당 정보가 떠요"}
+  }
 function focusOnMap(p){const q=pos(p);if(!map||!q)return;map.setView(q.ll,Math.max(map.getZoom(),15));renderMap();const m=markers[p.id];if(m)m.openPopup()}
 function openInList(id){S.open=id;S.confirmDel=null;const p=S.places.find(x=>x.id===id);
   if(p&&filtered().indexOf(p)<0){S.f.area="";S.f.cat="";S.f.price="";S.f.solo=false;S.f.theme="";saveF();S.q="";$("q").value="";$("qClear").hidden=true}
